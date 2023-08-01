@@ -85,26 +85,12 @@ class cAnalisisAhc extends CI_Controller
             // echo $d[$p];
 
             $matriks[] = array($nod[$p], 'nilai' => $d[$p]);
+
             // echo '<br>';
         }
         var_dump($matriks);
-        echo '<br>';
-        echo '<br>';
-
-
-        foreach ($matriks as $key =>  &$item) {
-            ksort($item);
-            $array[$key] = $item;
-        }
-        echo $array[$key];
-
-
-
-        // $a = 0;
-        // for ($o = 0; $o < sizeof($matriks); $o++) {
-        //     echo $matriks[$o][$a];
-        //     echo '<br>';
-        // }
+        $min = min($matriks);
+        echo $min;
     }
 }
 
