@@ -173,41 +173,58 @@
 
 
         <div class="row isotope-grid">
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-                <!-- Block2 -->
-                <div class="block2">
-                    <div class="block2-pic hov-img0">
-                        <img src="<?= base_url('asset/cozastore-master/') ?>images/product-01.jpg" alt="IMG-PRODUCT">
+            <?php
+            foreach ($produk as $key => $value) {
+            ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <form action="<?= base_url('Pelanggan/cHome/addtocart') ?>" method="POST">
+                        <input type="hidden" name="id" value="<?= $value->id_produk ?>">
+                        <input type="hidden" name="name" value="<?= $value->nama_produk ?>">
+                        <input type="hidden" name="price" value="<?= $value->harga - ($value->diskon / 100 * $value->harga) ?>">
+                        <input type="hidden" name="qty" value="1">
+                        <input type="hidden" name="stok" value="<?= $value->stok ?>">
+                        <input type="hidden" name="picture" value="<?= $value->gambar ?>">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img style="width: 150px; height: 350px;" src="<?= base_url('asset/foto-produk/' . $value->gambar) ?>" alt="IMG-PRODUCT">
+                            </div>
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <p class="stext-110 cl4 trans-04 js-name-b2 p-b-6">
+                                        <?= $value->nama_produk ?>
+                                    </p>
+                                    <small class="stext-90 cl4 trans-04 js-name-b2 p-b-6"><?= $value->deskripsi ?></small>
+                                    <small class="stext-90 cl4 trans-04 js-name-b2 p-b-6">Stok : <span class="badge badge-success"><?= $value->stok ?></span></small>
+                                    <span class="stext-105 cl3">
+                                        Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga))  ?>
+                                        <?php
+                                        if ($value->diskon != NULL) {
+                                        ?>
+                                            <del> Rp. <?= number_format($value->harga)  ?></del>
+                                        <?php
+                                        }
+                                        ?>
+                                        <button type="submit" class="mt-3 flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                            Add To Cart
+                                        </button>
+                                    </span>
 
-                        <button class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                            Quick View
-                        </button>
-                    </div>
+                                </div>
 
-                    <div class="block2-txt flex-w flex-t p-t-14">
-                        <div class="block2-txt-child1 flex-col-l ">
-                            <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Esprit Ruffle Shirt
-                            </a>
 
-                            <span class="stext-105 cl3">
-                                $16.64
-                            </span>
+                            </div>
                         </div>
-
-
-                    </div>
+                    </form>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
+
 
 
         </div>
 
-        <!-- Load more -->
-        <div class="flex-c-m flex-w w-full p-t-45">
-            <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-                Load More
-            </a>
-        </div>
+
     </div>
 </section>
