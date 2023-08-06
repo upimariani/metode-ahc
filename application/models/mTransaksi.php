@@ -28,6 +28,11 @@ class mTransaksi extends CI_Model
         $this->db->where('id_transaksi', $id);
         $this->db->update('transaksi', $data);
     }
+    public function pesanan_diterima($id, $data)
+    {
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('transaksi', $data);
+    }
 
     //sales
     public function transaksi_sales()

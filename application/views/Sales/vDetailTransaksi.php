@@ -29,8 +29,7 @@
 						<div class="col-lg-6">
 							<div class="text-light mb-3">
 								<h4>Bukti Pembayaran</h4>
-								<img style="width: 150px;" src="<?= base_url('asset/bukti-pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>">
-
+								<img style="width: 250px;" src="<?= base_url('asset/pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>">
 							</div>
 						</div>
 					<?php
@@ -92,7 +91,20 @@
 
 						</tbody>
 					</table>
-					<a href="<?= base_url('Admin/cTransaksi') ?>" class="btn btn-danger mt-3">Kembali</a>
+					<a href="<?= base_url('Sales/cTransaksi') ?>" class="btn btn-danger mt-3">Kembali</a>
+					<?php
+					if ($transaksi['transaksi']->stat_transaksi == '1') {
+					?>
+						<a href="<?= base_url('Sales/cTransaksi/konfirmasi/' . $transaksi['transaksi']->id_transaksi) ?>" class="btn btn-info mt-3">Konfirmasi Pembayaran</a>
+					<?php
+					} else if ($transaksi['transaksi']->stat_transaksi == '2') {
+					?>
+						<a href="<?= base_url('Sales/cTransaksi/dikirim/' . $transaksi['transaksi']->id_transaksi) ?>" class="btn btn-success mt-3">Pesanan Dikirim</a>
+					<?php
+					}
+					?>
+
+
 					<button onclick="window.print()" class="btn btn-warning mt-3">Print</button>
 				</div>
 				<!-- table container -->

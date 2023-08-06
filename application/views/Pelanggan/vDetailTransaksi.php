@@ -125,7 +125,17 @@
 
 
                     </div>
+
                 </div>
+                <?php
+                if ($transaksi['transaksi']->stat_transaksi == '3') {
+                ?>
+                    <a href="<?= base_url('Pelanggan/cTransaksi/pesanan_diterima/' . $transaksi['transaksi']->id_transaksi) ?>" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        Pesanan Telah Diterima
+                    </a>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

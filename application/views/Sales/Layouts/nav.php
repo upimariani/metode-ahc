@@ -45,13 +45,13 @@
 						if ($this->session->userdata('id') != '') {
 						?>
 							<a class="nav-link d-block" href="<?= base_url('Admin/cLogin/logout') ?>">
-								Admin, <b>Logout</b>
+								Sales, <b>Logout</b>
 							</a>
 						<?php
 						} else {
 						?>
 							<a class="nav-link d-block" href="<?= base_url('Admin/cLogin') ?>">
-								Admin, <b>Login</b>
+								Sales, <b>Login</b>
 							</a>
 						<?php
 						}

@@ -62,15 +62,7 @@
 										<a href="<?= base_url('Sales/cTransaksi/detail_transaksi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
 											<i class="fas fa-shopping-cart tm-product-delete-icon"></i>
 										</a>
-										<?php
-										if ($value->stat_transaksi == '1') {
-										?>
-											<a href="<?= base_url('Sales/cTransaksi/konfirmasi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
-												<i class="fas fa-check tm-product-delete-icon"></i>
-											</a>
-										<?php
-										}
-										?>
+
 
 									</td>
 								</tr>

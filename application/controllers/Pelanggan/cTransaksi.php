@@ -59,6 +59,16 @@ class cTransaksi extends CI_Controller
             redirect('Pelanggan/cTransaksi/detail_transaksi/' . $id, 'refresh');
         }
     }
+    public function pesanan_diterima($id)
+    {
+        //--------------analisis simpan disinii-------------
+        $data = array(
+            'stat_transaksi' => '4'
+        );
+        $this->mTransaksi->pesanan_diterima($id, $data);
+        $this->session->set_flashdata('success', 'Pesanan Anda Berhasil Diterima!!!');
+        redirect('Pelanggan/cTransaksi/detail_transaksi/' . $id, 'refresh');
+    }
 }
 
 /* End of file cTransaksi.php */
