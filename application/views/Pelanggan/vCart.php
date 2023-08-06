@@ -34,8 +34,8 @@
                         ?>
                             <tr class="table_row">
                                 <td class="column-1">
-                                    <div class="how-itemcart1">
-                                        <img src="<?= base_url('asset/foto-produk/' . $value['picture']) ?>" alt="IMG">
+                                    <div>
+                                        <img style="width: 50px;" src="<?= base_url('asset/foto-produk/' . $value['picture']) ?>" alt="IMG">
                                     </div>
                                 </td>
                                 <td class="column-2"><?= $value['name'] ?></td>

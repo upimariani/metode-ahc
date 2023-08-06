@@ -12,17 +12,17 @@ class mLogin extends CI_Model
 		return $this->db->get()->row();
 	}
 
-	//wisatawan
+	//pelanggan
 	public function registrasi($data)
 	{
-		$this->db->insert('wisatawan', $data);
+		$this->db->insert('pelanggan', $data);
 	}
-	public function login_wisatawan($username, $password)
+	public function login_pelangan($username, $password)
 	{
 		$this->db->select('*');
-		$this->db->from('wisatawan');
-		$this->db->where('username_wisatawan', $username);
-		$this->db->where('password_wisatawan', $password);
+		$this->db->from('pelanggan');
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
 		return $this->db->get()->row();
 	}
 }

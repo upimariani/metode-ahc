@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-xl">
 		<div class="container h-100">
 			<a class="navbar-brand" href="index.html">
-				<h1 class="tm-site-title mb-0">Admin</h1>
+				<h1 class="tm-site-title mb-0">Sales</h1>
 			</a>
 			<button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fas fa-bars tm-nav-icon"></i>
@@ -16,50 +16,23 @@
 					if ($this->session->userdata('id') != '') {
 					?>
 						<li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cDashboard') {
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cDashboard') {
 													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cDashboard') ?>">
+												}  ?>" href="<?= base_url('Sales/cDashboard') ?>">
 								<i class="fas fa-tachometer-alt"></i> Dashboard
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cProduk') {
-													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cProduk') ?>">
-								<i class="fas fa-tag"></i> Produk
-							</a>
-						</li>
 
-						<!-- <li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cDiskon') {
-													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cDiskon') ?>">
-								<i class="fas fa-percent"></i> Diskon
-							</a>
-						</li> -->
 						<li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cUser') {
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cUser') ?>">
-								<i class=" fas fa-user-shield"></i> User
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cTransaksi') {
-													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cTransaksi') ?>">
+												}  ?>" href="<?= base_url('Sales/cTransaksi') ?>">
 								<i class="fas fa-shopping-cart"></i> Transaksi Pelanggan
 							</a>
 						</li>
 
-						<li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cWisatawan') {
-													echo 'active';
-												}  ?>" href="<?= base_url('Admin/cWisatawan') ?>">
-								<i class="far fa-user"></i> Pelanggan
-							</a>
-						</li>
+
 
 					<?php
 					}

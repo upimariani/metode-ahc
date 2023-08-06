@@ -31,7 +31,7 @@
 							?>
 								<tr>
 									<th scope="row"><input type="checkbox" /></th>
-									<td class="tm-product-name"><?= $value->nama_wisatawan ?></td>
+									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->tgl_transaksi ?></td>
 									<td>Rp. <?= number_format($value->tot_transaksi)  ?></td>
 									<td><?php if ($value->stat_transaksi == '0') {
@@ -42,6 +42,14 @@
 										?>
 											<span class="badge badge-warning">Menunggu Konfirmasi </span>
 										<?php
+										} else if ($value->stat_transaksi == '2') {
+										?>
+											<span class="badge badge-info">Pesanan Diproses </span>
+										<?php
+										} else if ($value->stat_transaksi == '3') {
+										?>
+											<span class="badge badge-primary">Pesanan Dikirim </span>
+										<?php
 										} else {
 										?>
 											<span class="badge badge-success">Selesai </span>
@@ -51,13 +59,13 @@
 
 									</td>
 									<td>
-										<a href="<?= base_url('Admin/cTransaksi/detail_transaksi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
+										<a href="<?= base_url('Sales/cTransaksi/detail_transaksi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
 											<i class="fas fa-shopping-cart tm-product-delete-icon"></i>
 										</a>
 										<?php
 										if ($value->stat_transaksi == '1') {
 										?>
-											<a href="<?= base_url('Admin/cTransaksi/konfirmasi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
+											<a href="<?= base_url('Sales/cTransaksi/konfirmasi/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
 												<i class="fas fa-check tm-product-delete-icon"></i>
 											</a>
 										<?php

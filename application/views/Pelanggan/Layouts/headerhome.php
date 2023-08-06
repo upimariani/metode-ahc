@@ -26,20 +26,27 @@
                     <!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
-                            <li class="active-menu">
-                                <a href="index.html">Home</a>
-
-                            </li>
-
                             <li>
-                                <a href="product.html">Pesanan Saya</a>
+                                <a href="<?= base_url('Pelanggan/cHome') ?>">Home</a>
+
                             </li>
 
+                            <?php
+                            if ($this->session->userdata('id_pelanggan') != '') {
+                            ?>
+                                <li>
+                                    <a href="<?= base_url('Pelanggan/cTransaksi') ?>">Pesanan Saya</a>
+                                </li>
 
 
-                            <li>
-                                <a href="blog.html">Profil</a>
-                            </li>
+
+                                <li>
+                                    <a href="blog.html">Profil</a>
+                                </li>
+                            <?php
+                            }
+                            ?>
+
 
 
                         </ul>
@@ -47,23 +54,45 @@
 
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                        <div class="icon-header-item cl2 trans-04 p-l-22 p-r-11">
-                            <h5>Selamat Datang, </h5>
-                        </div>
                         <?php
-                        $qty = 0;
-                        foreach ($this->cart->contents() as $key => $value) {
-                            $qty += $value['qty'];
+                        if ($this->session->userdata('id_pelanggan') != '') {
+                        ?>
+                            <div class="icon-header-item cl2 trans-04 p-l-22 p-r-11">
+                                <h5>Selamat Datang, <?= $this->session->userdata('nama') ?></h5>
+                            </div>
+                            <?php
+                            $qty = 0;
+                            foreach ($this->cart->contents() as $key => $value) {
+                                $qty += $value['qty'];
+                            }
+                            ?>
+
+                            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?= $qty ?>">
+                                <i class="zmdi zmdi-shopping-cart"></i>
+                            </div>
+                        <?php
                         }
                         ?>
 
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?= $qty ?>">
-                            <i class="zmdi zmdi-shopping-cart"></i>
-                        </div>
 
-                        <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-                            <i class="zmdi zmdi-sign-in"></i> Login
-                        </a>
+
+                        <?php
+                        if ($this->session->userdata('id_pelanggan') == '') {
+                        ?>
+                            <a href="<?= base_url('Pelanggan/cLogin') ?>" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                                <i class="zmdi zmdi-sign-in"></i> Login
+                            </a>
+                        <?php
+                        } else {
+                        ?>
+                            <a href="<?= base_url('Pelanggan/cLogin/logout') ?>" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                                <i class="zmdi zmdi-sign-in"></i> Logout
+                            </a>
+                        <?php
+                        }
+                        ?>
+
+
                     </div>
                 </nav>
             </div>
@@ -123,9 +152,7 @@
                             View Cart
                         </a>
 
-                        <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-                            Check Out
-                        </a>
+
                     </div>
                 </div>
             </div>

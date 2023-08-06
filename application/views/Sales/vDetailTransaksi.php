@@ -16,8 +16,11 @@
 						<div class="text-light">
 							<h3>Detail Transaksi</h3>
 							<p>Tanggal Transaksi : <?= $transaksi['transaksi']->tgl_transaksi ?></p>
-							<p>Atas Nama : <?= $transaksi['transaksi']->nama_wisatawan ?></p>
-							<p>Total Transaksi : <strong> Rp. <?= number_format($transaksi['transaksi']->tot_transaksi)  ?></strong></p>
+							<p>Atas Nama : <?= $transaksi['transaksi']->nama_pelanggan ?></p>
+							<p>Subtotal : <strong> Rp. <?= number_format($transaksi['transaksi']->tot_transaksi)  ?></strong></p>
+							<p>Ongkos Kirim : <strong> Rp. <?= number_format($transaksi['transaksi']->ongkir)  ?></strong></p>
+							<h4 class="text-info">Total Pembayaran : <strong> Rp. <?= number_format($transaksi['transaksi']->ongkir + $transaksi['transaksi']->tot_transaksi)  ?></strong></h4>
+							<p>Alamat Pengiriman : <strong><?= $transaksi['transaksi']->pengiriman ?></strong></p>
 						</div>
 					</div>
 					<?php
@@ -56,7 +59,7 @@
 							?>
 								<tr>
 									<td><?= $no++ ?></td>
-									<td><?= $value->nama_tiket ?></td>
+									<td><?= $value->nama_produk	 ?></td>
 									<?php
 									if ($transaksi['transaksi']->level_member == '1') {
 									?>

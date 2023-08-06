@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class mTransaksi extends CI_Model
 {
-    //wisatawan
+    //pelanggan
     public function insert_transaksi($data)
     {
         $this->db->insert('transaksi', $data);
@@ -12,17 +12,15 @@ class mTransaksi extends CI_Model
     {
         $this->db->insert('detail_transaksi', $data);
     }
-    public function transaksi_wisatawan()
+    public function transaksi_pelanggan()
     {
-        $data['belum_bayar'] = $this->db->query("SELECT * FROM `transaksi` WHERE id_wisatawan = '" . $this->session->userdata('id_wisatawan') . "' AND stat_transaksi='0'")->result();
-        $data['menunggu'] = $this->db->query("SELECT * FROM `transaksi` WHERE id_wisatawan = '" . $this->session->userdata('id_wisatawan') . "' AND stat_transaksi='1'")->result();
-        $data['selesai'] = $this->db->query("SELECT * FROM `transaksi` WHERE id_wisatawan = '" . $this->session->userdata('id_wisatawan') . "' AND stat_transaksi='2'")->result();
+        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON pelanggan.id_pelanggan = transaksi.id_pelanggan WHERE pelanggan.id_pelanggan='" . $this->session->userdata('id_pelanggan') . "';")->result();
         return $data;
     }
-    public function detail_transaksi_wisatawan($id)
+    public function detail_transaksi_pelanggan($id_transaksi)
     {
-        $data['detail_transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN detail_transaksi ON transaksi.id_transaksi=detail_transaksi.id_transaksi JOIN tiket ON tiket.id_tiket=detail_transaksi.id_tiket LEFT JOIN diskon ON tiket.id_tiket = diskon.id_tiket WHERE transaksi.id_transaksi='" . $id . "'")->result();
-        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN wisatawan ON wisatawan.id_wisatawan=transaksi.id_wisatawan WHERE transaksi.id_transaksi='" . $id . "'")->row();
+        $data['detail_transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN detail_transaksi ON transaksi.id_transaksi=detail_transaksi.id_transaksi JOIN produk ON produk.id_produk=detail_transaksi.id_produk LEFT JOIN diskon ON produk.id_produk = diskon.id_produk WHERE transaksi.id_transaksi='" . $id_transaksi . "'")->result();
+        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE id_transaksi='" . $id_transaksi . "'")->row();
         return $data;
     }
     public function bayar($id, $data)
@@ -31,15 +29,15 @@ class mTransaksi extends CI_Model
         $this->db->update('transaksi', $data);
     }
 
-    //admin
-    public function transaksi_admin()
+    //sales
+    public function transaksi_sales()
     {
-        return $this->db->query("SELECT * FROM `transaksi` JOIN wisatawan ON transaksi.id_wisatawan = wisatawan.id_wisatawan ORDER BY stat_transaksi ASC")->result();
+        return $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan = pelanggan.id_pelanggan ORDER BY stat_transaksi ASC")->result();
     }
-    public function detail_transaksi_admin($id)
+    public function detail_transaksi_sales($id)
     {
-        $data['detail_transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN detail_transaksi ON transaksi.id_transaksi=detail_transaksi.id_transaksi JOIN tiket ON tiket.id_tiket=detail_transaksi.id_tiket LEFT JOIN diskon ON tiket.id_tiket = diskon.id_tiket WHERE transaksi.id_transaksi='" . $id . "'")->result();
-        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN wisatawan ON transaksi.id_wisatawan=wisatawan.id_wisatawan WHERE id_transaksi='" . $id . "'")->row();
+        $data['detail_transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN detail_transaksi ON transaksi.id_transaksi=detail_transaksi.id_transaksi JOIN produk ON produk.id_produk=detail_transaksi.id_produk LEFT JOIN diskon ON produk.id_produk = diskon.id_produk WHERE transaksi.id_transaksi='" . $id . "'")->result();
+        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE id_transaksi='" . $id . "'")->row();
         return $data;
     }
     public function konfirmasi($id, $data)
