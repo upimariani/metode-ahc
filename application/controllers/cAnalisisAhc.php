@@ -74,7 +74,8 @@ class cAnalisisAhc extends CI_Controller
                 // echo '<br>';
                 //perhitungan rumus euclidean
                 $d[] = round(sqrt(pow($vr[$j - 1] - $vr[$k - 1], 2) + pow($vf[$j - 1] - $vf[$k - 1], 2) + pow($vm[$j - 1] - $vm[$k - 1], 2)), 2);
-                $nod[] = $j . $k;
+                $nod[] = $j;
+                $nod1[] = $k;
             }
         }
 
@@ -84,13 +85,57 @@ class cAnalisisAhc extends CI_Controller
             // echo $nod[$p] . ' | ';
             // echo $d[$p];
 
-            $matriks[] = array($nod[$p], 'nilai' => $d[$p]);
+            $matriks[] = array('queue1' => $nod[$p], 'queue2' => $nod1[$p], 'nilai' => $d[$p]);
 
             // echo '<br>';
         }
-        var_dump($matriks);
-        $min = min($matriks);
-        echo $min;
+
+        $count = sizeof($matriks);
+        $count_nama = sizeof($nama);
+        $jml = $count / $count_nama;
+        echo round($jml / 5);
+        echo '<br>';
+
+        for ($a = 0; $a < sizeof($matriks); $a++) {
+            $queue[$a] = $matriks[$a]['queue1'];
+            $nilai[$a] = $matriks[$a]['nilai'];
+        }
+        $queue = array_column($matriks, 'queue1');
+        $nilai = array_column($matriks, 'nilai');
+        array_multisort($nilai, SORT_ASC, $matriks);
+
+        $member = array();
+        for ($z = 0; $z < sizeof($matriks); $z++) {
+            if ($matriks[$z]['queue1'] == '1') {
+                if ($matriks[$z]['nilai'] <= '0') {
+                    // echo 'Member 1 : ';
+                    // echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+                    // echo '<br>';
+                    $member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '1');
+                } else if ($matriks[$z]['nilai'] < 2) {
+                    // echo 'Member 2 :';
+                    // echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+                    // echo '<br>';
+                    $member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '2');
+                } else if ($matriks[$z]['nilai'] < 3) {
+                    // echo 'Member 3: ';
+                    // echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+                    // echo '<br>';
+                    $member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '3');
+                } else if ($matriks[$z]['nilai'] < 4) {
+                    // echo 'Member 4: ';
+                    // echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+                    // echo '<br>';
+                    $member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '4');
+                } else {
+                    // echo 'Member 5: ';
+                    // echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+                    // echo '<br>';
+                    $member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '5');
+                }
+            }
+        }
+        var_dump($member);
     }
 }
 

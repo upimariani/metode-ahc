@@ -195,7 +195,15 @@
                                         <?= $value->nama_produk ?>
                                     </p>
                                     <small class="stext-90 cl4 trans-04 js-name-b2 p-b-6"><?= $value->deskripsi ?></small>
-                                    <small class="stext-90 cl4 trans-04 js-name-b2 p-b-6">Stok : <span class="badge badge-success"><?= $value->stok ?></span></small>
+                                    <small class="stext-90 cl4 trans-04 js-name-b2 p-b-6">Stok : <?php if ($value->stok != '0') {
+                                                                                                    ?>
+                                            <span class="badge badge-success"><?= $value->stok ?></span>
+                                        <?php
+                                                                                                    } else {
+                                        ?>
+                                            <span class="badge badge-danger">Habis!</span>
+                                        <?php
+                                                                                                    } ?></small>
                                     <span class="stext-105 cl3">
                                         Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga))  ?>
                                         <?php
@@ -205,9 +213,16 @@
                                         <?php
                                         }
                                         ?>
-                                        <button type="submit" class="mt-3 flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                            Add To Cart
-                                        </button>
+                                        <?php
+                                        if ($this->session->userdata('nama_pelangan') != ' ' && $value->stok != '0') {
+                                        ?>
+                                            <button type="submit" class="mt-3 flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                                Add To Cart
+                                            </button>
+                                        <?php
+                                        }
+                                        ?>
+
                                     </span>
 
                                 </div>
