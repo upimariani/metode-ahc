@@ -16,7 +16,7 @@ function drawLineChart() {
       }
     };
 
-    // Set aspect ratio based on window width
+    // Set aspect ratio based on window width***
     optionsLine.maintainAspectRatio =
       $(window).width() < width_threshold ? false : true;
 
@@ -24,8 +24,8 @@ function drawLineChart() {
       type: "line",
       data: {
         labels: [
-          "January",
-          "February",
+          "hai",
+          "dfdf",
           "March",
           "April",
           "May",
@@ -81,7 +81,7 @@ function drawBarChart() {
             },
             scaleLabel: {
               display: true,
-              labelString: "Member Wisatawan"
+              labelString: "Member sds"
             }
           }
         ]
@@ -105,7 +105,7 @@ function drawBarChart() {
     configBar = {
       type: "horizontalBar",
       data: {
-        labels: ["Aku", "Dia", "Green", "Yellow", "Purple", "Orange", "Blue"],
+        labels: ["i", "Dia", "Green", "Yellow", "Purple", "Orange", "Blue"],
         datasets: [
           {
             label: "# of Hits",

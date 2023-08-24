@@ -19,9 +19,9 @@
                 <nav class="limiter-menu-desktop container">
 
                     <!-- Logo desktop -->
-                    <a href="#" class="logo">
-                        <img src="<?= base_url('asset/cozastore-master/') ?>images/icons/logo-01.png" alt="IMG-LOGO">
-                    </a>
+                    <span class="ltext-101 cl2 respon2">
+                        Surya Nedika Isabella
+                    </span>
 
                     <!-- Menu desktop -->
                     <div class="menu-desktop">
@@ -41,7 +41,7 @@
 
 
                                 <li>
-                                    <a href="blog.html">Profil</a>
+                                    <a href="<?= base_url('Pelanggan/cProfil') ?>">Profil</a>
                                 </li>
                             <?php
                             }

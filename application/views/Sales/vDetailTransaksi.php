@@ -29,7 +29,7 @@
 						<div class="col-lg-6">
 							<div class="text-light mb-3">
 								<h4>Bukti Pembayaran</h4>
-								<img style="width: 250px;" src="<?= base_url('asset/pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>">
+								<img style="width: 150px;" src="<?= base_url('asset/pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>">
 							</div>
 						</div>
 					<?php

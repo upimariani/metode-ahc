@@ -32,7 +32,8 @@
                             <th></th>
                         </tr>
                         <?php
-                        foreach ($transaksi['transaksi'] as $key => $value) {
+      
+                  foreach ($transsi['transaksi'] as $key => $value) {
                         ?>
                             <tr class="table_row">
 
