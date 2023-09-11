@@ -63,7 +63,21 @@
 					<a href="<?= base_url('Pelanggan/cTransaksi') ?>" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 						Kembali
 					</a>
+					<?php
+					if ($transaksi['transaksi']->isi_penilaian == null) {
+					?>
+						<form action="<?= base_url('Pelanggan/cTransaksi/penilaian/' . $transaksi['transaksi']->id_transaksi) ?>" method="POST">
+							<div class="bor8 m-b-30">
+								<h3>Tuliskan Penilaian Anda...</h3>
+								<textarea rows="7" class="form-control" name="penilaian" required></textarea>
+								<button type="submit" class="btn btn-success mt-3">Kirim</button>
+							</div>
+						</form>
+					<?php
+					}
+					?>
 				</div>
+
 			</div>
 		</div>
 
@@ -98,7 +112,7 @@
 						<?php
 						if ($transaksi['transaksi']->stat_pembayaran == '1') {
 						?>
-							<img style="width: 150px;" src="<?= base_url('asset/pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>">
+							<img class="mb-5" style="width: 150px;" src="<?= base_url('asset/pembayaran/' . $transaksi['transaksi']->bukti_pembayaran) ?>"><br>
 						<?php
 						} else {
 						?>

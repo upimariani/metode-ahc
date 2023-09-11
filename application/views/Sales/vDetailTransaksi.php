@@ -45,7 +45,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Nama Tiket</th>
+								<th>Nama Produk</th>
 								<th>Harga</th>
 								<th>Qty</th>
 								<th>Subtotal</th>

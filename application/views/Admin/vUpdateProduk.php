@@ -4,7 +4,7 @@
 			<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="tm-block-title d-inline-block">Update Ticket</h2>
+						<h2 class="tm-block-title d-inline-block">Update Produk</h2>
 					</div>
 				</div>
 				<div class="row tm-edit-product-row">

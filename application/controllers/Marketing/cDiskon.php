@@ -24,10 +24,10 @@ class cDiskon extends CI_Controller
 	}
 	public function create()
 	{
-		$this->form_validation->set_rules('nama', 'Nama Tiket', 'required');
-		$this->form_validation->set_rules('tgl', 'Tanggal Tiket', 'required');
+		$this->form_validation->set_rules('nama', 'Nama Produk', 'required');
+		$this->form_validation->set_rules('tgl', 'Tanggal Produk', 'required');
 		$this->form_validation->set_rules('nama_diskon', 'Nama Diskon', 'required');
-		$this->form_validation->set_rules('besar', 'Besar Tiket', 'required');
+		$this->form_validation->set_rules('besar', 'Besar Produk', 'required');
 		$this->form_validation->set_rules('member', 'Member', 'required');
 
 		if ($this->form_validation->run() == FALSE) {

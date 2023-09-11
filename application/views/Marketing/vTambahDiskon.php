@@ -11,9 +11,9 @@
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<form action="<?= base_url('Marketing/cDiskon/create') ?>" method="POST" class="tm-edit-product-form">
 							<div class="form-group mb-3">
-								<label for="category">Nama Tiket</label>
+								<label for="category">Nama Produk</label>
 								<select class="custom-select tm-select-accounts" name="nama" id="category">
-									<option value="" selected>Pilih Nama Tiket</option>
+									<option value="" selected>Pilih Nama Produk</option>
 									<?php
 									foreach ($produk as $key => $value) {
 										if ($value->id_diskon == NULL) {

@@ -9,7 +9,7 @@ class cDashboard extends CI_Controller
 		$this->load->view('Admin/Layouts/head');
 		$this->load->view('Admin/Layouts/nav');
 		$this->load->view('Admin/vDashboard');
-		$this->load->view('Admin/Layouts/footer');
+		// $this->load->view('Admin/Layouts/footer');
 	}
 }
 

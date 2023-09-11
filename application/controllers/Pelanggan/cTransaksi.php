@@ -210,6 +210,16 @@ class cTransaksi extends CI_Controller
 		$this->session->set_flashdata('success', 'Pesanan Anda Berhasil Diterima!!!');
 		redirect('Pelanggan/cTransaksi/detail_transaksi/' . $id, 'refresh');
 	}
+	public function penilaian($id)
+	{
+		$data = array(
+			'isi_penilaian' => $this->input->post('penilaian'),
+			'id_transaksi' => $id
+		);
+		$this->db->insert('penilaian', $data);
+		$this->session->set_flashdata('success', 'Penilaian Berhasil Dikirim!');
+		redirect('Pelanggan/cTransaksi');
+	}
 }
 
 /* End of file cTransaksi.php */

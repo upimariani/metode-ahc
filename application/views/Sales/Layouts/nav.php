@@ -31,7 +31,13 @@
 								<i class="fas fa-shopping-cart"></i> Transaksi Pelanggan
 							</a>
 						</li>
-
+						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cProduk') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Sales/cProduk') ?>">
+								<i class="fas fa-tag"></i> Produk
+							</a>
+						</li>
 
 
 					<?php

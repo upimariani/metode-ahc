@@ -20,8 +20,7 @@
 								<th scope="col">&nbsp;</th>
 								<th scope="col">Nama Pelanggan</th>
 								<th scope="col">Alamat</th>
-								<th scope="col">Tanggal Lahir</th>
-								<th scope="col">Jenis Kelamin</th>
+
 								<th scope="col">Status Member</th>
 								<th scope="col">Action</th>
 							</tr>
@@ -34,15 +33,26 @@
 									<th scope="row"><input type="checkbox" /></th>
 									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->alamat ?></td>
-									<td><?= $value->tgl_lahir ?></td>
-									<td><?= $value->jk ?></td>
-									<td><?php if ($value->level_member == '0') {
+
+									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
 										?>
-											<span class="badge badge-danger">Non Member</span>
+											<span class="badge badge-danger">Superstar</span>
 										<?php
-										} else if ($value->level_member == '1') {
+										} else if ($value->level_member == '2') {
 										?>
-											<span class="badge badge-success">Member </span>
+											<span class="badge badge-success">Golden Customer </span>
+										<?php
+										} else if ($value->level_member == '3') {
+										?>
+											<span class="badge badge-warning">Occasional Customer </span>
+										<?php
+										} else if ($value->level_member == '4') {
+										?>
+											<span class="badge badge-info">Everyday Shopper </span>
+										<?php
+										} else if ($value->level_member == '5') {
+										?>
+											<span class="badge badge-primary">Dormant Customer </span>
 										<?php
 										}
 										?>

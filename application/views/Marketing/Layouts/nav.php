@@ -32,7 +32,13 @@
 								<i class="fas fa-percent"></i> Diskon
 							</a>
 						</li>
-
+						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cProduk') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Marketing/cProduk') ?>">
+								<i class="fas fa-barcode"></i> Produk
+							</a>
+						</li>
 
 					<?php
 					}
