@@ -8,7 +8,10 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						<a class="text-light" href="https://api.whatsapp.com/send?phone=628123456789">
+							Hubungi Kami, Whatsapp!
+						</a>
+
 					</div>
 
 

@@ -64,7 +64,7 @@
 						Kembali
 					</a>
 					<?php
-					if ($transaksi['transaksi']->isi_penilaian == null) {
+					if ($transaksi['transaksi']->isi_penilaian == null && $transaksi['transaksi']->stat_transaksi == '4') {
 					?>
 						<form action="<?= base_url('Pelanggan/cTransaksi/penilaian/' . $transaksi['transaksi']->id_transaksi) ?>" method="POST">
 							<div class="bor8 m-b-30">

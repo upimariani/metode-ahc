@@ -109,34 +109,39 @@ class cAnalisisAhc extends CI_Controller
 		for ($z = 0; $z < sizeof($matriks); $z++) {
 			if ($matriks[$z]['queue1'] == '1') {
 				if ($matriks[$z]['nilai'] <= '0') {
-					// echo 'Member 1 : ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 1 : ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '1');
 				} else if ($matriks[$z]['nilai'] < 2) {
-					// echo 'Member 2 :';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 2 :';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '2');
 				} else if ($matriks[$z]['nilai'] < 3) {
-					// echo 'Member 3: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 3: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '3');
 				} else if ($matriks[$z]['nilai'] < 4) {
-					// echo 'Member 4: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 4: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '4');
 				} else {
-					// echo 'Member 5: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 5: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '5');
 				}
 			}
 		}
-		var_dump($member);
+		// var_dump($member);
+		echo '<canvas id="transaksi" style="width:100%;max-width:600px"></canvas>';
+	}
+	public function tree()
+	{
+		$this->load->view('vTree');
 	}
 }
 

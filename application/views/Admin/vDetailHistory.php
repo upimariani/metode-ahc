@@ -31,6 +31,7 @@
 								<th>Pengiriman</th>
 								<th>Status Transaksi</th>
 								<th>Total Transaksi</th>
+								<th>Penilaian</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,6 +69,7 @@
 										?>
 									</td>
 									<td>Rp. <?= number_format($value->tot_transaksi) ?></td>
+									<td><?= $value->isi_penilaian ?></td>
 								</tr>
 							<?php
 							}
@@ -76,6 +78,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								<th></th>
 								<td>Total: </td>
 								<td>Rp. <?= number_format($total)  ?></td>
 							</tr>

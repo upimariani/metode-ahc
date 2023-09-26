@@ -14,7 +14,7 @@
 
 				<div class="tm-product-table-container">
 
-					<table class="table table-hover tm-table-small tm-product-table">
+					<table id="myTable" class="table table-hover tm-table-small tm-product-table">
 						<thead>
 							<tr>
 								<th scope="col">&nbsp;</th>
@@ -30,7 +30,13 @@
 							foreach ($transaksi as $key => $value) {
 							?>
 								<tr>
-									<th scope="row"><input type="checkbox" /></th>
+									<td>
+										<a href="<?= base_url('Sales/cTransaksi/hapus/' . $value->id_transaksi) ?>" class="tm-product-delete-link">
+											<i class="fas fa-trash tm-product-delete-icon"></i>
+										</a>
+
+
+									</td>
 									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->tgl_transaksi ?></td>
 									<td>Rp. <?= number_format($value->tot_transaksi)  ?></td>

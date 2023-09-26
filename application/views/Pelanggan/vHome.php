@@ -146,7 +146,7 @@
 					<form action="<?= base_url('Pelanggan/cHome/addtocart') ?>" method="POST">
 						<input type="hidden" name="id" value="<?= $value->id_produk ?>">
 						<input type="hidden" name="name" value="<?= $value->nama_produk ?>">
-						<input type="hidden" name="price" value="<?= $value->harga - ($value->diskon / 100 * $value->harga) ?>">
+
 						<input type="hidden" name="qty" value="1">
 						<input type="hidden" name="stok" value="<?= $value->stok ?>">
 						<input type="hidden" name="picture" value="<?= $value->gambar ?>">
@@ -171,9 +171,23 @@
 										<?php
 																									} ?></small>
 									<span class="stext-105 cl3">
-										Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga))  ?>
 										<?php
-										if ($value->diskon != NULL) {
+										if ($value->member == $this->session->userdata('member') && $value->member != NULL) {
+										?>
+											Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga))  ?>
+											<input type="hidden" name="price" value="<?= $value->harga - ($value->diskon / 100 * $value->harga) ?>">
+										<?php
+										} else {
+										?>
+											Rp. <?= number_format($value->harga)  ?>
+											<input type="hidden" name="price" value="<?= $value->harga ?>">
+										<?php
+										}
+										?>
+
+
+										<?php
+										if ($value->member == $this->session->userdata('member') && $value->member != NULL) {
 										?>
 											<del> Rp. <?= number_format($value->harga)  ?></del>
 										<?php
@@ -205,7 +219,78 @@
 
 
 		</div>
+		<div class="bor10 m-t-50 p-t-43 p-b-40">
+			<!-- Tab01 -->
+			<div class="tab01">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item p-b-10">
+						<a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+					</li>
 
+
+					<li class="nav-item p-b-10">
+						<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a>
+					</li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content p-t-43">
+					<!-- - -->
+					<div class="tab-pane fade show active" id="description" role="tabpanel">
+						<div class="how-pos2 p-lr-15-md">
+							<p class="stext-102 cl6">
+								CV. Surya Nedika Isabella merupakan salah satu perusahaan yang
+								bergerak dibidang air mineral dalam kemasan (AMDK) di Kabupaten
+								Kuningan, Jawa Barat. Letaknya yang strategis yaitu di JL. Mayor Idma
+								No.780, Desa Babakan Mulya, RT.11 RW.02 Kecamatan Jalaksana,
+								Kabupaten Kuningan memiliki nilai tambah bagi perusahaan karena tempat
+								tersebut dapat dengan mudah dijangkau oleh pelanggan. </p>
+						</div>
+					</div>
+
+
+					<!-- - -->
+					<div class="tab-pane fade" id="reviews" role="tabpanel">
+						<div class="row">
+							<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+								<div class="p-b-30 m-lr-15-sm">
+									<!-- Review -->
+									<?php
+									foreach ($penilaian as $key => $value) {
+									?>
+										<div class="flex-w flex-t p-b-68">
+											<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+												<img src="<?= base_url('asset/cozastore-master/') ?>images/avatar-01.jpg" alt="AVATAR">
+											</div>
+
+											<div class="size-207">
+												<div class="flex-w flex-sb-m p-b-17">
+													<span class="mtext-107 cl2 p-r-20">
+														<?= $value->nama_pelanggan ?>
+													</span>
+													<small><?= $value->time ?></small>
+												</div>
+
+												<p class="stext-102 cl6">
+													<?= $value->isi_penilaian ?></p>
+											</div>
+										</div>
+
+									<?php
+									}
+
+									?>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 </section>

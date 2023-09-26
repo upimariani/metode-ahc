@@ -14,7 +14,7 @@
 
 				<div class="tm-product-table-container">
 
-					<table class="table table-hover tm-table-small tm-product-table">
+					<table id="myTable" class="table table-hover tm-table-small tm-product-table">
 						<thead>
 							<tr>
 								<th scope="col">&nbsp;</th>
@@ -66,7 +66,7 @@
 					</table>
 				</div>
 				<!-- table container -->
-				<button onclick="window.print()" class="btn btn-primary btn-block text-uppercase mb-3">Cetak Laporan</button>
+				<a href="<?= base_url('Owner/cTransaksi/cetak') ?>" class="btn btn-primary btn-block text-uppercase mb-3">Cetak Laporan</a>
 
 			</div>
 		</div>

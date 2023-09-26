@@ -31,6 +31,13 @@
 							</a>
 						</li>
 
+						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Owner' && $this->uri->segment(2) == 'cLaporanSegmentasi') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Owner/cLaporanSegmentasi') ?>">
+								<i class="fas fa-book"></i> Cetak Laporan Segementasi Pelanggan
+							</a>
+						</li>
 
 
 					<?php

@@ -51,13 +51,13 @@
 							</a>
 						</li>
 
-						<!-- <li class="nav-item">
+						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cHistoryPelanggan') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cHistoryPelanggan') ?>">
-								<i class=" fas fa-users"></i> History Pelanggan
+								<i class=" fas fa-users"></i> Segmentasi Pelanggan
 							</a>
-						</li> -->
+						</li>
 					<?php
 					}
 					?>

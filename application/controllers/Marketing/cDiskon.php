@@ -20,7 +20,7 @@ class cDiskon extends CI_Controller
 		$this->load->view('Marketing/Layouts/head');
 		$this->load->view('Marketing/Layouts/nav');
 		$this->load->view('Marketing/vDiskon', $data);
-		$this->load->view('Marketing/Layouts/footer');
+		// $this->load->view('Marketing/Layouts/footer');
 	}
 	public function create()
 	{

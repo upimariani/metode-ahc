@@ -15,7 +15,14 @@
 <script src="<?= base_url('asset/product-admin-master/') ?>js/bootstrap.min.js"></script>
 <!-- https://getbootstrap.com/ -->
 <script src="<?= base_url('asset/product-admin-master/') ?>js/tooplate-scripts.js"></script>
+<link href="<?= base_url('asset/') ?>DataTables/datatables.min.css" rel="stylesheet">
 
+<script src="<?= base_url('asset/') ?>DataTables/datatables.min.js"></script>
+<script>
+	$('#myTable').DataTable({
+		select: true
+	});
+</script>
 
 
 </body>
