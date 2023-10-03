@@ -18,6 +18,18 @@ class cHistoryPelanggan extends CI_Controller
 		$this->load->view('Admin/vHistoryPelanggan', $data);
 		$this->load->view('Admin/Layouts/footer');
 	}
+	public function detail_level_member($member)
+	{
+		$data = array(
+
+			'history' => $this->mHistoryPelanggan->select(),
+			'status' => $member
+		);
+		$this->load->view('Admin/Layouts/head');
+		$this->load->view('Admin/Layouts/nav');
+		$this->load->view('Admin/vLevelMemberPelanggan', $data);
+		$this->load->view('Admin/Layouts/footer');
+	}
 	public function detail_history($id)
 	{
 		$data = array(

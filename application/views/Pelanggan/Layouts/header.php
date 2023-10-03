@@ -46,6 +46,9 @@
 							<?php
 							}
 							?>
+							<li>
+								<a href="<?= base_url('Pelanggan/cFaq') ?>">FAQ</a>
+							</li>
 						</ul>
 					</div>
 					<?php

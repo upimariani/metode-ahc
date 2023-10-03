@@ -58,6 +58,16 @@
 								<i class=" fas fa-users"></i> Segmentasi Pelanggan
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="<?= base_url('Owner/cTransaksi/cetak') ?>">
+								<i class=" fas fa-book"></i> Cetak Laporan Penjualan
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="<?= base_url('Owner/cLaporanSegmentasi/cetak') ?>">
+								<i class=" fas fa-book-open"></i> Cetak Laporan Segmentasi Pelanggan
+							</a>
+						</li>
 					<?php
 					}
 					?>

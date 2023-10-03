@@ -52,6 +52,7 @@ class cLogin extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('no_telp', 'No Telepon', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('Pelanggan/Layouts/head');
@@ -64,7 +65,8 @@ class cLogin extends CI_Controller
 				'alamat' => $this->input->post('alamat'),
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
-				'level_member' => '1'
+				'level_member' => '5',
+				'no_tlp' => $this->input->post('no_telp')
 			);
 			$this->mLogin->registrasi($data);
 			$this->session->set_flashdata('success', 'Anda Berhasil Registrasi! Silahkan Melakukan Login');

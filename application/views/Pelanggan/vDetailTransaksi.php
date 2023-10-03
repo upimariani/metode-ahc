@@ -63,9 +63,12 @@
 					<a href="<?= base_url('Pelanggan/cTransaksi') ?>" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 						Kembali
 					</a>
-					<?php
-					if ($transaksi['transaksi']->isi_penilaian == null && $transaksi['transaksi']->stat_transaksi == '4') {
-					?>
+					<a href="<?= base_url('Pelanggan/cTransaksi/invoice/' . $transaksi['transaksi']->id_transaksi) ?>" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+						Invoice
+					</a>
+					<!-- <?php
+							if ($transaksi['transaksi']->isi_penilaian == null && $transaksi['transaksi']->stat_transaksi == '4') {
+							?>
 						<form action="<?= base_url('Pelanggan/cTransaksi/penilaian/' . $transaksi['transaksi']->id_transaksi) ?>" method="POST">
 							<div class="bor8 m-b-30">
 								<h3>Tuliskan Penilaian Anda...</h3>
@@ -74,8 +77,8 @@
 							</div>
 						</form>
 					<?php
-					}
-					?>
+							}
+					?> -->
 				</div>
 
 			</div>

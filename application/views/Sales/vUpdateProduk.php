@@ -9,7 +9,7 @@
 				</div>
 				<div class="row tm-edit-product-row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
-						<?php echo form_open_multipart('Admin/cProduk/update/' . $produk->id_produk); ?>
+						<?php echo form_open_multipart('Sales/cProduk/update/' . $produk->id_produk); ?>
 						<div class="form-group mb-3">
 							<label for="name">Nama produk
 							</label>

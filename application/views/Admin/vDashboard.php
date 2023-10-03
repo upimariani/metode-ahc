@@ -1,9 +1,5 @@
 <div class="container">
-	<div class="row">
-		<div class="col">
-			<p class="text-white mt-5 mb-5">Welcome back, <b>Admin</b></p>
-		</div>
-	</div>
+
 	<!-- row -->
 	<div class="row tm-content-row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
@@ -32,52 +28,23 @@
 					<thead>
 						<tr>
 							<th scope="col">&nbsp;</th>
-							<th scope="col">Nama Pelanggan</th>
-							<th scope="col">Alamat</th>
-
-							<th scope="col">Status Member</th>
+							<th scope="col">Level Member</th>
 							<th scope="col">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-						foreach ($history as $key => $value) {
+						$no = 1;
+						$level_member = array('Superstar', 'Golden Customer', 'Typical Customer', 'Occasional Customer', 'Everyday Shopper');
+						$status = array('1', '2', '3', '4', '5');
+						for ($i = 0; $i < sizeof($level_member); $i++) {
+
 						?>
 							<tr>
-								<th scope="row"><input type="checkbox" /></th>
-								<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
-								<td><?= $value->alamat ?></td>
-
-								<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
-									?>
-										<span class="badge badge-danger">Superstar</span>
-									<?php
-									} else if ($value->level_member == '2') {
-									?>
-										<span class="badge badge-success">Golden Customer </span>
-									<?php
-									} else if ($value->level_member == '3') {
-									?>
-										<span class="badge badge-warning">Occasional Customer </span>
-									<?php
-									} else if ($value->level_member == '4') {
-									?>
-										<span class="badge badge-info">Everyday Shopper </span>
-									<?php
-									} else if ($value->level_member == '5') {
-									?>
-										<span class="badge badge-primary">Dormant Customer </span>
-									<?php
-									}
-									?>
-
-
-								</td>
+								<td><?= $no++ ?></td>
+								<td><?= $level_member[$i] ?></td>
 								<td>
-									<a href="<?= base_url('Admin/cHistoryPelanggan/detail_history/' . $value->id_pelanggan) ?>" class="tm-product-delete-link">
-										<i class="far fa-edit tm-product-delete-icon"></i>
-									</a>
-
+									<a class="tm-product-delete-link" href="<?= base_url('Admin/cHistoryPelanggan/detail_level_member/' . $status[$i]) ?>"><i class="far fa-eye tm-product-delete-icon"></i></a>
 								</td>
 							</tr>
 						<?php

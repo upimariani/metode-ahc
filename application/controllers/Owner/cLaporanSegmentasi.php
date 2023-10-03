@@ -35,7 +35,7 @@ class cLaporanSegmentasi extends CI_Controller
 		$pdf->Cell(10, 30, '', 0, 1);
 		$pdf->SetFont('Times', 'B', 9);
 		$pdf->Cell(10, 7, 'No', 1, 0, 'C');
-		$pdf->Cell(50, 7, 'Atas Nama', 1, 0, 'C');
+		$pdf->Cell(50, 7, 'Nama', 1, 0, 'C');
 		$pdf->Cell(70, 7, 'Alamat', 1, 0, 'C');
 		$pdf->Cell(50, 7, 'Level Member', 1, 0, 'C');
 

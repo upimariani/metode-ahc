@@ -61,6 +61,15 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<?= form_error('no_telp', '<small class="text-danger">', '</small>') ?>
+							<div class="bor8 m-b-20 how-pos4-parent">
+								<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="number" name="no_telp" placeholder="No Telepon">
+							</div>
+						</div>
+					</div>
+
 					<div class="m-b-30">
 						Apakah Anda Sudah Memiliki Akun? <a href="<?= base_url('Pelanggan/cLogin') ?>" class="text-info">Login Disini</a>
 					</div>

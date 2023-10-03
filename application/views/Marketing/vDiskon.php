@@ -8,7 +8,9 @@
 		</div>
 	</div>
 	<div class="row tm-content-row">
+
 		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+
 			<div class="tm-bg-primary-dark tm-block tm-block-products">
 				<?php
 				if ($this->session->userdata('success')) {
@@ -88,10 +90,17 @@
 				<a href="<?= base_url('Marketing/cDiskon/create') ?>" class="btn btn-primary btn-block text-uppercase mb-3">Add new discount</a>
 
 			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<canvas id="lineChart"></canvas>
+					<canvas id="pieChart" class="chartjs-render-monitor" width="200" height="10"></canvas>
+					<canvas id="barChart"></canvas>
+				</div>
+
+			</div>
+
 		</div>
-		<canvas id="lineChart"></canvas>
-		<canvas id="pieChart" class="chartjs-render-monitor" width="200" height="10"></canvas>
-		<canvas id="barChart"></canvas>
+
 	</div>
 </div>
 <footer class="tm-footer row tm-mt-small">

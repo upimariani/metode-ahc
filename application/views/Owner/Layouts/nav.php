@@ -27,7 +27,7 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Owner' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Owner/cTransaksi') ?>">
-								<i class="fas fa-book"></i> Cetak Laporan
+								<i class="fas fa-book"></i> Cetak Laporan Penjualan
 							</a>
 						</li>
 
@@ -35,7 +35,7 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Owner' && $this->uri->segment(2) == 'cLaporanSegmentasi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Owner/cLaporanSegmentasi') ?>">
-								<i class="fas fa-book"></i> Cetak Laporan Segementasi Pelanggan
+								<i class="fas fa-book"></i> Cetak Laporan Segmentasi Pelanggan
 							</a>
 						</li>
 

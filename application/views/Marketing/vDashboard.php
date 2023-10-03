@@ -20,7 +20,48 @@
 		</div>
 
 		<canvas id="pieChart" class="chartjs-render-monitor" width="200" height="10"></canvas>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+			<div class="tm-product-table-container">
+				<table class="table table-hover tm-table-small tm-product-table">
+					<thead>
+						<tr>
+							<th scope="col">&nbsp;</th>
+							<th scope="col">Level Member</th>
+							<th scope="col">Promosi</th>
+						</tr>
+					</thead>
+					<tbody>
 
+						<tr>
+							<th scope="row">1.</th>
+							<td class="tm-product-name">Superstar</td>
+							<td>Pemberian Kartu Member</td>
+						</tr>
+						<tr>
+							<th scope="row">2.</th>
+							<td class="tm-product-name">Golden Customer</td>
+							<td>Bonus - Bonus<br> - Pembelian lebih dari 10 kali bonus 2 dus kemasan cup <br> - Pembelian 20 kali bonus 4 dus kemasan cup</td>
+						</tr>
+						<tr>
+							<th scope="row">3.</th>
+							<td class="tm-product-name">Occasional Customer</td>
+							<td>Pemberian diskon per item, misal untuk kemasan botol 20% untuk kemasan 15% cup tiap bulannya diawal transaksi pertama</td>
+						</tr>
+						<tr>
+							<th scope="row">4.</th>
+							<td class="tm-product-name">Everyday</td>
+							<td>Ada promo menarik misalnya beli 50 gratis 1 perharinya</td>
+						</tr>
+						<tr>
+							<th scope="row">5.</th>
+							<td class="tm-product-name">Dormant Customer</td>
+							<td>Chat pemberitahuan dari sistem melalui whatsapp semisal ada promo dan diskon</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
 
 	</div>
 </div>

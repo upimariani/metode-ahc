@@ -20,6 +20,7 @@
 								<th scope="col">Deskripsi</th>
 								<th scope="col">Stok</th>
 								<th scope="col">Harga</th>
+								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -32,7 +33,14 @@
 									<td><?= $value->deskripsi ?></td>
 									<td><?= $value->stok ?></td>
 									<td>Rp. <?= number_format($value->harga) ?></td>
-
+									<td>
+										<a href="<?= base_url('Sales/cProduk/delete/' . $value->id_produk) ?>" class="tm-product-delete-link">
+											<i class="far fa-trash-alt tm-product-delete-icon"></i>
+										</a>
+										<a href="<?= base_url('Sales/cProduk/update/' . $value->id_produk) ?>" class="tm-product-delete-link">
+											<i class="far fa-edit tm-product-delete-icon"></i>
+										</a>
+									</td>
 								</tr>
 							<?php
 							}
@@ -42,9 +50,12 @@
 					</table>
 				</div>
 				<!-- table container -->
+				<a href="<?= base_url('Sales/cProduk/create') ?>" class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
 
 			</div>
-		</div>
+			<!-- table container -->
 
+		</div>
 	</div>
+
 </div>

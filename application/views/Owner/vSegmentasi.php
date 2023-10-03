@@ -37,9 +37,41 @@
 									<td><?= $value->alamat ?></td>
 
 
-									<td><?= $value->recency ?></td>
-									<td><?= $value->frequency ?></td>
-									<td>Rp. <?= number_format($value->monetary)  ?></td>
+									<td>
+										<?php
+										if ($value->recency <= '30') {
+											echo '4';
+											// echo $vr[$i];
+										} else if ($value->recency >= '60' || $value->recency <= '90') {
+											echo '3';
+											// echo $vr[$i];
+										} else if ($recency[$i] >= '120' || $recency[$i] <= '150') {
+											echo '2';
+											// echo $vr[$i];
+										} else if ($recency[$i] > '150') {
+											echo '1';
+											// echo $vr[$i];
+										}
+										?>
+									</td>
+									<td><?php if ($value->frequency > '10') {
+											echo  '4';
+										} else if ($value->frequency >= '7' && $value->frequency <= '9') {
+											echo  '3';
+										} else if ($value->frequency >= '4' && $value->frequency <= '6') {
+											echo  '2';
+										} else if ($value->frequency < '4') {
+											echo  '1';
+										} ?></td>
+									<td><?php if ($value->monetary > '100000000') {
+											echo '4';
+										} else if ($value->monetary >= '50000000' && $value->monetary <= '100000000') {
+											echo '3';
+										} else if ($value->monetary >= '5000000' && $value->monetary <= '50000000') {
+											echo '2';
+										} else if ($value->monetary < '50000000') {
+											echo '1';
+										} ?></td>
 									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
 										?>
 											<span class="badge badge-danger">Superstar</span>

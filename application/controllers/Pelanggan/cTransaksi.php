@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+
 class cTransaksi extends CI_Controller
 {
 
@@ -93,10 +94,10 @@ class cTransaksi extends CI_Controller
 			} else if ($recency[$i] >= '60' || $recency[$i] <= '90') {
 				$vr[] = '3';
 				// echo $vr[$i];
-			} else if ($recency[$i] >= '60' || $recency[$i] <= '90') {
+			} else if ($recency[$i] >= '120' || $recency[$i] <= '150') {
 				$vr[] = '2';
 				// echo $vr[$i];
-			} else if ($recency[$i] >= '120' || $recency[$i] <= '1500') {
+			} else if ($recency[$i] > '150') {
 				$vr[] = '1';
 				// echo $vr[$i];
 			}
@@ -162,36 +163,36 @@ class cTransaksi extends CI_Controller
 		$member = array();
 		for ($z = 0; $z < sizeof($matriks); $z++) {
 			if ($matriks[$z]['queue1'] == '1') {
-				if ($matriks[$z]['nilai'] <= '0') {
-					// echo 'Member 1 : ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+				if ($matriks[$z]['nilai'] <= '1') {
+					echo 'Member 1 : ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '1');
 				} else if ($matriks[$z]['nilai'] < 2) {
-					// echo 'Member 2 :';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 2 :';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '2');
 				} else if ($matriks[$z]['nilai'] < 3) {
-					// echo 'Member 3: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 3: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '3');
 				} else if ($matriks[$z]['nilai'] < 4) {
-					// echo 'Member 4: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 4: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '4');
 				} else {
-					// echo 'Member 5: ';
-					// echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
-					// echo '<br>';
+					echo 'Member 5: ';
+					echo $matriks[$z]['queue1'] . ' ' . $matriks[$z]['queue2'] . ' ' . $matriks[$z]['nilai'];
+					echo '<br>';
 					$member[] = array('karyawan' => $matriks[$z]['queue2'], 'member' => '5');
 				}
 			}
 		}
 
-		//update level member pelanggan
+		// update level member pelanggan
 		for ($m = 0; $m < sizeof($member); $m++) {
 			$id_pelanggan = $member[$m]['karyawan'];
 			$data_member = array(
@@ -202,7 +203,7 @@ class cTransaksi extends CI_Controller
 		}
 
 
-		//update status transaksi pelanggan
+		// update status transaksi pelanggan
 		$data = array(
 			'stat_transaksi' => '4'
 		);
@@ -219,6 +220,27 @@ class cTransaksi extends CI_Controller
 		$this->db->insert('penilaian', $data);
 		$this->session->set_flashdata('success', 'Penilaian Berhasil Dikirim!');
 		redirect('Pelanggan/cTransaksi');
+	}
+
+	public function invoice($id_transaksi)
+	{
+		$data = array(
+			'transaksi' => $this->mTransaksi->detail_transaksi_pelanggan($id_transaksi)
+		);
+		$this->load->view('Pelanggan/vInvoice', $data);
+	}
+	public function download_invoice($id_transaksi)
+	{
+		$this->load->library('Pdfgenerator');
+		$data['title'] = "Data Random";
+		$file_pdf = $data['title'];
+		$paper = 'A4';
+		$orientation = "landscape";
+		$data = array(
+			'transaksi' => $this->mTransaksi->detail_transaksi_pelanggan($id_transaksi)
+		);
+		$html = $this->load->view('Pelanggan/vInvoice', $data, true);
+		$this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
 	}
 }
 

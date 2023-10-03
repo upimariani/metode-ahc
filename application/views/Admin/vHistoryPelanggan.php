@@ -13,16 +13,13 @@
 				?>
 
 				<div class="tm-product-table-container">
-
 					<table id="myTable" class="table table-hover tm-table-small tm-product-table">
 						<thead>
 							<tr>
 								<th scope="col">&nbsp;</th>
 								<th scope="col">Nama Pelanggan</th>
 								<th scope="col">Alamat</th>
-								<th scope="col">Recency</th>
-								<th scope="col">Frequecy</th>
-								<th scope="col">Monetary</th>
+
 								<th scope="col">Status Member</th>
 								<th scope="col">Action</th>
 							</tr>
@@ -36,10 +33,6 @@
 									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->alamat ?></td>
 
-
-									<td><?= $value->recency ?></td>
-									<td><?= $value->frequency ?></td>
-									<td>Rp. <?= number_format($value->monetary)  ?></td>
 									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
 										?>
 											<span class="badge badge-danger">Superstar</span>
@@ -58,7 +51,8 @@
 										<?php
 										} else if ($value->level_member == '5') {
 										?>
-											<span class="badge badge-primary">Dormant Customer </span>
+											<span class="badge badge-primary">Dormant Customer </span><br>
+											<a href="https://api.whatsapp.com/send?phone=<?= $value->no_tlp ?>" class="badge badge-warning">Whatsapp Here!...</a>
 										<?php
 										}
 										?>
@@ -78,6 +72,7 @@
 
 						</tbody>
 					</table>
+
 				</div>
 
 			</div>
