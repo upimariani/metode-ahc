@@ -61,7 +61,7 @@
 									<td><?= $value->nama_produk	 ?></td>
 
 									<td>Rp. <?= number_format($value->harga) ?></td>
-									<td><?= $value->qty ?></td>
+									<td><?= $value->qty ?></td>*******************************************
 
 									<td>Rp. <?= number_format($value->harga * $value->qty) ?></td>
 
@@ -73,6 +73,22 @@
 
 						</tbody>
 					</table>
+					<?php
+					if ($transaksi['transaksi']->level_member == 2) {
+					?>
+						<p class="text-light mt-2">*Catatan: <span class="badge badge-warning">Pelanggan ini berhak mendapatkan bonus 2 dus air mineral merk asmi ukuran 240 ml</span></p>
+
+					<?php
+					}
+					?>
+					<?php
+					if ($transaksi['transaksi']->level_member == 3) {
+					?>
+						<p class="text-light mt-2">*Catatan: <span class="badge badge-success">Pelanggan ini berhak mendapatkan bonus 1 dus air mineral merk asmi ukuran 240 ml</span></p>
+
+					<?php
+					}
+					?>
 					<a href="<?= base_url('Sales/cTransaksi') ?>" class="btn btn-danger mt-3">Kembali</a>
 					<?php
 					if ($transaksi['transaksi']->stat_transaksi == '1') {

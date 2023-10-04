@@ -23,6 +23,7 @@
 					<table class="table-shopping-cart">
 						<tr class="table_head">
 							<th class="column-1">Tanggal Transaksi</th>
+							<th>Produk</th>
 							<th>Total Transaksi</th>
 							<th>Ongkos Kirim</th>
 							<th>Total Pembayaran</th>
@@ -37,8 +38,19 @@
 						?>
 							<tr class="table_row">
 
-								<td class="column-1"><?= $value->tgl_transaksi ?></td>
+								<td class="column-1 badge badge-warning"><?= $value->tgl_transaksi ?></td>
+								<td>
+									<?php
+									$detail_produk = $this->db->query("SELECT * FROM `transaksi` JOIN detail_transaksi ON transaksi.id_transaksi=detail_transaksi.id_transaksi JOIN produk ON produk.id_produk=detail_transaksi.id_produk LEFT JOIN diskon ON produk.id_produk = diskon.id_produk WHERE transaksi.id_transaksi='" . $value->id_transaksi . "'")->result();
+									foreach ($detail_produk as $key => $item) {
+									?>
+										<?= $item->nama_produk ?> x <?= $item->qty ?><br>
+									<?php
+									}
+									?>
+								</td>
 								<td>Rp. <?= number_format($value->tot_transaksi)  ?></td>
+
 								<td>Rp. <?= number_format($value->ongkir)  ?> </td>
 								<td>Rp. <?= number_format($value->tot_transaksi + $value->ongkir)  ?> </td>
 								<td class="column-3"><small><?= $value->pengiriman ?></small></td>
