@@ -111,8 +111,22 @@
 						</tbody>
 					</table>
 				</div>
-				<a href="<?= base_url('Owner/cLaporanSegmentasi/cetak') ?>" class="btn btn-primary btn-block text-uppercase mb-3">Cetak Laporan</a>
 
+				<form action="<?= base_url('Owner/cLaporanSegmentasi/cetak') ?>" method="POST">
+					<div class="row">
+
+						<div class="col-lg-12">
+							<select class="custom-select tm-select-accounts" name="level_member" required>
+								<option value="">---Pilih Level Member---</option>
+								<option value="1">Superstar</option>
+								<option value="2">Golden Customer</option>
+								<option value="3">Occasional Customer</option>
+								<option value="4">Everyday Customer</option>
+								<option value="5">Dormant Customer</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block text-uppercase mt-3">Cetak Laporan</button>
+				</form>
 			</div>
 		</div>
 

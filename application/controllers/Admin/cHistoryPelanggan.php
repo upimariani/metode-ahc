@@ -7,6 +7,7 @@ class cHistoryPelanggan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('mHistoryPelanggan');
+		$this->load->model('mAnalisis');
 	}
 	public function index()
 	{
@@ -40,6 +41,17 @@ class cHistoryPelanggan extends CI_Controller
 		$this->load->view('Admin/Layouts/nav');
 		$this->load->view('Admin/vDetailHistory', $data);
 		$this->load->view('Admin/Layouts/footer');
+	}
+	public function viewAnalisis()
+	{
+		$this->load->view('Admin/Layouts/head');
+		$this->load->view('Admin/Layouts/nav');
+		$this->load->view('Admin/vViewAnalisis');
+		$this->load->view('Admin/Layouts/footer');
+	}
+
+	public function lap_segmentasi()
+	{
 	}
 }
 

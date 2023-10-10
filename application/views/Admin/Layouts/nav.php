@@ -50,7 +50,13 @@
 								<i class=" fas fa-user-shield"></i> User
 							</a>
 						</li>
-
+						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cTransaksi') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Admin/cTransaksi') ?>">
+								<i class="fas fa-shopping-cart"></i> Penjualan
+							</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cHistoryPelanggan') {
 													echo 'active';
@@ -59,12 +65,16 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="<?= base_url('Owner/cTransaksi/cetak') ?>">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cLaporanTransaksi') {
+													echo 'active';
+												}  ?> " href="<?= base_url('Admin/cLaporanTransaksi') ?>">
 								<i class=" fas fa-book"></i> Cetak Laporan Penjualan
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="<?= base_url('Owner/cLaporanSegmentasi/cetak') ?>">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cLaporanSegmentasi') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Admin/cLaporanSegmentasi') ?>">
 								<i class=" fas fa-book-open"></i> Cetak Laporan Segmentasi Pelanggan
 							</a>
 						</li>

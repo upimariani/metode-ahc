@@ -32,13 +32,13 @@
 								<i class="fas fa-percent"></i> Diskon
 							</a>
 						</li>
-						<!-- <li class="nav-item">
-							<a class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cProduk') {
+						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cSegmentasiPelanggan') {
 													echo 'active';
-												}  ?>" href="<?= base_url('Marketing/cProduk') ?>">
-								<i class="fas fa-barcode"></i> Produk
+												}  ?>" href="<?= base_url('Marketing/cSegmentasiPelanggan') ?>">
+								<i class="fas fa-user"></i> Segmentasi Pelanggan
 							</a>
-						</li> -->
+						</li>
 
 					<?php
 					}

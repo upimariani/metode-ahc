@@ -50,6 +50,17 @@ class mTransaksi extends CI_Model
 		$this->db->where('id_transaksi', $id);
 		$this->db->update('transaksi', $data);
 	}
+
+
+	public function cetak($bulan, $tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
+		$this->db->where('MONTH(tgl_transaksi)', $bulan);
+		$this->db->where('YEAR(tgl_transaksi)', $tahun);
+		return $this->db->get()->result();
+	}
 }
 
 /* End of file mTransaksi.php */

@@ -61,7 +61,7 @@
 									<td><?= $value->nama_produk	 ?></td>
 
 									<td>Rp. <?= number_format($value->harga) ?></td>
-									<td><?= $value->qty ?></td>*******************************************
+									<td><?= $value->qty ?></td>
 
 									<td>Rp. <?= number_format($value->harga * $value->qty) ?></td>
 

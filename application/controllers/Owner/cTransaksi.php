@@ -20,6 +20,8 @@ class cTransaksi extends CI_Controller
 	}
 	public function cetak()
 	{
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
 		// memanggil library FPDF
 		require('asset/fpdf/fpdf.php');
 
@@ -43,7 +45,7 @@ class cTransaksi extends CI_Controller
 		$pdf->SetFont('Times', '', 10);
 		$no = 1;
 
-		$data = $this->mTransaksi->transaksi_sales();
+		$data = $this->mTransaksi->cetak($bulan, $tahun);
 		$total = 0;
 		foreach ($data as $key => $value) {
 			$total += $value->tot_transaksi;

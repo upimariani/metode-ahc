@@ -44,7 +44,9 @@ class cLaporanSegmentasi extends CI_Controller
 		$pdf->SetFont('Times', '', 10);
 		$no = 1;
 
-		$data = $this->mHistoryPelanggan->select();
+
+		$level = $this->input->post('level_member');
+		$data = $this->mHistoryPelanggan->cetak($level);
 		foreach ($data as $key => $value) {
 			if ($value->level_member == '1') {
 				$status = 'Superstar';

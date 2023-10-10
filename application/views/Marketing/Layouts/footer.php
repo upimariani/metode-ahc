@@ -30,7 +30,14 @@
 	barChart, pieChart;
 	// DOM is ready
 </script>
+<link href="<?= base_url('asset/') ?>DataTables/datatables.min.css" rel="stylesheet">
 
+<script src="<?= base_url('asset/') ?>DataTables/datatables.min.js"></script>
+<script>
+	$('#myTable').DataTable({
+		select: true
+	});
+</script>
 
 </body>
 

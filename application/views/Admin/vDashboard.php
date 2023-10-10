@@ -20,8 +20,8 @@
 				<canvas id="barChart2"></canvas>
 			</div>
 		</div>
-		<canvas id="pieChart" class="chartjs-render-monitor" width="200" height="10"></canvas>
-		<div class="col-lg-12">
+		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+
 			<div class="tm-product-table-container">
 
 				<table id="myTable" class="table table-hover tm-table-small tm-product-table">
@@ -54,7 +54,11 @@
 					</tbody>
 				</table>
 			</div>
+
+
 		</div>
+		<canvas id="pieChart" class="chartjs-render-monitor" width="200" height="10"></canvas>
+
 
 	</div>
 </div>
@@ -241,20 +245,20 @@
 			<?php
 			$data_pelanggan = $this->db->query("SELECT COUNT(id_pelanggan) as jml_member, level_member FROM `pelanggan` GROUP BY level_member")->result();
 			foreach ($data_pelanggan as $key => $value) {
-				if ($value->level_member == '1' || $value->level_member == '0') {
-					$status[] =	'Superstar';
+				if ($value->level_member == '1') {
+					$status_member[] =	'Superstar';
 				} else if ($value->level_member == '2') {
 
-					$status[] = 'Golden Customer';
+					$status_member[] = 'Golden Customer';
 				} else if ($value->level_member == '3') {
 
-					$status[] = 'Occasional Customer';
+					$status_member[] = 'Occasional Customer';
 				} else if ($value->level_member == '4') {
 
-					$status[] = 'Everyday Shopper';
+					$status_member[] = 'Everyday Shopper';
 				} else if ($value->level_member == '5') {
 
-					$status[] = 'Dormant Customer';
+					$status_member[] = 'Dormant Customer';
 				}
 
 				$jumlah_level[] = $value->jml_member;
@@ -263,7 +267,7 @@
 			configBar = {
 				type: "horizontalBar",
 				data: {
-					labels: <?= json_encode($status) ?>,
+					labels: <?= json_encode($status_member) ?>,
 					datasets: [{
 						label: "Jumlah Level Member",
 						data: <?= json_encode($jumlah_level) ?>,

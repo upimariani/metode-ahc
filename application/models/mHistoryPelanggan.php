@@ -11,6 +11,13 @@ class mHistoryPelanggan extends CI_Model
 	{
 		return $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan LEFT JOIN penilaian ON transaksi.id_transaksi=penilaian.id_transaksi WHERE pelanggan.id_pelanggan='" . $id . "'")->result();
 	}
+	public function cetak($level_member)
+	{
+		$this->db->select('*');
+		$this->db->from('pelanggan');
+		$this->db->where('level_member', $level_member);
+		return $this->db->get()->result();
+	}
 }
 
 /* End of file mHistoryPelanggan.php */

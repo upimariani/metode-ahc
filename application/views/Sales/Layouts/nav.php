@@ -28,7 +28,7 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Sales/cTransaksi') ?>">
-								<i class="fas fa-shopping-cart"></i> Transaksi Pelanggan
+								<i class="fas fa-shopping-cart"></i> Penjualan
 							</a>
 						</li>
 						<li class="nav-item">

@@ -12,7 +12,7 @@
 				}
 				?>
 
-				<div class="tm-product-table-container">
+				<div style="color: white;" class="tm-product-table-container">
 					<table id="myTable" class="table table-hover tm-table-small tm-product-table">
 						<thead>
 							<tr>
@@ -33,7 +33,7 @@
 									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->alamat ?></td>
 
-									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
+									<td><?php if ($value->level_member == '1') {
 										?>
 											<span class="badge badge-danger">Superstar</span>
 										<?php
@@ -74,6 +74,7 @@
 					</table>
 
 				</div>
+				<a href="<?= base_url('Admin/cHistoryPelanggan/viewAnalisis') ?>" class="btn btn-primary btn-block text-uppercase mb-3">View Analisis Perhitungan</a>
 
 			</div>
 		</div>
