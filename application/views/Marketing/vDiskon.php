@@ -30,7 +30,6 @@
 								<th scope="col">&nbsp;</th>
 								<th scope="col">Nama Produk</th>
 								<th scope="col">Nama Diskon</th>
-								<th scope="col">Tanggal Diskon</th>
 								<th scope="col">Diskon</th>
 								<th scope="col">Member</th>
 								<th scope="col">Action</th>
@@ -44,7 +43,6 @@
 									<th scope="row"><input type="checkbox" /></th>
 									<td class="tm-product-name"><?= $value->nama_produk ?></td>
 									<td><?= $value->nama_diskon ?></td>
-									<td><?= $value->tgl_diskon ?></td>
 									<td><?= $value->diskon ?> %</td>
 									<td><?php if ($value->member == '1') {
 										?>

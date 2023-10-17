@@ -54,7 +54,7 @@
 										}
 										?>
 									</td>
-									<td><?php if ($value->frequency > '10') {
+									<td><?php if ($value->frequency >= '10') {
 											echo  '4';
 										} else if ($value->frequency >= '7' && $value->frequency <= '9') {
 											echo  '3';
@@ -72,7 +72,7 @@
 										} else if ($value->monetary < '50000000') {
 											echo '1';
 										} ?></td>
-									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
+									<td><?php if ($value->level_member == '1') {
 										?>
 											<span class="badge badge-danger">Superstar</span>
 										<?php

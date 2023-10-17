@@ -27,11 +27,7 @@
 								</select>
 								<?= form_error('nama', '<small class="text-danger">', '</small>') ?>
 							</div>
-							<div class="form-group mb-3">
-								<label for="description">Tanggal Diskon</label>
-								<input name="tgl" type="date" class="form-control validate" />
-								<?= form_error('tgl', '<small class="text-danger">', '</small>') ?>
-							</div>
+
 							<div class="form-group mb-3">
 								<label for="description">Nama Diskon</label>
 								<input id="name" name="nama_diskon" type="text" class="form-control validate" />

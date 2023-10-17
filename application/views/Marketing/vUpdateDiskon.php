@@ -9,7 +9,7 @@
 				</div>
 				<div class="row tm-edit-product-row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
-						<form action="<?= base_url('Marketing/cDiskon/update/' . $produk->id_produk) ?>" method="POST" class="tm-edit-product-form">
+						<form action="<?= base_url('Marketing/cDiskon/update/' . $produk->id_diskon) ?>" method="POST" class="tm-edit-product-form">
 							<div class="form-group mb-3">
 								<label for="category">Nama Produk</label>
 								<select class="custom-select tm-select-accounts" name="nama" id="category">
@@ -29,11 +29,7 @@
 								</select>
 								<?= form_error('nama', '<small class="text-danger">', '</small>') ?>
 							</div>
-							<div class="form-group mb-3">
-								<label for="description">Tanggal Diskon</label>
-								<input name="tgl" value="<?= $produk->tgl_diskon ?>" type="date" class="form-control validate" />
-								<?= form_error('tgl', '<small class="text-danger">', '</small>') ?>
-							</div>
+
 							<div class="form-group mb-3">
 								<label for="description">Nama Diskon</label>
 								<input id="name" name="nama_diskon" value="<?= $produk->nama_diskon ?>" type="text" class="form-control validate" />

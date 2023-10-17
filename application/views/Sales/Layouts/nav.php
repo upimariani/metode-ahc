@@ -28,14 +28,14 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Sales/cTransaksi') ?>">
-								<i class="fas fa-shopping-cart"></i> Penjualan
+								<i class="fas fa-shopping-cart"></i> Data Penjualan
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Sales' && $this->uri->segment(2) == 'cProduk') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Sales/cProduk') ?>">
-								<i class="fas fa-tag"></i> Produk
+								<i class="fas fa-tag"></i> Data Produk
 							</a>
 						</li>
 

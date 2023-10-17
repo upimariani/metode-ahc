@@ -64,7 +64,7 @@
 									// echo $vr[$i];
 								}
 
-								if ($frequency[$i] > '10') {
+								if ($frequency[$i] >= '10') {
 									$vf[] = '4';
 								} else if ($frequency[$i] >= '7' && $frequency[$i] <= '9') {
 									$vf[] = '3';

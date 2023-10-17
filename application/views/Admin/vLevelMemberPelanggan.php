@@ -56,7 +56,7 @@
 											}
 											?>
 										</td>
-										<td><?php if ($value->frequency > '10') {
+										<td><?php if ($value->frequency >= '10') {
 												echo  '4';
 											} else if ($value->frequency >= '7' && $value->frequency <= '9') {
 												echo  '3';

@@ -29,7 +29,7 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cDiskon') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Marketing/cDiskon') ?>">
-								<i class="fas fa-percent"></i> Diskon
+								<i class="fas fa-percent"></i> Data Diskon
 							</a>
 						</li>
 						<li class="nav-item">

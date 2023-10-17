@@ -38,7 +38,7 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cProduk') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cProduk') ?>">
-								<i class="fas fa-tag"></i> Produk
+								<i class="fas fa-tag"></i> Data Produk
 							</a>
 						</li>
 
@@ -47,14 +47,14 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cUser') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cUser') ?>">
-								<i class=" fas fa-user-shield"></i> User
+								<i class=" fas fa-user-shield"></i> Kelola Akun
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cTransaksi') ?>">
-								<i class="fas fa-shopping-cart"></i> Penjualan
+								<i class="fas fa-shopping-cart"></i> Data Penjualan
 							</a>
 						</li>
 						<li class="nav-item">

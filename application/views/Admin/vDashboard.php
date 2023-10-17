@@ -35,7 +35,7 @@
 					<tbody>
 						<?php
 						$no = 1;
-						$level_member = array('Superstar', 'Golden Customer', 'Typical Customer', 'Occasional Customer', 'Everyday Shopper');
+						$level_member = array('Superstar', 'Golden Customer', 'Occasional Customer', 'Everyday Shopper', 'Dormant Customer');
 						$status = array('1', '2', '3', '4', '5');
 						for ($i = 0; $i < sizeof($level_member); $i++) {
 

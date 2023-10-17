@@ -86,23 +86,20 @@ class cTransaksi extends CI_Controller
 			// echo '| ' . $recency[$i];
 			// echo '| ' . $frequency[$i];
 			// echo '| ' . $monetary[$i];
+			// echo '<br>';
 
 
 			if ($recency[$i] <= '30') {
 				$vr[] = '4';
-				// echo $vr[$i];
 			} else if ($recency[$i] >= '60' || $recency[$i] <= '90') {
 				$vr[] = '3';
-				// echo $vr[$i];
 			} else if ($recency[$i] >= '120' || $recency[$i] <= '150') {
 				$vr[] = '2';
-				// echo $vr[$i];
 			} else if ($recency[$i] > '150') {
 				$vr[] = '1';
-				// echo $vr[$i];
 			}
 
-			if ($frequency[$i] > '10') {
+			if ($frequency[$i] >= '10') {
 				$vf[] = '4';
 			} else if ($frequency[$i] >= '7' && $frequency[$i] <= '9') {
 				$vf[] = '3';
@@ -121,6 +118,11 @@ class cTransaksi extends CI_Controller
 			} else if ($monetary[$i] < '50000000') {
 				$vm[] = '1';
 			}
+
+			// echo $vr[$i];
+			// echo $vf[$i];
+			// echo $vm[$i];
+			// echo '<br>';
 		}
 
 		$no = 1;

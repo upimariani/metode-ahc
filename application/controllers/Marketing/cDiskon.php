@@ -25,7 +25,6 @@ class cDiskon extends CI_Controller
 	public function create()
 	{
 		$this->form_validation->set_rules('nama', 'Nama Produk', 'required');
-		$this->form_validation->set_rules('tgl', 'Tanggal Produk', 'required');
 		$this->form_validation->set_rules('nama_diskon', 'Nama Diskon', 'required');
 		$this->form_validation->set_rules('besar', 'Besar Produk', 'required');
 		$this->form_validation->set_rules('member', 'Member', 'required');
@@ -41,7 +40,6 @@ class cDiskon extends CI_Controller
 		} else {
 			$data = array(
 				'id_produk' => $this->input->post('nama'),
-				'tgl_diskon' => $this->input->post('tgl'),
 				'diskon' => $this->input->post('besar'),
 				'nama_diskon' => $this->input->post('nama_diskon'),
 				'member' => $this->input->post('member')
@@ -54,7 +52,6 @@ class cDiskon extends CI_Controller
 	public function update($id)
 	{
 		$this->form_validation->set_rules('nama', 'Nama Tiket', 'required');
-		$this->form_validation->set_rules('tgl', 'Tanggal Tiket', 'required');
 		$this->form_validation->set_rules('nama_diskon', 'Nama Diskon', 'required');
 		$this->form_validation->set_rules('besar', 'Besar Tiket', 'required');
 		$this->form_validation->set_rules('member', 'Member', 'required');
@@ -71,11 +68,11 @@ class cDiskon extends CI_Controller
 		} else {
 			$data = array(
 				'id_produk' => $this->input->post('nama'),
-				'tgl_diskon' => $this->input->post('tgl'),
 				'diskon' => $this->input->post('besar'),
 				'nama_diskon' => $this->input->post('nama_diskon'),
 				'member' => $this->input->post('member')
 			);
+
 			$this->mDiskon->update($id, $data);
 			$this->session->set_flashdata('success', 'Data Diskon Berhasil Diperbaharui!!!');
 			redirect('Marketing/cDiskon');
