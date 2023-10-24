@@ -35,68 +35,105 @@
 									<th scope="row"><input type="checkbox" /></th>
 									<td class="tm-product-name"><?= $value->nama_pelanggan ?></td>
 									<td><?= $value->alamat ?></td>
+									<?php
+									if ($periode == '1') {
+									?>
+										<td><?= $value->r ?></td>
+										<td><?= $value->f ?></td>
+										<td><?= $value->m ?></td>
+										<td><?php if ($value->hasil == '1' || $value->hasil == '0') {
+											?>
+												<span class="badge badge-danger">Superstar</span>
+											<?php
+											} else if ($value->hasil == '2') {
+											?>
+												<span class="badge badge-success">Golden Customer </span>
+											<?php
+											} else if ($value->hasil == '3') {
+											?>
+												<span class="badge badge-warning">Occasional Customer </span>
+											<?php
+											} else if ($value->hasil == '4') {
+											?>
+												<span class="badge badge-info">Everyday Shopper </span>
+											<?php
+											} else if ($value->hasil == '5') {
+											?>
+												<span class="badge badge-primary">Dormant Customer </span>
+											<?php
+											}
+											?>
 
 
-									<td>
-										<?php
-										if ($value->recency <= '30') {
-											echo '4';
-											// echo $vr[$i];
-										} else if ($value->recency >= '60' || $value->recency <= '90') {
-											echo '3';
-											// echo $vr[$i];
-										} else if ($recency[$i] >= '120' || $recency[$i] <= '150') {
-											echo '2';
-											// echo $vr[$i];
-										} else if ($recency[$i] > '150') {
-											echo '1';
-											// echo $vr[$i];
-										}
-										?>
-									</td>
-									<td><?php if ($value->frequency > '10') {
-											echo  '4';
-										} else if ($value->frequency >= '7' && $value->frequency <= '9') {
-											echo  '3';
-										} else if ($value->frequency >= '4' && $value->frequency <= '6') {
-											echo  '2';
-										} else if ($value->frequency < '4') {
-											echo  '1';
-										} ?></td>
-									<td><?php if ($value->monetary > '100000000') {
-											echo '4';
-										} else if ($value->monetary >= '50000000' && $value->monetary <= '100000000') {
-											echo '3';
-										} else if ($value->monetary >= '5000000' && $value->monetary <= '50000000') {
-											echo '2';
-										} else if ($value->monetary < '50000000') {
-											echo '1';
-										} ?></td>
-									<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
-										?>
-											<span class="badge badge-danger">Superstar</span>
-										<?php
-										} else if ($value->level_member == '2') {
-										?>
-											<span class="badge badge-success">Golden Customer </span>
-										<?php
-										} else if ($value->level_member == '3') {
-										?>
-											<span class="badge badge-warning">Occasional Customer </span>
-										<?php
-										} else if ($value->level_member == '4') {
-										?>
-											<span class="badge badge-info">Everyday Shopper </span>
-										<?php
-										} else if ($value->level_member == '5') {
-										?>
-											<span class="badge badge-primary">Dormant Customer </span>
-										<?php
-										}
-										?>
+										</td>
+									<?php
+									} else {
 
 
-									</td>
+									?>
+
+
+										<td>
+											<?php
+											if ($value->recency <= '30') {
+												echo '4';
+												// echo $vr[$i];
+											} else if ($value->recency >= '60' || $value->recency <= '90') {
+												echo '3';
+												// echo $vr[$i];
+											} else if ($recency[$i] >= '120' || $recency[$i] <= '150') {
+												echo '2';
+												// echo $vr[$i];
+											} else if ($recency[$i] > '150') {
+												echo '1';
+												// echo $vr[$i];
+											}
+											?>
+										</td>
+										<td><?php if ($value->frequency >= '10') {
+												echo  '4';
+											} else if ($value->frequency >= '7' && $value->frequency <= '9') {
+												echo  '3';
+											} else if ($value->frequency >= '4' && $value->frequency <= '6') {
+												echo  '2';
+											} else if ($value->frequency < '4') {
+												echo  '1';
+											} ?></td>
+										<td><?php if ($value->monetary > '100000000') {
+												echo '4';
+											} else if ($value->monetary >= '50000000' && $value->monetary <= '100000000') {
+												echo '3';
+											} else if ($value->monetary >= '5000000' && $value->monetary <= '50000000') {
+												echo '2';
+											} else if ($value->monetary < '50000000') {
+												echo '1';
+											} ?></td>
+										<td><?php if ($value->level_member == '1' || $value->level_member == '0') {
+											?>
+												<span class="badge badge-danger">Superstar</span>
+											<?php
+											} else if ($value->level_member == '2') {
+											?>
+												<span class="badge badge-success">Golden Customer </span>
+											<?php
+											} else if ($value->level_member == '3') {
+											?>
+												<span class="badge badge-warning">Occasional Customer </span>
+											<?php
+											} else if ($value->level_member == '4') {
+											?>
+												<span class="badge badge-info">Everyday Shopper </span>
+											<?php
+											} else if ($value->level_member == '5') {
+											?>
+												<span class="badge badge-primary">Dormant Customer </span>
+											<?php
+											}
+											?>
+
+
+										</td>
+									<?php } ?>
 									<td>
 										<a href="<?= base_url('Admin/cHistoryPelanggan/detail_history/' . $value->id_pelanggan) ?>" class="tm-product-delete-link">
 											<i class="far fa-edit tm-product-delete-icon"></i>
@@ -112,7 +149,7 @@
 					</table>
 				</div>
 
-				<form action="<?= base_url('Owner/cLaporanSegmentasi/cetak') ?>" method="POST">
+				<form action="<?= base_url('Owner/cLaporanSegmentasi/cetak/' . $periode) ?>" method="POST">
 					<div class="row">
 
 						<div class="col-lg-12">

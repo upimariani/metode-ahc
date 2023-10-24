@@ -11,15 +11,29 @@ class cLaporanSegmentasi extends CI_Controller
 	}
 	public function index()
 	{
+		$this->load->view('Owner/Layouts/head');
+		$this->load->view('Owner/Layouts/nav');
+		$this->load->view('Owner/vPeriodeSegementasi');
+		$this->load->view('Owner/Layouts/footer');
+	}
+	public function detail_segemntasi($periode)
+	{
+		if ($periode == '1') {
+			$data_periode = $this->mHistoryPelanggan->select_history_old();
+		} else {
+			$data_periode = $this->mHistoryPelanggan->select();
+		}
 		$data = array(
-			'history' => $this->mHistoryPelanggan->select()
+			'periode' => $periode,
+			'history' => $data_periode,
+			'periode' => $periode
 		);
 		$this->load->view('Owner/Layouts/head');
 		$this->load->view('Owner/Layouts/nav');
 		$this->load->view('Owner/vSegmentasi', $data);
 		$this->load->view('Owner/Layouts/footer');
 	}
-	public function cetak()
+	public function cetak($periode)
 	{
 		// memanggil library FPDF
 		require('asset/fpdf/fpdf.php');
@@ -46,24 +60,47 @@ class cLaporanSegmentasi extends CI_Controller
 
 
 		$level = $this->input->post('level_member');
-		$data = $this->mHistoryPelanggan->cetak($level);
-		foreach ($data as $key => $value) {
-			if ($value->level_member == '1') {
-				$status = 'Superstar';
-			} else if ($value->level_member == '2') {
-				$status = 'Golden Customer';
-			} else if ($value->level_member == '3') {
-				$status = 'Occasional Customer';
-			} else if ($value->level_member == '4') {
-				$status = 'Everyday Shopper';
-			} else if ($value->level_member == '5') {
-				$status = 'Dormant Customer';
+		if ($periode == '1') {
+			$data = $this->mHistoryPelanggan->cetak_analisis($level);
+			foreach ($data as $key => $value) {
+				if ($value->hasil == '1') {
+					$status = 'Superstar';
+				} else if ($value->hasil == '2') {
+					$status = 'Golden Customer';
+				} else if ($value->hasil == '3') {
+					$status = 'Occasional Customer';
+				} else if ($value->hasil == '4') {
+					$status = 'Everyday Shopper';
+				} else if ($value->hasil == '5') {
+					$status = 'Dormant Customer';
+				}
+				$pdf->Cell(10, 6, $no++, 1, 0, 'C');
+				$pdf->Cell(50, 6, $value->nama_pelanggan, 1, 0);
+				$pdf->Cell(70, 6, $value->alamat, 1, 0);
+				$pdf->Cell(50, 6, $status, 1, 1);
 			}
-			$pdf->Cell(10, 6, $no++, 1, 0, 'C');
-			$pdf->Cell(50, 6, $value->nama_pelanggan, 1, 0);
-			$pdf->Cell(70, 6, $value->alamat, 1, 0);
-			$pdf->Cell(50, 6, $status, 1, 1);
+		} else {
+			$data = $this->mHistoryPelanggan->cetak($level);
+			foreach ($data as $key => $value) {
+				if ($value->level_member == '1') {
+					$status = 'Superstar';
+				} else if ($value->level_member == '2') {
+					$status = 'Golden Customer';
+				} else if ($value->level_member == '3') {
+					$status = 'Occasional Customer';
+				} else if ($value->level_member == '4') {
+					$status = 'Everyday Shopper';
+				} else if ($value->level_member == '5') {
+					$status = 'Dormant Customer';
+				}
+				$pdf->Cell(10, 6, $no++, 1, 0, 'C');
+				$pdf->Cell(50, 6, $value->nama_pelanggan, 1, 0);
+				$pdf->Cell(70, 6, $value->alamat, 1, 0);
+				$pdf->Cell(50, 6, $status, 1, 1);
+			}
 		}
+
+
 		$pdf->Output();
 	}
 }

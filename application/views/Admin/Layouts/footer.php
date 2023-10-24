@@ -19,6 +19,21 @@
 
 <script src="<?= base_url('asset/') ?>DataTables/datatables.min.js"></script>
 <script>
+	Chart.defaults.global.defaultFontColor = 'white';
+	let ctxLine,
+		ctxBar,
+		ctxPie,
+		optionsLine,
+		optionsBar,
+		optionsPie,
+		configLine,
+		configBar,
+		configPie,
+		lineChart;
+	barChart, pieChart;
+	// DOM is ready
+</script>
+<script>
 	$('#myTable').DataTable({
 		select: true
 	});

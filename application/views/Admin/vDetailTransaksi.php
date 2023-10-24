@@ -81,6 +81,26 @@
 					<?php
 					}
 					?>
+					<?php
+					if ($transaksi['transaksi']->level_member == 3) {
+					?>
+						<p class="text-light mt-2">*Catatan: <span class="badge badge-success">Pelanggan ini berhak mendapatkan bonus 1 dus air mineral merk asmi ukuran 240 ml</span></p>
+
+					<?php
+					}
+					?>
+					<a href="<?= base_url('Admin/cTransaksi') ?>" class="btn btn-danger mt-3">Kembali</a>
+					<?php
+					if ($transaksi['transaksi']->stat_transaksi == '1') {
+					?>
+						<a href="<?= base_url('Admin/cTransaksi/konfirmasi/' . $transaksi['transaksi']->id_transaksi) ?>" class="btn btn-info mt-3">Konfirmasi Pembayaran</a>
+					<?php
+					} else if ($transaksi['transaksi']->stat_transaksi == '2') {
+					?>
+						<a href="<?= base_url('Admin/cTransaksi/dikirim/' . $transaksi['transaksi']->id_transaksi) ?>" class="btn btn-success mt-3">Pesanan Dikirim</a>
+					<?php
+					}
+					?>
 
 
 

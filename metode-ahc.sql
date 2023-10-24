@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Okt 2023 pada 00.56
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.3.9
+-- Generation Time: Oct 25, 2023 at 01:07 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,387 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_transaksi`
+-- Table structure for table `analisis`
+--
+
+CREATE TABLE `analisis` (
+  `id_analisis` int(11) NOT NULL,
+  `id_pelanggan` int(11) NOT NULL,
+  `r` int(11) NOT NULL,
+  `f` int(11) NOT NULL,
+  `m` int(11) NOT NULL,
+  `periode` int(11) NOT NULL,
+  `hasil` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `analisis`
+--
+
+INSERT INTO `analisis` (`id_analisis`, `id_pelanggan`, `r`, `f`, `m`, `periode`, `hasil`) VALUES
+(1, 1, 4, 4, 4, 2022, 1),
+(2, 9, 3, 1, 2, 2022, 1),
+(3, 13, 3, 1, 2, 2022, 1),
+(4, 30, 3, 1, 2, 2022, 1),
+(5, 34, 3, 2, 2, 2022, 1),
+(6, 73, 3, 1, 2, 2022, 1),
+(7, 86, 3, 1, 2, 2022, 1),
+(8, 99, 3, 1, 2, 2022, 1),
+(9, 102, 4, 4, 4, 2022, 1),
+(10, 103, 3, 2, 2, 2022, 1),
+(11, 107, 3, 2, 2, 2022, 1),
+(12, 118, 3, 4, 3, 2022, 1),
+(13, 119, 4, 4, 4, 2022, 1),
+(14, 123, 3, 1, 2, 2022, 1),
+(15, 125, 4, 4, 3, 2022, 1),
+(16, 134, 3, 1, 2, 2022, 1),
+(17, 137, 3, 4, 3, 2022, 1),
+(18, 147, 3, 2, 2, 2022, 1),
+(19, 153, 3, 1, 2, 2022, 1),
+(20, 162, 3, 2, 2, 2022, 1),
+(21, 169, 3, 2, 2, 2022, 1),
+(22, 177, 3, 2, 2, 2022, 1),
+(23, 202, 3, 1, 2, 2022, 1),
+(24, 212, 3, 1, 2, 2022, 1),
+(25, 214, 4, 3, 3, 2022, 1),
+(26, 218, 3, 1, 2, 2022, 1),
+(27, 219, 4, 2, 2, 2022, 1),
+(28, 224, 3, 2, 2, 2022, 1),
+(29, 232, 3, 1, 2, 2022, 1),
+(30, 238, 4, 4, 4, 2022, 1),
+(31, 259, 3, 4, 3, 2022, 1),
+(32, 269, 3, 1, 2, 2022, 1),
+(33, 277, 3, 1, 2, 2022, 1),
+(34, 283, 4, 4, 4, 2022, 1),
+(35, 284, 3, 2, 2, 2022, 1),
+(36, 290, 3, 3, 3, 2022, 1),
+(37, 297, 3, 1, 2, 2022, 1),
+(38, 317, 3, 4, 3, 2022, 1),
+(39, 318, 3, 1, 2, 2022, 1),
+(40, 343, 3, 1, 2, 2022, 1),
+(41, 348, 3, 1, 2, 2022, 1),
+(42, 355, 3, 1, 2, 2022, 1),
+(43, 15, 3, 1, 2, 2022, 1),
+(44, 47, 3, 1, 2, 2022, 1),
+(45, 96, 4, 3, 3, 2022, 1),
+(46, 108, 3, 1, 2, 2022, 1),
+(47, 126, 4, 4, 3, 2022, 1),
+(48, 131, 3, 3, 3, 2022, 1),
+(49, 139, 3, 1, 2, 2022, 1),
+(50, 158, 4, 1, 1, 2022, 1),
+(51, 166, 4, 1, 2, 2022, 1),
+(52, 181, 3, 1, 2, 2022, 1),
+(53, 220, 3, 1, 2, 2022, 1),
+(54, 235, 3, 1, 2, 2022, 1),
+(55, 242, 4, 3, 3, 2022, 1),
+(56, 292, 3, 1, 2, 2022, 1),
+(57, 301, 3, 1, 1, 2022, 1),
+(58, 304, 3, 1, 2, 2022, 1),
+(59, 309, 3, 1, 2, 2022, 1),
+(60, 351, 3, 1, 1, 2022, 1),
+(61, 353, 3, 1, 2, 2022, 1),
+(62, 356, 4, 2, 3, 2022, 1),
+(63, 12, 4, 2, 2, 2022, 2),
+(64, 17, 3, 1, 2, 2022, 2),
+(65, 25, 3, 1, 1, 2022, 2),
+(66, 31, 4, 1, 2, 2022, 2),
+(67, 38, 3, 1, 2, 2022, 2),
+(68, 45, 3, 3, 3, 2022, 2),
+(69, 55, 3, 1, 2, 2022, 2),
+(70, 75, 3, 1, 2, 2022, 2),
+(71, 84, 4, 2, 2, 2022, 2),
+(72, 130, 3, 1, 2, 2022, 2),
+(73, 142, 4, 4, 4, 2022, 2),
+(74, 191, 3, 2, 2, 2022, 2),
+(75, 192, 3, 4, 3, 2022, 2),
+(76, 203, 3, 1, 1, 2022, 2),
+(77, 251, 4, 2, 2, 2022, 2),
+(78, 274, 3, 1, 2, 2022, 2),
+(79, 298, 3, 2, 2, 2022, 2),
+(80, 300, 3, 1, 2, 2022, 2),
+(81, 358, 3, 1, 2, 2022, 2),
+(82, 36, 3, 2, 2, 2022, 2),
+(83, 48, 3, 1, 2, 2022, 2),
+(84, 68, 3, 4, 3, 2022, 2),
+(85, 127, 3, 1, 2, 2022, 2),
+(86, 128, 4, 4, 4, 2022, 2),
+(87, 275, 4, 2, 2, 2022, 2),
+(88, 285, 3, 1, 2, 2022, 2),
+(89, 288, 3, 1, 2, 2022, 2),
+(90, 321, 3, 1, 2, 2022, 2),
+(91, 62, 3, 1, 2, 2022, 3),
+(92, 111, 3, 1, 2, 2022, 3),
+(93, 229, 3, 1, 2, 2022, 3),
+(94, 138, 3, 1, 2, 2022, 3),
+(95, 216, 3, 2, 2, 2022, 3),
+(96, 27, 4, 4, 3, 2022, 3),
+(97, 63, 3, 1, 1, 2022, 3),
+(98, 71, 3, 1, 2, 2022, 3),
+(99, 77, 4, 4, 4, 2022, 3),
+(100, 87, 4, 2, 2, 2022, 3),
+(101, 100, 3, 2, 2, 2022, 3),
+(102, 106, 4, 4, 4, 2022, 3),
+(103, 116, 4, 4, 4, 2022, 3),
+(104, 143, 3, 1, 2, 2022, 3),
+(105, 151, 3, 1, 1, 2022, 3),
+(106, 180, 4, 2, 2, 2022, 3),
+(107, 205, 4, 4, 4, 2022, 3),
+(108, 222, 3, 4, 4, 2022, 3),
+(109, 239, 3, 1, 1, 2022, 3),
+(110, 250, 3, 1, 2, 2022, 3),
+(111, 276, 4, 3, 2, 2022, 3),
+(112, 286, 3, 1, 2, 2022, 3),
+(113, 291, 3, 1, 1, 2022, 3),
+(114, 357, 3, 1, 2, 2022, 3),
+(115, 5, 3, 2, 2, 2022, 4),
+(116, 10, 4, 2, 2, 2022, 4),
+(117, 11, 3, 1, 2, 2022, 4),
+(118, 18, 4, 4, 4, 2022, 4),
+(119, 20, 4, 4, 4, 2022, 4),
+(120, 21, 3, 1, 2, 2022, 4),
+(121, 22, 3, 1, 2, 2022, 4),
+(122, 28, 4, 1, 2, 2022, 4),
+(123, 35, 4, 4, 4, 2022, 4),
+(124, 74, 3, 1, 2, 2022, 4),
+(125, 79, 4, 4, 4, 2022, 4),
+(126, 82, 3, 4, 4, 2022, 4),
+(127, 95, 3, 3, 3, 2022, 4),
+(128, 101, 3, 3, 3, 2022, 4),
+(129, 115, 3, 1, 2, 2022, 4),
+(130, 152, 3, 4, 3, 2022, 4),
+(131, 155, 3, 4, 4, 2022, 4),
+(132, 160, 4, 1, 1, 2022, 4),
+(133, 165, 4, 1, 2, 2022, 4),
+(134, 186, 4, 4, 4, 2022, 4),
+(135, 190, 3, 1, 2, 2022, 4),
+(136, 196, 3, 1, 2, 2022, 4),
+(137, 200, 4, 4, 4, 2022, 4),
+(138, 201, 3, 3, 2, 2022, 4),
+(139, 213, 4, 4, 3, 2022, 4),
+(140, 223, 3, 1, 2, 2022, 4),
+(141, 267, 3, 1, 2, 2022, 4),
+(142, 289, 4, 3, 3, 2022, 4),
+(143, 302, 4, 2, 2, 2022, 4),
+(144, 308, 3, 1, 2, 2022, 4),
+(145, 349, 4, 1, 2, 2022, 4),
+(146, 354, 3, 1, 2, 2022, 4),
+(147, 51, 4, 4, 4, 2022, 4),
+(148, 66, 3, 1, 2, 2022, 4),
+(149, 122, 3, 1, 2, 2022, 4),
+(150, 133, 3, 1, 2, 2022, 4),
+(151, 145, 4, 2, 2, 2022, 4),
+(152, 154, 3, 2, 2, 2022, 4),
+(153, 170, 4, 4, 4, 2022, 4),
+(154, 194, 4, 1, 2, 2022, 4),
+(155, 198, 3, 2, 2, 2022, 4),
+(156, 199, 3, 1, 2, 2022, 4),
+(157, 209, 3, 1, 2, 2022, 4),
+(158, 231, 4, 4, 3, 2022, 4),
+(159, 234, 3, 1, 2, 2022, 4),
+(160, 268, 3, 2, 2, 2022, 4),
+(161, 270, 3, 1, 2, 2022, 4),
+(162, 295, 4, 4, 4, 2022, 4),
+(163, 305, 3, 1, 2, 2022, 4),
+(164, 310, 3, 1, 2, 2022, 4),
+(165, 316, 3, 2, 2, 2022, 4),
+(166, 322, 4, 4, 3, 2022, 4),
+(167, 331, 3, 1, 2, 2022, 4),
+(168, 345, 3, 1, 1, 2022, 4),
+(169, 2, 4, 4, 4, 2022, 4),
+(170, 3, 4, 1, 2, 2022, 4),
+(171, 4, 3, 1, 2, 2022, 4),
+(172, 6, 3, 1, 1, 2022, 4),
+(173, 7, 3, 1, 2, 2022, 4),
+(174, 8, 3, 1, 1, 2022, 4),
+(175, 14, 3, 1, 1, 2022, 4),
+(176, 16, 3, 1, 2, 2022, 4),
+(177, 19, 4, 4, 4, 2022, 4),
+(178, 23, 3, 1, 2, 2022, 4),
+(179, 24, 3, 1, 2, 2022, 4),
+(180, 26, 4, 2, 2, 2022, 4),
+(181, 29, 4, 4, 3, 2022, 4),
+(182, 32, 3, 1, 2, 2022, 4),
+(183, 33, 3, 1, 2, 2022, 4),
+(184, 37, 3, 1, 2, 2022, 4),
+(185, 39, 3, 1, 2, 2022, 4),
+(186, 40, 3, 2, 2, 2022, 4),
+(187, 41, 3, 1, 2, 2022, 4),
+(188, 42, 3, 1, 2, 2022, 4),
+(189, 43, 3, 1, 2, 2022, 4),
+(190, 44, 3, 2, 2, 2022, 4),
+(191, 46, 4, 3, 3, 2022, 4),
+(192, 49, 4, 3, 3, 2022, 4),
+(193, 52, 3, 1, 2, 2022, 4),
+(194, 53, 4, 1, 2, 2022, 4),
+(195, 54, 3, 1, 2, 2022, 4),
+(196, 56, 3, 2, 2, 2022, 4),
+(197, 58, 3, 1, 2, 2022, 4),
+(198, 59, 4, 1, 2, 2022, 4),
+(199, 61, 4, 1, 2, 2022, 4),
+(200, 64, 3, 2, 2, 2022, 4),
+(201, 67, 3, 2, 2, 2022, 4),
+(202, 69, 4, 4, 4, 2022, 4),
+(203, 70, 3, 4, 3, 2022, 4),
+(204, 72, 3, 1, 2, 2022, 4),
+(205, 78, 4, 2, 2, 2022, 4),
+(206, 80, 3, 1, 2, 2022, 4),
+(207, 81, 3, 1, 2, 2022, 4),
+(208, 83, 3, 1, 2, 2022, 4),
+(209, 85, 4, 1, 2, 2022, 4),
+(210, 88, 3, 1, 2, 2022, 4),
+(211, 89, 3, 1, 2, 2022, 4),
+(212, 90, 4, 4, 4, 2022, 4),
+(213, 91, 3, 2, 2, 2022, 4),
+(214, 92, 4, 4, 4, 2022, 4),
+(215, 93, 3, 1, 2, 2022, 4),
+(216, 94, 3, 3, 2, 2022, 4),
+(217, 98, 3, 1, 1, 2022, 4),
+(218, 104, 4, 4, 4, 2022, 4),
+(219, 110, 4, 4, 4, 2022, 4),
+(220, 112, 3, 4, 4, 2022, 4),
+(221, 114, 3, 1, 2, 2022, 4),
+(222, 117, 4, 2, 2, 2022, 4),
+(223, 120, 3, 2, 2, 2022, 4),
+(224, 121, 4, 4, 4, 2022, 4),
+(225, 124, 3, 1, 2, 2022, 4),
+(226, 129, 3, 1, 1, 2022, 4),
+(227, 135, 3, 1, 2, 2022, 4),
+(228, 136, 4, 1, 1, 2022, 4),
+(229, 140, 4, 3, 2, 2022, 4),
+(230, 141, 3, 1, 2, 2022, 4),
+(231, 144, 4, 1, 2, 2022, 4),
+(232, 146, 4, 4, 4, 2022, 4),
+(233, 148, 3, 1, 2, 2022, 4),
+(234, 149, 4, 1, 2, 2022, 4),
+(235, 150, 4, 4, 3, 2022, 4),
+(236, 156, 3, 1, 2, 2022, 4),
+(237, 157, 3, 1, 2, 2022, 4),
+(238, 159, 4, 4, 4, 2022, 4),
+(239, 161, 4, 2, 2, 2022, 4),
+(240, 163, 3, 1, 2, 2022, 4),
+(241, 164, 3, 1, 2, 2022, 4),
+(242, 167, 3, 4, 4, 2022, 4),
+(243, 171, 3, 1, 2, 2022, 4),
+(244, 173, 3, 1, 2, 2022, 4),
+(245, 176, 3, 1, 2, 2022, 4),
+(246, 178, 4, 1, 1, 2022, 4),
+(247, 179, 3, 1, 2, 2022, 4),
+(248, 182, 3, 1, 1, 2022, 4),
+(249, 183, 3, 1, 2, 2022, 4),
+(250, 184, 4, 2, 2, 2022, 4),
+(251, 185, 4, 3, 3, 2022, 4),
+(252, 187, 3, 1, 2, 2022, 4),
+(253, 188, 3, 1, 2, 2022, 4),
+(254, 189, 3, 1, 1, 2022, 4),
+(255, 193, 3, 1, 2, 2022, 4),
+(256, 195, 3, 1, 2, 2022, 4),
+(257, 197, 3, 1, 2, 2022, 4),
+(258, 204, 3, 1, 1, 2022, 4),
+(259, 206, 4, 4, 4, 2022, 4),
+(260, 207, 3, 1, 2, 2022, 4),
+(261, 208, 3, 1, 2, 2022, 4),
+(262, 210, 3, 1, 2, 2022, 4),
+(263, 211, 3, 1, 2, 2022, 4),
+(264, 215, 3, 1, 1, 2022, 4),
+(265, 221, 3, 1, 2, 2022, 4),
+(266, 225, 3, 1, 2, 2022, 4),
+(267, 227, 3, 2, 2, 2022, 4),
+(268, 230, 4, 1, 2, 2022, 4),
+(269, 233, 4, 4, 4, 2022, 4),
+(270, 236, 4, 1, 2, 2022, 4),
+(271, 237, 3, 1, 2, 2022, 4),
+(272, 240, 3, 1, 1, 2022, 4),
+(273, 241, 3, 1, 2, 2022, 4),
+(274, 243, 3, 4, 3, 2022, 4),
+(275, 244, 3, 3, 3, 2022, 4),
+(276, 245, 4, 2, 2, 2022, 4),
+(277, 247, 4, 4, 4, 2022, 4),
+(278, 249, 3, 1, 2, 2022, 4),
+(279, 252, 3, 1, 1, 2022, 4),
+(280, 253, 3, 1, 2, 2022, 4),
+(281, 255, 3, 1, 2, 2022, 4),
+(282, 256, 3, 1, 2, 2022, 4),
+(283, 257, 4, 4, 4, 2022, 4),
+(284, 260, 4, 4, 4, 2022, 4),
+(285, 261, 3, 3, 3, 2022, 4),
+(286, 262, 4, 2, 2, 2022, 4),
+(287, 263, 3, 1, 2, 2022, 4),
+(288, 265, 3, 3, 3, 2022, 4),
+(289, 266, 3, 2, 2, 2022, 4),
+(290, 271, 4, 4, 4, 2022, 4),
+(291, 273, 4, 2, 2, 2022, 4),
+(292, 278, 4, 4, 3, 2022, 4),
+(293, 280, 3, 1, 2, 2022, 4),
+(294, 281, 3, 1, 2, 2022, 4),
+(295, 282, 4, 1, 2, 2022, 4),
+(296, 287, 3, 1, 2, 2022, 4),
+(297, 293, 4, 4, 4, 2022, 4),
+(298, 294, 3, 4, 3, 2022, 4),
+(299, 296, 3, 1, 2, 2022, 4),
+(300, 299, 3, 4, 3, 2022, 4),
+(301, 303, 4, 4, 3, 2022, 4),
+(302, 306, 3, 2, 2, 2022, 4),
+(303, 307, 3, 1, 2, 2022, 4),
+(304, 311, 4, 4, 3, 2022, 4),
+(305, 312, 4, 1, 2, 2022, 4),
+(306, 313, 3, 1, 2, 2022, 4),
+(307, 314, 3, 1, 2, 2022, 4),
+(308, 315, 3, 2, 2, 2022, 4),
+(309, 319, 4, 4, 3, 2022, 4),
+(310, 320, 4, 1, 2, 2022, 4),
+(311, 324, 3, 1, 2, 2022, 4),
+(312, 325, 3, 1, 2, 2022, 4),
+(313, 326, 3, 1, 2, 2022, 4),
+(314, 327, 3, 1, 2, 2022, 4),
+(315, 328, 3, 1, 2, 2022, 4),
+(316, 330, 4, 1, 2, 2022, 4),
+(317, 332, 4, 4, 4, 2022, 4),
+(318, 334, 4, 4, 4, 2022, 4),
+(319, 335, 3, 1, 2, 2022, 4),
+(320, 336, 3, 1, 2, 2022, 4),
+(321, 339, 3, 3, 3, 2022, 4),
+(322, 340, 4, 1, 2, 2022, 4),
+(323, 341, 4, 1, 1, 2022, 4),
+(324, 344, 3, 1, 2, 2022, 4),
+(325, 347, 3, 1, 2, 2022, 4),
+(326, 350, 3, 1, 2, 2022, 4),
+(327, 352, 3, 1, 2, 2022, 4),
+(328, 50, 3, 1, 2, 2022, 5),
+(329, 132, 3, 1, 1, 2022, 5),
+(330, 228, 3, 1, 2, 2022, 5),
+(331, 246, 4, 1, 2, 2022, 5),
+(332, 323, 3, 1, 2, 2022, 5),
+(333, 338, 3, 1, 1, 2022, 5),
+(334, 57, 3, 1, 2, 2022, 5),
+(335, 60, 3, 1, 2, 2022, 5),
+(336, 65, 3, 1, 2, 2022, 5),
+(337, 76, 3, 1, 1, 2022, 5),
+(338, 97, 4, 1, 1, 2022, 5),
+(339, 105, 3, 1, 2, 2022, 5),
+(340, 109, 3, 1, 2, 2022, 5),
+(341, 113, 3, 1, 2, 2022, 5),
+(342, 168, 3, 1, 1, 2022, 5),
+(343, 172, 4, 4, 4, 2022, 5),
+(344, 174, 3, 1, 2, 2022, 5),
+(345, 175, 4, 1, 2, 2022, 5),
+(346, 217, 3, 1, 1, 2022, 5),
+(347, 226, 3, 1, 2, 2022, 5),
+(348, 248, 4, 4, 4, 2022, 5),
+(349, 254, 3, 2, 2, 2022, 5),
+(350, 258, 3, 1, 2, 2022, 5),
+(351, 264, 3, 4, 4, 2022, 5),
+(352, 272, 3, 1, 2, 2022, 5),
+(353, 279, 4, 4, 3, 2022, 5),
+(354, 329, 3, 2, 2, 2022, 5),
+(355, 333, 4, 4, 4, 2022, 5),
+(356, 337, 4, 4, 3, 2022, 5),
+(357, 342, 4, 2, 2, 2022, 5),
+(358, 346, 3, 4, 3, 2022, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_transaksi`
 --
 
 CREATE TABLE `detail_transaksi` (
@@ -36,7 +416,7 @@ CREATE TABLE `detail_transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_transaksi`
+-- Dumping data for table `detail_transaksi`
 --
 
 INSERT INTO `detail_transaksi` (`id_detail`, `id_transaksi`, `id_produk`, `qty`) VALUES
@@ -3583,7 +3963,7 @@ INSERT INTO `detail_transaksi` (`id_detail`, `id_transaksi`, `id_produk`, `qty`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `diskon`
+-- Table structure for table `diskon`
 --
 
 CREATE TABLE `diskon` (
@@ -3594,10 +3974,17 @@ CREATE TABLE `diskon` (
   `member` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `diskon`
+--
+
+INSERT INTO `diskon` (`id_diskon`, `id_produk`, `diskon`, `nama_diskon`, `member`) VALUES
+(2, 1, 5, 'sale of day', 1);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -3611,368 +3998,368 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pelanggan`
+-- Dumping data for table `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_tlp`, `username`, `password`, `level_member`) VALUES
-(1, 'ADE NANANG', 'PARIGI PANGANDARAN', '89101928374', 'ade_nanang', 'ade_nanang', 1),
-(2, 'A DEDI', 'KUNINGAN', '89303217654', 'a_dedi', 'a_dedi', 4),
-(3, '3 PUTRA', 'CIBINBIN KUNINGAN', '89716171231', '3_putra', '3_putra', 4),
-(4, '3 PUTRI', 'LURAGUNG KUNINGAN', '89123142536', '3_putri', '3_putri', 4),
-(5, '3 SAUDARA', 'CIHIDEUNG KUNINGAN', '89888735422', '3_saudara', '3_saudara', 3),
-(6, '3 SAUDARA', 'JATIPANCUR KUNINGAN', '85674833321', '3_saudara', '3_saudara', 4),
-(7, '3 SAUDARA', 'CIAWI GEBANG KUNINGAN', '85344211833', '3_saudara', '3_saudara', 4),
-(8, 'ABADI', 'KEDOKAN GABUS INDRAMAYU', '81909499494', 'abadi', 'abadi', 4),
-(9, 'ABU', 'CIAWI GEBANG KUNINGAN', '81999845455', 'abu', 'abu', 1),
-(10, 'ABUD', 'CIKIJING MAJALENGKA', '81903944566', 'abud', 'abud', 3),
-(11, 'ABUD', 'CIREBON', '89888432333', 'abud', 'abud', 3),
-(12, 'ADE', 'CINAGARA KUNINGAN', '81234567833', 'ade', 'ade', 1),
-(13, 'ADE APIT', 'TASIK', '89736464775', 'ade_apit', 'ade_apit', 1),
-(14, 'AGUNG INDAH', 'CIAWI GEBANG KUNINGAN', '89464646464', 'agung_indah', 'agung_indah', 4),
-(15, 'AGUS', 'DARMA KUNINGAN', '81374665575', 'agus', 'agus', 1),
-(16, 'AGUS', 'MAJA MAJALENGKA', '81465363737', 'agus', 'agus', 4),
-(17, 'AHMAD ZAENI', 'ASTANA JAPURA CIREBON', '81927464656', 'ahmad_zaeni', 'ahmad_zaeni', 1),
-(18, 'AL-BADAR', 'LEWUIMUNDING MAJALENGKA', '81756589696', 'al-badar', 'al-badar', 3),
-(19, 'AL-FATIH', 'LURAGUNG KUNINGAN', '81576869787', 'al-fatih', 'al-fatih', 4),
-(20, 'ALIT', 'DARMA KUNINGAN', '81955657575', 'alit', 'alit', 3),
-(21, 'ALNID', 'GEGESIK CIAWI GEBANG KUNINGAN', '81756584933', 'alnid', 'alnid', 3),
-(22, 'AL-QOMAT', 'RAJAGALUH MAJALENGKA', '89575647484', 'al-qomat', 'al-qomat', 3),
-(23, 'AMANAH', 'LENGKONG KUNINGAN', '89458347333', 'amanah', 'amanah', 4),
-(24, 'AMANDA TOYA', 'KARANGWARENG CIREBON', '89563833333', 'amanda_toya', 'amanda_toya', 4),
-(25, 'AMIN', 'ASTANA JAPURA CIREBON', '89324455555', 'amin', 'amin', 2),
-(26, 'AMNADA TOYA', 'KARANGWARENG CIREBON', '89475637333', 'amnada_toya', 'amnada_toya', 4),
-(27, 'AN NUR', 'CIDAHU KUNINGAN', '89567464373', 'an_nur', 'an_nur', 3),
-(28, 'AN NUR', 'CIBINBIN KUNINGAN', '89557464744', 'an_nur', 'an_nur', 3),
-(29, 'ANAN', 'BABAKAN MULYA', '81846574745', 'anan', 'anan', 4),
-(30, 'ANDALAS', 'KAWALI CIAMIS', '85283745858', 'andalas', 'andalas', 1),
-(31, 'ANDI', 'PEJATEN INDRAMAYU', '89374675758', 'andi', 'andi', 1),
-(32, 'ANDREAS', 'CIREBON', '81946573784', 'andreas', 'andreas', 4),
-(33, 'ANDRI', 'BANJARSARI', '81757393567', 'andri', 'andri', 4),
-(34, 'ANEKA SANDANG', 'KADURAMA KUNINGAN', '89854573838', 'aneka_sandang', 'aneka_sandang', 1),
-(35, 'ANEKA SANDANG', 'PANGKALAN KUNINGAN', '89475836464', 'aneka_sandang', 'aneka_sandang', 3),
-(36, 'ANEKA SANDANG', 'CIAWI GEBANG KUNINGAN', '89374657837', 'aneka_sandang', 'aneka_sandang', 2),
-(37, 'ANISA', 'KUNINGAN', '81456376839', 'anisa', 'anisa', 4),
-(38, 'ANTO', 'RANDUSANGA BREBES', '81485839383', 'anto', 'anto', 1),
-(39, 'ANUGRAH', 'RAJAGALUH MAJALENGKA', '81957484843', 'anugrah', 'anugrah', 4),
-(40, 'ANUGRAH TIRTA', 'JL JUANDA KUNINGAN', '81478585859', 'anugrah_tirta', 'anugrah_tirta', 4),
-(41, 'ANWAR/RIO', 'KUNINGAN', '89575636383', 'anwar/rio', 'anwar/rio', 4),
-(42, 'APEP', 'CILEDUG CIREBON', '89375683733', 'apep', 'apep', 4),
-(43, 'ARCO', 'CIRENDANG KUNINGAN', '89456584844', 'arco', 'arco', 4),
-(44, 'ARCO', 'ASTANA JAPURA CIREBON', '89376375557', 'arco', 'arco', 4),
-(45, 'ARCO', 'KASTURI KUNINGAN', '89465567565', 'arco', 'arco', 2),
-(46, 'ARI/AL-BARKAH', 'LANGENSARI', '83973637363', 'ari/al-barkah', 'ari/al-barkah', 4),
-(47, 'ARI/AL-BARKAH', 'BANJARPATROMAN', '85365373633', 'ari/al-barkah', 'ari/al-barkah', 1),
-(48, 'ARI/AL-BARKAH', 'LAKBOK', '81564474644', 'ari/al-barkah', 'ari/al-barkah', 2),
-(49, 'ARI/BINTANG TIMUR', 'BANJARPATROMAN', '87467363736', 'ari/bintang_timur', 'ari/bintang_timur', 4),
+(1, 'ADE NANANG', 'PARIGI PANGANDARAN', '89101928374', 'ade_nanang', 'ade_nanang', 5),
+(2, 'A DEDI', 'KUNINGAN', '89303217654', 'a_dedi', 'a_dedi', 5),
+(3, '3 PUTRA', 'CIBINBIN KUNINGAN', '89716171231', '3_putra', '3_putra', 5),
+(4, '3 PUTRI', 'LURAGUNG KUNINGAN', '89123142536', '3_putri', '3_putri', 5),
+(5, '3 SAUDARA', 'CIHIDEUNG KUNINGAN', '89888735422', '3_saudara', '3_saudara', 5),
+(6, '3 SAUDARA', 'JATIPANCUR KUNINGAN', '85674833321', '3_saudara', '3_saudara', 5),
+(7, '3 SAUDARA', 'CIAWI GEBANG KUNINGAN', '85344211833', '3_saudara', '3_saudara', 5),
+(8, 'ABADI', 'KEDOKAN GABUS INDRAMAYU', '81909499494', 'abadi', 'abadi', 5),
+(9, 'ABU', 'CIAWI GEBANG KUNINGAN', '81999845455', 'abu', 'abu', 5),
+(10, 'ABUD', 'CIKIJING MAJALENGKA', '81903944566', 'abud', 'abud', 5),
+(11, 'ABUD', 'CIREBON', '89888432333', 'abud', 'abud', 5),
+(12, 'ADE', 'CINAGARA KUNINGAN', '81234567833', 'ade', 'ade', 5),
+(13, 'ADE APIT', 'TASIK', '89736464775', 'ade_apit', 'ade_apit', 5),
+(14, 'AGUNG INDAH', 'CIAWI GEBANG KUNINGAN', '89464646464', 'agung_indah', 'agung_indah', 5),
+(15, 'AGUS', 'DARMA KUNINGAN', '81374665575', 'agus', 'agus', 5),
+(16, 'AGUS', 'MAJA MAJALENGKA', '81465363737', 'agus', 'agus', 5),
+(17, 'AHMAD ZAENI', 'ASTANA JAPURA CIREBON', '81927464656', 'ahmad_zaeni', 'ahmad_zaeni', 5),
+(18, 'AL-BADAR', 'LEWUIMUNDING MAJALENGKA', '81756589696', 'al-badar', 'al-badar', 5),
+(19, 'AL-FATIH', 'LURAGUNG KUNINGAN', '81576869787', 'al-fatih', 'al-fatih', 5),
+(20, 'ALIT', 'DARMA KUNINGAN', '81955657575', 'alit', 'alit', 5),
+(21, 'ALNID', 'GEGESIK CIAWI GEBANG KUNINGAN', '81756584933', 'alnid', 'alnid', 5),
+(22, 'AL-QOMAT', 'RAJAGALUH MAJALENGKA', '89575647484', 'al-qomat', 'al-qomat', 5),
+(23, 'AMANAH', 'LENGKONG KUNINGAN', '89458347333', 'amanah', 'amanah', 5),
+(24, 'AMANDA TOYA', 'KARANGWARENG CIREBON', '89563833333', 'amanda_toya', 'amanda_toya', 5),
+(25, 'AMIN', 'ASTANA JAPURA CIREBON', '89324455555', 'amin', 'amin', 5),
+(26, 'AMNADA TOYA', 'KARANGWARENG CIREBON', '89475637333', 'amnada_toya', 'amnada_toya', 5),
+(27, 'AN NUR', 'CIDAHU KUNINGAN', '89567464373', 'an_nur', 'an_nur', 5),
+(28, 'AN NUR', 'CIBINBIN KUNINGAN', '89557464744', 'an_nur', 'an_nur', 5),
+(29, 'ANAN', 'BABAKAN MULYA', '81846574745', 'anan', 'anan', 5),
+(30, 'ANDALAS', 'KAWALI CIAMIS', '85283745858', 'andalas', 'andalas', 5),
+(31, 'ANDI', 'PEJATEN INDRAMAYU', '89374675758', 'andi', 'andi', 5),
+(32, 'ANDREAS', 'CIREBON', '81946573784', 'andreas', 'andreas', 5),
+(33, 'ANDRI', 'BANJARSARI', '81757393567', 'andri', 'andri', 5),
+(34, 'ANEKA SANDANG', 'KADURAMA KUNINGAN', '89854573838', 'aneka_sandang', 'aneka_sandang', 5),
+(35, 'ANEKA SANDANG', 'PANGKALAN KUNINGAN', '89475836464', 'aneka_sandang', 'aneka_sandang', 5),
+(36, 'ANEKA SANDANG', 'CIAWI GEBANG KUNINGAN', '89374657837', 'aneka_sandang', 'aneka_sandang', 5),
+(37, 'ANISA', 'KUNINGAN', '81456376839', 'anisa', 'anisa', 5),
+(38, 'ANTO', 'RANDUSANGA BREBES', '81485839383', 'anto', 'anto', 5),
+(39, 'ANUGRAH', 'RAJAGALUH MAJALENGKA', '81957484843', 'anugrah', 'anugrah', 5),
+(40, 'ANUGRAH TIRTA', 'JL JUANDA KUNINGAN', '81478585859', 'anugrah_tirta', 'anugrah_tirta', 5),
+(41, 'ANWAR/RIO', 'KUNINGAN', '89575636383', 'anwar/rio', 'anwar/rio', 5),
+(42, 'APEP', 'CILEDUG CIREBON', '89375683733', 'apep', 'apep', 5),
+(43, 'ARCO', 'CIRENDANG KUNINGAN', '89456584844', 'arco', 'arco', 5),
+(44, 'ARCO', 'ASTANA JAPURA CIREBON', '89376375557', 'arco', 'arco', 5),
+(45, 'ARCO', 'KASTURI KUNINGAN', '89465567565', 'arco', 'arco', 5),
+(46, 'ARI/AL-BARKAH', 'LANGENSARI', '83973637363', 'ari/al-barkah', 'ari/al-barkah', 5),
+(47, 'ARI/AL-BARKAH', 'BANJARPATROMAN', '85365373633', 'ari/al-barkah', 'ari/al-barkah', 5),
+(48, 'ARI/AL-BARKAH', 'LAKBOK', '81564474644', 'ari/al-barkah', 'ari/al-barkah', 5),
+(49, 'ARI/BINTANG TIMUR', 'BANJARPATROMAN', '87467363736', 'ari/bintang_timur', 'ari/bintang_timur', 5),
 (50, 'ARI/DEWI', 'BANJARPATROMAN', '87463735333', 'ari/dewi', 'ari/dewi', 5),
-(51, 'ARI/ENDANG', 'LANGENSARI', '87537826422', 'ari/endang', 'ari/endang', 4),
-(52, 'ARI/ENDANG', 'LAKBOK', '87363536383', 'ari/endang', 'ari/endang', 4),
-(53, 'ARI/ENDANG', 'BANJARPATROMAN', '89738367555', 'ari/endang', 'ari/endang', 4),
-(54, 'ARI/H MAMAN', 'LAKBOK', '89274573343', 'ari/h_maman', 'ari/h_maman', 4),
-(55, 'ARI/HARAPAN', 'BANJARPATROMAN', '89745672782', 'ari/harapan', 'ari/harapan', 2),
-(56, 'ARI/HARAPAN', 'LAKBOK', '89758363532', 'ari/harapan', 'ari/harapan', 4),
+(51, 'ARI/ENDANG', 'LANGENSARI', '87537826422', 'ari/endang', 'ari/endang', 5),
+(52, 'ARI/ENDANG', 'LAKBOK', '87363536383', 'ari/endang', 'ari/endang', 5),
+(53, 'ARI/ENDANG', 'BANJARPATROMAN', '89738367555', 'ari/endang', 'ari/endang', 5),
+(54, 'ARI/H MAMAN', 'LAKBOK', '89274573343', 'ari/h_maman', 'ari/h_maman', 5),
+(55, 'ARI/HARAPAN', 'BANJARPATROMAN', '89745672782', 'ari/harapan', 'ari/harapan', 5),
+(56, 'ARI/HARAPAN', 'LAKBOK', '89758363532', 'ari/harapan', 'ari/harapan', 5),
 (57, 'ARI/INTAN', 'BANJARPATROMAN', '89475637284', 'ari/intan', 'ari/intan', 5),
-(58, 'ARI/JAJA', 'LANGENSARI', '89475683658', 'ari/jaja', 'ari/jaja', 4),
-(59, 'ARI/LAKSANA', 'LANGENSARI', '89727585937', 'ari/laksana', 'ari/laksana', 4),
+(58, 'ARI/JAJA', 'LANGENSARI', '89475683658', 'ari/jaja', 'ari/jaja', 5),
+(59, 'ARI/LAKSANA', 'LANGENSARI', '89727585937', 'ari/laksana', 'ari/laksana', 5),
 (60, 'ARI/LAKSANA', 'BANJARPATROMAN', '89376573528', 'ari/laksana', 'ari/laksana', 5),
-(61, 'ARI/LULURAN', 'BANJARPATROMAN', '89272625262', 'ari/luluran', 'ari/luluran', 4),
-(62, 'ARI/NEW PANTES', 'BANJARPATROMAN', '82475768965', 'ari/new_pantes', 'ari/new_pantes', 3),
-(63, 'ARI/ODAKA', 'LAKBOK', '89374657833', 'ari/odaka', 'ari/odaka', 3),
-(64, 'ARI/SALUYU', 'LANGENSARI', '89273657855', 'ari/saluyu', 'ari/saluyu', 4),
+(61, 'ARI/LULURAN', 'BANJARPATROMAN', '89272625262', 'ari/luluran', 'ari/luluran', 5),
+(62, 'ARI/NEW PANTES', 'BANJARPATROMAN', '82475768965', 'ari/new_pantes', 'ari/new_pantes', 5),
+(63, 'ARI/ODAKA', 'LAKBOK', '89374657833', 'ari/odaka', 'ari/odaka', 5),
+(64, 'ARI/SALUYU', 'LANGENSARI', '89273657855', 'ari/saluyu', 'ari/saluyu', 5),
 (65, 'ARI/SAMUDRA', 'LAKBOK', '89275735633', 'ari/samudra', 'ari/samudra', 5),
-(66, 'ARI/SAMUDRA KUE', 'BANJARPATROMAN', '89727568493', 'ari/samudra_kue', 'ari/samudra_kue', 4),
-(67, 'ARI/SBN', 'BANJARPATROMAN', '82975763387', 'ari/sbn', 'ari/sbn', 4),
-(68, 'ARI/SENADA', 'LAKBOK', '81758643836', 'ari/senada', 'ari/senada', 2),
-(69, 'ARI/SINAR ABADI', 'LANGENSARI', '87635837393', 'ari/sinar_abadi', 'ari/sinar_abadi', 4),
-(70, 'ARI/SINAR BARU', 'BANJARPATROMAN', '89273647585', 'ari/sinar_baru', 'ari/sinar_baru', 4),
-(71, 'ARI/TK HARAPAN', 'BANJARPATROMAN', '89273657373', 'ari/tk_harapan', 'ari/tk_harapan', 3),
-(72, 'ARI/YANTO', 'LAKBOK', '81684638839', 'ari/yanto', 'ari/yanto', 4),
-(73, 'ARIP', 'LURAGUNG KUNINGAN', '89263865843', 'arip', 'arip', 1),
-(74, 'ARIP', 'BANGKIR  KUNINGAN', '89274675831', 'arip', 'arip', 3),
-(75, 'ARIP', 'CIKADU KUNINGAN', '81985874658', 'arip', 'arip', 1),
+(66, 'ARI/SAMUDRA KUE', 'BANJARPATROMAN', '89727568493', 'ari/samudra_kue', 'ari/samudra_kue', 5),
+(67, 'ARI/SBN', 'BANJARPATROMAN', '82975763387', 'ari/sbn', 'ari/sbn', 5),
+(68, 'ARI/SENADA', 'LAKBOK', '81758643836', 'ari/senada', 'ari/senada', 5),
+(69, 'ARI/SINAR ABADI', 'LANGENSARI', '87635837393', 'ari/sinar_abadi', 'ari/sinar_abadi', 5),
+(70, 'ARI/SINAR BARU', 'BANJARPATROMAN', '89273647585', 'ari/sinar_baru', 'ari/sinar_baru', 5),
+(71, 'ARI/TK HARAPAN', 'BANJARPATROMAN', '89273657373', 'ari/tk_harapan', 'ari/tk_harapan', 5),
+(72, 'ARI/YANTO', 'LAKBOK', '81684638839', 'ari/yanto', 'ari/yanto', 5),
+(73, 'ARIP', 'LURAGUNG KUNINGAN', '89263865843', 'arip', 'arip', 5),
+(74, 'ARIP', 'BANGKIR  KUNINGAN', '89274675831', 'arip', 'arip', 5),
+(75, 'ARIP', 'CIKADU KUNINGAN', '81985874658', 'arip', 'arip', 5),
 (76, 'ARIP', 'TB ', '89276255777', 'arip', 'arip', 5),
-(77, 'ARIP/CAMAT', 'BANGKIR INDRAMAYU', '81972365839', 'arip/camat', 'arip/camat', 3),
-(78, 'ARIS', 'RANCAH', '82919547373', 'aris', 'aris', 4),
-(79, 'ARIS/SINAR BARU', 'RANCAH', '81758383638', 'aris/sinar_baru', 'aris/sinar_baru', 3),
-(80, 'ARIS/YADI', 'RANCAH', '81859362754', 'aris/yadi', 'aris/yadi', 4),
-(81, 'AROPAH', 'SEDONG CIREBON', '87185936336', 'aropah', 'aropah', 4),
-(82, 'ARUMAN', 'KALIMANGGIS KUNINGAN', '81759739222', 'aruman', 'aruman', 3),
-(83, 'ARUMAN', 'KALIMANGGIS CIREBON', '89746836828', 'aruman', 'aruman', 4),
-(84, 'AS', 'KADUGEDE KUNINGAN', '81957836253', 'as', 'as', 1),
-(85, 'ASEP WIJAYA', 'CILIMUS KUNINGAN', '87164828926', 'asep_wijaya', 'asep_wijaya', 4),
-(86, 'ASSALLAM', 'CIGARUGAK KUNINGAN', '87264969726', 'assallam', 'assallam', 1),
-(87, 'ATCO', 'ASTANA JAPURA CIREBON', '89273646862', 'atco', 'atco', 3),
-(88, 'AWANG', 'CIREBON', '82375386625', 'awang', 'awang', 4),
-(89, 'BANGKIT', 'KUNINGAN', '82746792749', 'bangkit', 'bangkit', 4),
-(90, 'BAPAK ANAS', 'MANIS KIDUL', '87283657573', 'bapak_anas', 'bapak_anas', 4),
-(91, 'BERKAH', 'GUNUNG KARUNG KUNINGAN', '89275836388', 'berkah', 'berkah', 4),
-(92, 'BERKAH', 'PSR IKAN LURAGUNG KUNINGAN', '89274656836', 'berkah', 'berkah', 4),
-(93, 'BERKAH JAYA', 'PSR IKAN LURAGUNG KUNINGAN', '87368563836', 'berkah_jaya', 'berkah_jaya', 4),
-(94, 'BERKAH JAYA', 'PANGKALAN KUNINGAN', '89264537936', 'berkah_jaya', 'berkah_jaya', 4),
-(95, 'BERKAH JAYA/UMED', 'CIAWI GEBANG KUNINGAN', '87486538763', 'berkah_jaya/umed', 'berkah_jaya/umed', 3),
-(96, 'BERKAH/UMED', 'CIAWI KUNINGAN', '89476385242', 'berkah/umed', 'berkah/umed', 1),
+(77, 'ARIP/CAMAT', 'BANGKIR INDRAMAYU', '81972365839', 'arip/camat', 'arip/camat', 5),
+(78, 'ARIS', 'RANCAH', '82919547373', 'aris', 'aris', 5),
+(79, 'ARIS/SINAR BARU', 'RANCAH', '81758383638', 'aris/sinar_baru', 'aris/sinar_baru', 5),
+(80, 'ARIS/YADI', 'RANCAH', '81859362754', 'aris/yadi', 'aris/yadi', 5),
+(81, 'AROPAH', 'SEDONG CIREBON', '87185936336', 'aropah', 'aropah', 5),
+(82, 'ARUMAN', 'KALIMANGGIS KUNINGAN', '81759739222', 'aruman', 'aruman', 5),
+(83, 'ARUMAN', 'KALIMANGGIS CIREBON', '89746836828', 'aruman', 'aruman', 5),
+(84, 'AS', 'KADUGEDE KUNINGAN', '81957836253', 'as', 'as', 5),
+(85, 'ASEP WIJAYA', 'CILIMUS KUNINGAN', '87164828926', 'asep_wijaya', 'asep_wijaya', 5),
+(86, 'ASSALLAM', 'CIGARUGAK KUNINGAN', '87264969726', 'assallam', 'assallam', 5),
+(87, 'ATCO', 'ASTANA JAPURA CIREBON', '89273646862', 'atco', 'atco', 5),
+(88, 'AWANG', 'CIREBON', '82375386625', 'awang', 'awang', 5),
+(89, 'BANGKIT', 'KUNINGAN', '82746792749', 'bangkit', 'bangkit', 5),
+(90, 'BAPAK ANAS', 'MANIS KIDUL', '87283657573', 'bapak_anas', 'bapak_anas', 5),
+(91, 'BERKAH', 'GUNUNG KARUNG KUNINGAN', '89275836388', 'berkah', 'berkah', 5),
+(92, 'BERKAH', 'PSR IKAN LURAGUNG KUNINGAN', '89274656836', 'berkah', 'berkah', 5),
+(93, 'BERKAH JAYA', 'PSR IKAN LURAGUNG KUNINGAN', '87368563836', 'berkah_jaya', 'berkah_jaya', 5),
+(94, 'BERKAH JAYA', 'PANGKALAN KUNINGAN', '89264537936', 'berkah_jaya', 'berkah_jaya', 5),
+(95, 'BERKAH JAYA/UMED', 'CIAWI GEBANG KUNINGAN', '87486538763', 'berkah_jaya/umed', 'berkah_jaya/umed', 5),
+(96, 'BERKAH/UMED', 'CIAWI KUNINGAN', '89476385242', 'berkah/umed', 'berkah/umed', 5),
 (97, 'BINANGKIT', 'RAJAGALUH MAJALENGKA', '83965836652', 'binangkit', 'binangkit', 5),
-(98, 'BPK ADE', 'RAJAPOLAH TASIK', '89726472572', 'bpk_ade', 'bpk_ade', 4),
-(99, 'BPK EDI/PAK SHUKRON', 'KUNINGAN', '81736829284', 'bpk_edi/pak_shukron', 'bpk_edi/pak_shukron', 1),
-(100, 'BPK IAN', 'KUNINGAN', '81749268262', 'bpk_ian', 'bpk_ian', 3),
-(101, 'BPK WITONO', 'WATERBOOM CILEDUG CIREBON', '81795703726', 'bpk_witono', 'bpk_witono', 3),
-(102, 'BRKAH JAYA', 'PSR IKAN LURAGUNG KUNINGAN', '82765397475', 'brkah_jaya', 'brkah_jaya', 1),
-(103, 'BU UJU', 'KUNINGAN', '91847962645', 'bu_uju', 'bu_uju', 1),
-(104, 'BUDIMAN', 'PANGANDARAN', '81394692674', 'budiman', 'budiman', 4),
+(98, 'BPK ADE', 'RAJAPOLAH TASIK', '89726472572', 'bpk_ade', 'bpk_ade', 5),
+(99, 'BPK EDI/PAK SHUKRON', 'KUNINGAN', '81736829284', 'bpk_edi/pak_shukron', 'bpk_edi/pak_shukron', 5),
+(100, 'BPK IAN', 'KUNINGAN', '81749268262', 'bpk_ian', 'bpk_ian', 5),
+(101, 'BPK WITONO', 'WATERBOOM CILEDUG CIREBON', '81795703726', 'bpk_witono', 'bpk_witono', 5),
+(102, 'BRKAH JAYA', 'PSR IKAN LURAGUNG KUNINGAN', '82765397475', 'brkah_jaya', 'brkah_jaya', 5),
+(103, 'BU UJU', 'KUNINGAN', '91847962645', 'bu_uju', 'bu_uju', 5),
+(104, 'BUDIMAN', 'PANGANDARAN', '81394692674', 'budiman', 'budiman', 5),
 (105, 'CAHAYA PUTRA', 'JL,BARU BABAKAN REMA KUNINGAN', '81957396252', 'cahaya_putra', 'cahaya_putra', 5),
-(106, 'CAHAYA PUTRA', 'TARAJU KUNINGAN', '81974628282', 'cahaya_putra', 'cahaya_putra', 3),
-(107, 'CI YEYEN', 'LURAGUNG KUNINGAN', '82963862725', 'ci_yeyen', 'ci_yeyen', 1),
-(108, 'CINTA MANAH', 'CIKIJING MAJALENGKA', '89274672528', 'cinta_manah', 'cinta_manah', 1),
+(106, 'CAHAYA PUTRA', 'TARAJU KUNINGAN', '81974628282', 'cahaya_putra', 'cahaya_putra', 5),
+(107, 'CI YEYEN', 'LURAGUNG KUNINGAN', '82963862725', 'ci_yeyen', 'ci_yeyen', 5),
+(108, 'CINTA MANAH', 'CIKIJING MAJALENGKA', '89274672528', 'cinta_manah', 'cinta_manah', 5),
 (109, 'DANU', 'KARANGWARENG CIREBON', '89273467535', 'danu', 'danu', 5),
-(110, 'DARKIM', 'BANDUNGSARI BREBES', '89275635625', 'darkim', 'darkim', 4),
-(111, 'DARSONO', 'CIDAHU KUNINGAN', '89275727522', 'darsono', 'darsono', 3),
-(112, 'DEDE', 'LURAGUNG KUNINGAN', '82957624622', 'dede', 'dede', 4),
+(110, 'DARKIM', 'BANDUNGSARI BREBES', '89275635625', 'darkim', 'darkim', 5),
+(111, 'DARSONO', 'CIDAHU KUNINGAN', '89275727522', 'darsono', 'darsono', 5),
+(112, 'DEDE', 'LURAGUNG KUNINGAN', '82957624622', 'dede', 'dede', 5),
 (113, 'DEDI', 'KUNINGAN', '81964275215', 'dedi', 'dedi', 5),
-(114, 'DENA', 'PAGUNDAN KUNINGAN', '82939456939', 'dena', 'dena', 4),
-(115, 'DIAN', 'LURAGUNG KUNINGAN', '81324571210', 'dian', 'dian', 3),
-(116, 'DINAR', 'CIBINBIN KUNINGAN', '82219317366', 'dinar', 'dinar', 3),
-(117, 'DINAR/AGUS', 'CIBINBIN KUNINGAN', '82219317367', 'dinar/agus', 'dinar/agus', 4),
-(118, 'DINAR/KUD', 'CIBINBIN KUNINGAN', '82219317368', 'dinar/kud', 'dinar/kud', 1),
-(119, 'DINAR/PD MUKTI', 'CIBINBIN KUNINGAN', '82219317369', 'dinar/pd_mukti', 'dinar/pd_mukti', 1),
-(120, 'DINAR/PIPIT', 'CIBINBIN KUNINGAN', '81324571111', 'dinar/pipit', 'dinar/pipit', 4),
-(121, 'DKM', 'JALAKSANA', '81324571112', 'dkm', 'dkm', 4),
-(122, 'DN JAYA', 'RAJAGALUH MAJALENGKA', '81324571113', 'dn_jaya', 'dn_jaya', 4),
-(123, 'DOK RIANI', 'KUNINGAN', '81324571114', 'dok_riani', 'dok_riani', 1),
-(124, 'DOMBA AYU', 'LURAGUNG KUNINGAN', '83708201111', 'domba_ayu', 'domba_ayu', 4),
-(125, 'DOMBA AYU', 'PAGUNDAN KUNINGAN', '83708201112', 'domba_ayu', 'domba_ayu', 1),
-(126, 'DONI RUSLY', 'KARANGSINOM INDRAMAYU', '83708201113', 'doni_rusly', 'doni_rusly', 1),
+(114, 'DENA', 'PAGUNDAN KUNINGAN', '82939456939', 'dena', 'dena', 5),
+(115, 'DIAN', 'LURAGUNG KUNINGAN', '81324571210', 'dian', 'dian', 5),
+(116, 'DINAR', 'CIBINBIN KUNINGAN', '82219317366', 'dinar', 'dinar', 5),
+(117, 'DINAR/AGUS', 'CIBINBIN KUNINGAN', '82219317367', 'dinar/agus', 'dinar/agus', 5),
+(118, 'DINAR/KUD', 'CIBINBIN KUNINGAN', '82219317368', 'dinar/kud', 'dinar/kud', 5),
+(119, 'DINAR/PD MUKTI', 'CIBINBIN KUNINGAN', '82219317369', 'dinar/pd_mukti', 'dinar/pd_mukti', 5),
+(120, 'DINAR/PIPIT', 'CIBINBIN KUNINGAN', '81324571111', 'dinar/pipit', 'dinar/pipit', 5),
+(121, 'DKM', 'JALAKSANA', '81324571112', 'dkm', 'dkm', 5),
+(122, 'DN JAYA', 'RAJAGALUH MAJALENGKA', '81324571113', 'dn_jaya', 'dn_jaya', 5),
+(123, 'DOK RIANI', 'KUNINGAN', '81324571114', 'dok_riani', 'dok_riani', 5),
+(124, 'DOMBA AYU', 'LURAGUNG KUNINGAN', '83708201111', 'domba_ayu', 'domba_ayu', 5),
+(125, 'DOMBA AYU', 'PAGUNDAN KUNINGAN', '83708201112', 'domba_ayu', 'domba_ayu', 5),
+(126, 'DONI RUSLY', 'KARANGSINOM INDRAMAYU', '83708201113', 'doni_rusly', 'doni_rusly', 5),
 (127, 'DOPIR', 'CIREBON', '83708201114', 'dopir', 'dopir', 2),
-(128, 'EDI BEBEK', 'KUNINGAN', '82219317370', 'edi_bebek', 'edi_bebek', 2),
-(129, 'EHA', 'CIAWI GEBANG KUNINGAN', '82219317371', 'eha', 'eha', 4),
-(130, 'EKA', 'BODE CIREBON', '82219317372', 'eka', 'eka', 1),
-(131, 'EKO', 'PURWOKERTO', '82219317373', 'eko', 'eko', 1),
+(128, 'EDI BEBEK', 'KUNINGAN', '82219317370', 'edi_bebek', 'edi_bebek', 5),
+(129, 'EHA', 'CIAWI GEBANG KUNINGAN', '82219317371', 'eha', 'eha', 5),
+(130, 'EKA', 'BODE CIREBON', '82219317372', 'eka', 'eka', 5),
+(131, 'EKO', 'PURWOKERTO', '82219317373', 'eko', 'eko', 5),
 (132, 'ELAN', 'CIKAHALANG CIREBON', '81324571115', 'elan', 'elan', 5),
-(133, 'ELIN', 'CIAWI GEBANG KUNINGAN', '81324571116', 'elin', 'elin', 4),
-(134, 'ELY', 'CIHIDEUNG KUNINGAN', '81324571117', 'ely', 'ely', 1),
-(135, 'EMO', 'CINAGARA KUNINGAN', '81324571118', 'emo', 'emo', 4),
-(136, 'ENAH', 'BUGEL INDRAMAYU', '83708201115', 'enah', 'enah', 4),
-(137, 'ENDAN TIWI', 'PABUARAN CIREBON', '83708201116', 'endan_tiwi', 'endan_tiwi', 1),
-(138, 'ENDANG', 'KAWALI CIAMIS', '83708201117', 'endang', 'endang', 3),
-(139, 'ENDANG', 'PRODUKSI', '83708201118', 'endang', 'endang', 1),
-(140, 'ENDRY', 'KUNINGAN', '82219317374', 'endry', 'endry', 4),
-(141, 'ENDUY', 'KAWALI CIAMIS', '82219317375', 'enduy', 'enduy', 4),
-(142, 'ETI JUWITA', 'LURAGUNG KUNINGAN', '82219317376', 'eti_juwita', 'eti_juwita', 2),
-(143, 'FAHMI', 'SELAJAMBE KUNINGAN', '82219317377', 'fahmi', 'fahmi', 3),
-(144, 'FAHMI', 'KUNINGAN', '81324571119', 'fahmi', 'fahmi', 4),
-(145, 'FAJAR', 'LURAGUNG KUNINGAN', '81324571120', 'fajar', 'fajar', 4),
-(146, 'FAJAR', 'JALAKSANA KUNINGAN', '81324571121', 'fajar', 'fajar', 4),
-(147, 'FAJAR', 'KADUGEDE KUNINGAN', '81324571122', 'fajar', 'fajar', 1),
-(148, 'FAJRI', 'LURAGUNG KUNINGAN', '83708201119', 'fajri', 'fajri', 4),
-(149, 'FERDY', 'PRODUKSI', '83708201120', 'ferdy', 'ferdy', 4),
-(150, 'FIA', 'PLOSO INDRAMAYU', '83708201121', 'fia', 'fia', 4),
-(151, 'FORTUNA', 'CIKIJING MAJALENGKA', '83708201122', 'fortuna', 'fortuna', 3),
-(152, 'GASUY', 'SOPIR', '82219317378', 'gasuy', 'gasuy', 3),
-(153, 'H AGUS', 'DARMA KUNINGAN', '82219317379', 'h_agus', 'h_agus', 1),
-(154, 'H ALEX', 'WILANEGARA KUNINGAN', '82219317380', 'h_alex', 'h_alex', 4),
-(155, 'H DIDIN', 'BANJARPATROMAN', '82219317381', '10', '10', 3),
-(156, 'H DIDIN/ICEP', 'CIMARAGAS BANJARPATROMAN', '82219317382', 'h_didin', 'h_didin', 4),
-(157, 'H DIDIN/PANDAWA', 'BANJARSARI', '82219317383', 'h_didin/icep', 'h_didin/icep', 4),
-(158, 'H DIDIN/PANDAWA', 'BANJARPATROMAN', '81324571123', 'h_didin/pandawa', 'h_didin/pandawa', 1),
-(159, 'H DIDIN/TK SALAM', 'PANULUSAN', '81324571124', 'h_didin/pandawa', 'h_didin/pandawa', 4),
-(160, 'H ELIN', 'CIAWI GEBANG KUNINGAN', '81324571125', 'h_didin/tk_salam', 'h_didin/tk_salam', 3),
-(161, 'H ENDANG', 'KAWALI CIAMIS', '81324571126', 'h_elin', 'h_elin', 4),
-(162, 'H ENJEN', 'CIKEUSIK KUNINGAN', '81324571127', 'h_endang', 'h_endang', 1),
-(163, 'H ENOK', 'CILIMUS KUNINGAN', '81324571128', 'h_enjen', 'h_enjen', 4),
-(164, 'H ENTIN', 'RAJAGALUH MAJALENGKA', '83708201123', 'h_enok', 'h_enok', 4),
-(165, 'H PIPIT', 'CIAWI GEBANG KUNINGAN', '83708201124', 'h_entin', 'h_entin', 3),
-(166, 'H UDIN', 'CIHIDEUNG KUNINGAN', '83708201125', 'h_pipit', 'h_pipit', 1),
-(167, 'HADI', 'CIDAHU KUNINGAN', '83708201126', 'h_udin', 'h_udin', 4),
+(133, 'ELIN', 'CIAWI GEBANG KUNINGAN', '81324571116', 'elin', 'elin', 5),
+(134, 'ELY', 'CIHIDEUNG KUNINGAN', '81324571117', 'ely', 'ely', 5),
+(135, 'EMO', 'CINAGARA KUNINGAN', '81324571118', 'emo', 'emo', 5),
+(136, 'ENAH', 'BUGEL INDRAMAYU', '83708201115', 'enah', 'enah', 5),
+(137, 'ENDAN TIWI', 'PABUARAN CIREBON', '83708201116', 'endan_tiwi', 'endan_tiwi', 5),
+(138, 'ENDANG', 'KAWALI CIAMIS', '83708201117', 'endang', 'endang', 5),
+(139, 'ENDANG', 'PRODUKSI', '83708201118', 'endang', 'endang', 5),
+(140, 'ENDRY', 'KUNINGAN', '82219317374', 'endry', 'endry', 5),
+(141, 'ENDUY', 'KAWALI CIAMIS', '82219317375', 'enduy', 'enduy', 5),
+(142, 'ETI JUWITA', 'LURAGUNG KUNINGAN', '82219317376', 'eti_juwita', 'eti_juwita', 5),
+(143, 'FAHMI', 'SELAJAMBE KUNINGAN', '82219317377', 'fahmi', 'fahmi', 5),
+(144, 'FAHMI', 'KUNINGAN', '81324571119', 'fahmi', 'fahmi', 5),
+(145, 'FAJAR', 'LURAGUNG KUNINGAN', '81324571120', 'fajar', 'fajar', 5),
+(146, 'FAJAR', 'JALAKSANA KUNINGAN', '81324571121', 'fajar', 'fajar', 5),
+(147, 'FAJAR', 'KADUGEDE KUNINGAN', '81324571122', 'fajar', 'fajar', 5),
+(148, 'FAJRI', 'LURAGUNG KUNINGAN', '83708201119', 'fajri', 'fajri', 5),
+(149, 'FERDY', 'PRODUKSI', '83708201120', 'ferdy', 'ferdy', 5),
+(150, 'FIA', 'PLOSO INDRAMAYU', '83708201121', 'fia', 'fia', 5),
+(151, 'FORTUNA', 'CIKIJING MAJALENGKA', '83708201122', 'fortuna', 'fortuna', 5),
+(152, 'GASUY', 'SOPIR', '82219317378', 'gasuy', 'gasuy', 5),
+(153, 'H AGUS', 'DARMA KUNINGAN', '82219317379', 'h_agus', 'h_agus', 5),
+(154, 'H ALEX', 'WILANEGARA KUNINGAN', '82219317380', 'h_alex', 'h_alex', 5),
+(155, 'H DIDIN', 'BANJARPATROMAN', '82219317381', '10', '10', 5),
+(156, 'H DIDIN/ICEP', 'CIMARAGAS BANJARPATROMAN', '82219317382', 'h_didin', 'h_didin', 5),
+(157, 'H DIDIN/PANDAWA', 'BANJARSARI', '82219317383', 'h_didin/icep', 'h_didin/icep', 5),
+(158, 'H DIDIN/PANDAWA', 'BANJARPATROMAN', '81324571123', 'h_didin/pandawa', 'h_didin/pandawa', 5),
+(159, 'H DIDIN/TK SALAM', 'PANULUSAN', '81324571124', 'h_didin/pandawa', 'h_didin/pandawa', 5),
+(160, 'H ELIN', 'CIAWI GEBANG KUNINGAN', '81324571125', 'h_didin/tk_salam', 'h_didin/tk_salam', 5),
+(161, 'H ENDANG', 'KAWALI CIAMIS', '81324571126', 'h_elin', 'h_elin', 5),
+(162, 'H ENJEN', 'CIKEUSIK KUNINGAN', '81324571127', 'h_endang', 'h_endang', 5),
+(163, 'H ENOK', 'CILIMUS KUNINGAN', '81324571128', 'h_enjen', 'h_enjen', 5),
+(164, 'H ENTIN', 'RAJAGALUH MAJALENGKA', '83708201123', 'h_enok', 'h_enok', 5),
+(165, 'H PIPIT', 'CIAWI GEBANG KUNINGAN', '83708201124', 'h_entin', 'h_entin', 5),
+(166, 'H UDIN', 'CIHIDEUNG KUNINGAN', '83708201125', 'h_pipit', 'h_pipit', 5),
+(167, 'HADI', 'CIDAHU KUNINGAN', '83708201126', 'h_udin', 'h_udin', 5),
 (168, 'HAFISAH', 'KUNINGAN', '83708201127', 'hadi', 'hadi', 5),
-(169, 'HANA', 'CIDAHU KUNINGAN', '83708201128', 'hafisah', 'hafisah', 1),
-(170, 'HD', 'CIKIJING MAJALENGKA', '82219317384', 'hana', 'hana', 4),
-(171, 'HENDIRK', 'SITANGGAL BREBES', '82219317385', 'hd', 'hd', 4),
+(169, 'HANA', 'CIDAHU KUNINGAN', '83708201128', 'hafisah', 'hafisah', 5),
+(170, 'HD', 'CIKIJING MAJALENGKA', '82219317384', 'hana', 'hana', 5),
+(171, 'HENDIRK', 'SITANGGAL BREBES', '82219317385', 'hd', 'hd', 5),
 (172, 'HENDRA', 'CILOWA', '82219317386', 'hendirk', 'hendirk', 5),
-(173, 'HERI', 'KUNINGAN', '82219317387', 'hendra', 'hendra', 4),
+(173, 'HERI', 'KUNINGAN', '82219317387', 'hendra', 'hendra', 5),
 (174, 'HIDAYAT', 'KERSANA BREBES', '82219317388', 'heri', 'heri', 5),
 (175, 'HIKMAH', 'KAPANDAYAN KUNINGAN', '82219317389', 'hidayat', 'hidayat', 5),
-(176, 'HJ IMI', 'CIAWI GEBANG KUNINGAN', '82219317390', 'hikmah', 'hikmah', 4),
-(177, 'HJ NOK', 'CILIMUS KUNINGAN', '82219317391', 'hj_imi', 'hj_imi', 1),
-(178, 'IAN', 'KUNINGAN', '81324571129', 'hj_nok', 'hj_nok', 4),
-(179, 'IBU ASMI', 'KUNINGAN', '81324571130', 'ian', 'ian', 4),
-(180, 'IBU EFENDI', 'KASTURI', '81324571131', 'ibu_asmi', 'ibu_asmi', 3),
-(181, 'IBU ENOK', 'CILIMUS KUNINGAN', '81324571132', 'ibu_efendi', 'ibu_efendi', 1),
-(182, 'IBU IDAH', 'HUSNUL KHOTIMAH', '81324571133', 'ibu_enok', 'ibu_enok', 4),
-(183, 'IBU IMAS', 'BABAKAN', '81324571134', 'ibu_idah', 'ibu_idah', 4),
-(184, 'IBU NENTI', 'KUNINGAN', '81324571135', 'ibu_imas', 'ibu_imas', 4),
-(185, 'IBU RIA', 'HUSNUL KHOTIMAH', '81324571136', 'ibu_nenti', 'ibu_nenti', 4),
-(186, 'IBU SRI', 'CIREBON', '83708201129', 'ibu_ria', 'ibu_ria', 3),
-(187, 'IIM', 'LURAGUNG KUNINGAN', '83708201130', 'ibu_sri', 'ibu_sri', 4),
-(188, 'ILHAM', 'ASTANA JAPURA CIREBON', '83708201131', 'iim', 'iim', 4),
-(189, 'INDAH JAYA', 'MALAUSMA MAJALENGKA', '83708201132', 'ilham', 'ilham', 4),
-(190, 'INDEP', 'RAJAGALUH MAJALENGKA', '83708201133', 'indah_jaya', 'indah_jaya', 3),
-(191, 'IPAH', 'WILANEGARA KUNINGAN', '83708201134', 'indep', 'indep', 2),
-(192, 'IRFAN', 'KOJENGKANG KUNINGAN', '83708201135', 'ipah', 'ipah', 2),
-(193, 'IRFAN', 'PRODUKSI', '83708201136', 'irfan', 'irfan', 4),
-(194, 'IRWAN', 'KUNINGAN', '82219317392', 'irfan', 'irfan', 4),
-(195, 'IYAN', 'CIREBON', '82219317393', 'irwan', 'irwan', 4),
-(196, 'JIHAN', 'KADIPATEN MAJALENGKA', '82219317394', 'iyan', 'iyan', 3),
-(197, 'JUJU', 'BEBER CIREBON', '82219317395', 'jihan', 'jihan', 4),
-(198, 'JUJU', 'KONDANGSARI BREBES', '82219317396', 'juju', 'juju', 4),
-(199, 'KAMAL ', 'BANDUNGSARI BREBES', '82219317397', 'juju', 'juju', 4),
-(200, 'KARYAWAN PRODUKSI', 'KUNINGAN', '82219317398', 'kamal_', 'kamal_', 3),
-(201, 'KEMBAR PUTRI', 'DARMA KUNINGAN', '82219317399', 'karyawan_produksi', 'karyawan_produksi', 3),
-(202, 'KHASANAH', 'CIDAHU KUNINGAN', '82219317400', 'kembar_putri', 'kembar_putri', 1),
-(203, 'KIKI', 'PASELAMAN CILEDUG CIREBON', '82219317401', 'khasanah', 'khasanah', 1),
-(204, 'KLINIK SAMARA', 'KUNINGAN', '81324571137', 'kiki', 'kiki', 4),
-(205, 'KLINIK SAMARA', 'JALAKSANA KUNINGAN', '81324571138', 'klinik_samara', 'klinik_samara', 3),
-(206, 'KOKO', 'KUNINGAN', '81324571139', 'klinik_samara', 'klinik_samara', 4),
-(207, 'LEGI', 'RAJAGALUH MAJALENGKA', '81324571140', 'koko', 'koko', 4),
-(208, 'LELA', 'CIPEDANG INDRAMAYU', '81324571141', 'legi', 'legi', 4),
-(209, 'LIA', 'KUNINGAN', '81324571142', 'lela', 'lela', 4),
-(210, 'LILIK', 'ASTANA JAPURA CIREBON', '81324571143', 'lia', 'lia', 4),
-(211, 'LINDA MOTOR', 'CIWARU KUNINGAN', '81324571144', 'lilik', 'lilik', 4),
-(212, 'LINTANG', 'TRISI INDRAMAYU', '81324571145', 'linda_motor', 'linda_motor', 1),
-(213, 'LUKI', 'CIWARU KUNINGAN', '81324571146', 'lintang', 'lintang', 3),
-(214, 'LUMAYAN', 'OLECED KUNINGAN', '83708201137', 'luki', 'luki', 1),
-(215, 'M RAFAEL', 'PANGKALAN KUNINGAN', '83708201138', 'lumayan', 'lumayan', 4),
-(216, 'M99', 'CIPICUNG KUNINGAN', '83708201139', 'm_rafael', 'm_rafael', 3),
+(176, 'HJ IMI', 'CIAWI GEBANG KUNINGAN', '82219317390', 'hikmah', 'hikmah', 5),
+(177, 'HJ NOK', 'CILIMUS KUNINGAN', '82219317391', 'hj_imi', 'hj_imi', 5),
+(178, 'IAN', 'KUNINGAN', '81324571129', 'hj_nok', 'hj_nok', 5),
+(179, 'IBU ASMI', 'KUNINGAN', '81324571130', 'ian', 'ian', 5),
+(180, 'IBU EFENDI', 'KASTURI', '81324571131', 'ibu_asmi', 'ibu_asmi', 5),
+(181, 'IBU ENOK', 'CILIMUS KUNINGAN', '81324571132', 'ibu_efendi', 'ibu_efendi', 5),
+(182, 'IBU IDAH', 'HUSNUL KHOTIMAH', '81324571133', 'ibu_enok', 'ibu_enok', 5),
+(183, 'IBU IMAS', 'BABAKAN', '81324571134', 'ibu_idah', 'ibu_idah', 5),
+(184, 'IBU NENTI', 'KUNINGAN', '81324571135', 'ibu_imas', 'ibu_imas', 5),
+(185, 'IBU RIA', 'HUSNUL KHOTIMAH', '81324571136', 'ibu_nenti', 'ibu_nenti', 5),
+(186, 'IBU SRI', 'CIREBON', '83708201129', 'ibu_ria', 'ibu_ria', 5),
+(187, 'IIM', 'LURAGUNG KUNINGAN', '83708201130', 'ibu_sri', 'ibu_sri', 5),
+(188, 'ILHAM', 'ASTANA JAPURA CIREBON', '83708201131', 'iim', 'iim', 5),
+(189, 'INDAH JAYA', 'MALAUSMA MAJALENGKA', '83708201132', 'ilham', 'ilham', 5),
+(190, 'INDEP', 'RAJAGALUH MAJALENGKA', '83708201133', 'indah_jaya', 'indah_jaya', 5),
+(191, 'IPAH', 'WILANEGARA KUNINGAN', '83708201134', 'indep', 'indep', 5),
+(192, 'IRFAN', 'KOJENGKANG KUNINGAN', '83708201135', 'ipah', 'ipah', 5),
+(193, 'IRFAN', 'PRODUKSI', '83708201136', 'irfan', 'irfan', 5),
+(194, 'IRWAN', 'KUNINGAN', '82219317392', 'irfan', 'irfan', 5),
+(195, 'IYAN', 'CIREBON', '82219317393', 'irwan', 'irwan', 5),
+(196, 'JIHAN', 'KADIPATEN MAJALENGKA', '82219317394', 'iyan', 'iyan', 5),
+(197, 'JUJU', 'BEBER CIREBON', '82219317395', 'jihan', 'jihan', 5),
+(198, 'JUJU', 'KONDANGSARI BREBES', '82219317396', 'juju', 'juju', 5),
+(199, 'KAMAL ', 'BANDUNGSARI BREBES', '82219317397', 'juju', 'juju', 5),
+(200, 'KARYAWAN PRODUKSI', 'KUNINGAN', '82219317398', 'kamal_', 'kamal_', 5),
+(201, 'KEMBAR PUTRI', 'DARMA KUNINGAN', '82219317399', 'karyawan_produksi', 'karyawan_produksi', 5),
+(202, 'KHASANAH', 'CIDAHU KUNINGAN', '82219317400', 'kembar_putri', 'kembar_putri', 5),
+(203, 'KIKI', 'PASELAMAN CILEDUG CIREBON', '82219317401', 'khasanah', 'khasanah', 5),
+(204, 'KLINIK SAMARA', 'KUNINGAN', '81324571137', 'kiki', 'kiki', 5),
+(205, 'KLINIK SAMARA', 'JALAKSANA KUNINGAN', '81324571138', 'klinik_samara', 'klinik_samara', 5),
+(206, 'KOKO', 'KUNINGAN', '81324571139', 'klinik_samara', 'klinik_samara', 5),
+(207, 'LEGI', 'RAJAGALUH MAJALENGKA', '81324571140', 'koko', 'koko', 5),
+(208, 'LELA', 'CIPEDANG INDRAMAYU', '81324571141', 'legi', 'legi', 5),
+(209, 'LIA', 'KUNINGAN', '81324571142', 'lela', 'lela', 5),
+(210, 'LILIK', 'ASTANA JAPURA CIREBON', '81324571143', 'lia', 'lia', 5),
+(211, 'LINDA MOTOR', 'CIWARU KUNINGAN', '81324571144', 'lilik', 'lilik', 5),
+(212, 'LINTANG', 'TRISI INDRAMAYU', '81324571145', 'linda_motor', 'linda_motor', 5),
+(213, 'LUKI', 'CIWARU KUNINGAN', '81324571146', 'lintang', 'lintang', 5),
+(214, 'LUMAYAN', 'OLECED KUNINGAN', '83708201137', 'luki', 'luki', 5),
+(215, 'M RAFAEL', 'PANGKALAN KUNINGAN', '83708201138', 'lumayan', 'lumayan', 5),
+(216, 'M99', 'CIPICUNG KUNINGAN', '83708201139', 'm_rafael', 'm_rafael', 5),
 (217, 'MAJELIS ASH SHUFA', 'KUNINGAN', '83708201140', 'm99', 'm99', 5),
-(218, 'MAJELIS ASH SUFFAH', 'BABAKAN MULYA', '83708201141', 'majelis_ash_shufa', 'majelis_ash_shufa', 1),
-(219, 'MAKMURI', 'COMAL PEMALANG', '83708201142', 'majelis_ash_suffah', 'majelis_ash_suffah', 1),
-(220, 'MANAGEMENT UNIKU', 'KUNINGAN', '83708201143', 'makmuri', 'makmuri', 1),
-(221, 'MARISA', 'UNIKU', '83708201144', 'management_uniku', 'management_uniku', 4),
-(222, 'MAS HARJO', 'BATANG', '83708201145', 'marisa', 'marisa', 3),
-(223, 'MAZAYA', 'CIWARU KUNINGAN', '83708201146', 'mas_harjo', 'mas_harjo', 3),
-(224, 'MEGA', 'CIDAHU KUNINGAN', '82219317402', 'mazaya', 'mazaya', 1),
-(225, 'MERAH PUTIH', 'PEMALANG', '82219317403', 'mega', 'mega', 4),
+(218, 'MAJELIS ASH SUFFAH', 'BABAKAN MULYA', '83708201141', 'majelis_ash_shufa', 'majelis_ash_shufa', 5),
+(219, 'MAKMURI', 'COMAL PEMALANG', '83708201142', 'majelis_ash_suffah', 'majelis_ash_suffah', 5),
+(220, 'MANAGEMENT UNIKU', 'KUNINGAN', '83708201143', 'makmuri', 'makmuri', 5),
+(221, 'MARISA', 'UNIKU', '83708201144', 'management_uniku', 'management_uniku', 5),
+(222, 'MAS HARJO', 'BATANG', '83708201145', 'marisa', 'marisa', 5),
+(223, 'MAZAYA', 'CIWARU KUNINGAN', '83708201146', 'mas_harjo', 'mas_harjo', 5),
+(224, 'MEGA', 'CIDAHU KUNINGAN', '82219317402', 'mazaya', 'mazaya', 5),
+(225, 'MERAH PUTIH', 'PEMALANG', '82219317403', 'mega', 'mega', 5),
 (226, 'MIA', 'KUNINGAN', '82219317404', 'merah_putih', 'merah_putih', 5),
-(227, 'MIMIN', 'ASTANA JAPURA CIREBON', '82219317405', 'mia', 'mia', 4),
+(227, 'MIMIN', 'ASTANA JAPURA CIREBON', '82219317405', 'mia', 'mia', 5),
 (228, 'MIMIN', 'LURAGUNG KUNINGAN', '82219317406', 'mimin', 'mimin', 5),
-(229, 'MIRAH', 'CIAWI GEBANG KUNINGAN', '82219317407', 'mimin', 'mimin', 3),
-(230, 'MITRA INDAH', 'LURAGUNG KUNINGAN', '82219317408', 'mirah', 'mirah', 4),
-(231, 'MITRA INDAH', 'CIBEUREUM CIBINBIN KUNINGAN', '82219317409', 'mitra_indah', 'mitra_indah', 4),
-(232, 'MUFIDAH', 'LOSARI CIREBON', '82219317410', 'mitra_indah', 'mitra_indah', 1),
-(233, 'MUJUR', 'KARANGWARENG CIREBON', '82219317411', 'mufidah', 'mufidah', 4),
-(234, 'MULIA', 'KADUGEDE KUNINGAN', '82219317412', 'mujur', 'mujur', 4),
-(235, 'MULIA GLOSIR', 'LURAGUNG KUNINGAN', '82219317413', 'mulia', 'mulia', 1),
-(236, 'MULYADI', 'KEMEPD INDRAMAYU', '82219317414', 'mulia_glosir', 'mulia_glosir', 4),
-(237, 'NAUFAL', 'KEMPEK KARANGSINOM INDRAMAYU', '82219317415', 'mulyadi', 'mulyadi', 4),
-(238, 'NENDEN', 'KUNINGAN', '81324571147', 'naufal', 'naufal', 1),
-(239, 'NENENG', 'KUNINGAN', '81324571148', 'nenden', 'nenden', 3),
-(240, 'NIRWANA', 'CIKEUSIK KUNINGAN', '81324571149', 'neneng', 'neneng', 4),
-(241, 'NITA', 'KUNINGAN', '81324571150', 'nirwana', 'nirwana', 4),
-(242, 'NONO', 'SOPIR', '81324571151', 'nita', 'nita', 1),
-(243, 'NOUVAL', 'KUNINGAN', '81324571152', 'nono', 'nono', 4),
-(244, 'NOVAL', 'KUNINGAN', '81324571153', 'nouval', 'nouval', 4),
-(245, 'NOVI', 'KUNINGAN', '81324571154', 'noval', 'noval', 4),
+(229, 'MIRAH', 'CIAWI GEBANG KUNINGAN', '82219317407', 'mimin', 'mimin', 5),
+(230, 'MITRA INDAH', 'LURAGUNG KUNINGAN', '82219317408', 'mirah', 'mirah', 5),
+(231, 'MITRA INDAH', 'CIBEUREUM CIBINBIN KUNINGAN', '82219317409', 'mitra_indah', 'mitra_indah', 5),
+(232, 'MUFIDAH', 'LOSARI CIREBON', '82219317410', 'mitra_indah', 'mitra_indah', 5),
+(233, 'MUJUR', 'KARANGWARENG CIREBON', '82219317411', 'mufidah', 'mufidah', 5),
+(234, 'MULIA', 'KADUGEDE KUNINGAN', '82219317412', 'mujur', 'mujur', 5),
+(235, 'MULIA GLOSIR', 'LURAGUNG KUNINGAN', '82219317413', 'mulia', 'mulia', 5),
+(236, 'MULYADI', 'KEMEPD INDRAMAYU', '82219317414', 'mulia_glosir', 'mulia_glosir', 5),
+(237, 'NAUFAL', 'KEMPEK KARANGSINOM INDRAMAYU', '82219317415', 'mulyadi', 'mulyadi', 5),
+(238, 'NENDEN', 'KUNINGAN', '81324571147', 'naufal', 'naufal', 5),
+(239, 'NENENG', 'KUNINGAN', '81324571148', 'nenden', 'nenden', 5),
+(240, 'NIRWANA', 'CIKEUSIK KUNINGAN', '81324571149', 'neneng', 'neneng', 5),
+(241, 'NITA', 'KUNINGAN', '81324571150', 'nirwana', 'nirwana', 5),
+(242, 'NONO', 'SOPIR', '81324571151', 'nita', 'nita', 5),
+(243, 'NOUVAL', 'KUNINGAN', '81324571152', 'nono', 'nono', 5),
+(244, 'NOVAL', 'KUNINGAN', '81324571153', 'nouval', 'nouval', 5),
+(245, 'NOVI', 'KUNINGAN', '81324571154', 'noval', 'noval', 5),
 (246, 'NOVI/FERDI', 'KUNINGAN', '81324571155', 'novi', 'novi', 5),
-(247, 'OJO/SENTRASERASI', 'CIBINBIN KUNINGAN', '81324571156', 'novi/ferdi', 'novi/ferdi', 4),
+(247, 'OJO/SENTRASERASI', 'CIBINBIN KUNINGAN', '81324571156', 'novi/ferdi', 'novi/ferdi', 5),
 (248, 'OKS', 'PASAR KEPUH KUNINGAN', '81324571157', 'ojo/sentraserasi', 'ojo/sentraserasi', 5),
-(249, 'OOM', 'ASTANA JAPURA CIREBON', '81324571158', 'oks', 'oks', 4),
-(250, 'OONG', 'ASTANA JAPURA CIREBON', '81324571159', 'oom', 'oom', 3),
-(251, 'OTENG', 'LURAGUNG KUNINGAN', '81324571160', 'oong', 'oong', 2),
-(252, 'PADIL', 'LURAGUNG KUNINGAN', '83708201147', 'oteng', 'oteng', 4),
-(253, 'PADILAH', 'TRISI INDRAMAYU', '83708201148', 'padil', 'padil', 4),
+(249, 'OOM', 'ASTANA JAPURA CIREBON', '81324571158', 'oks', 'oks', 5),
+(250, 'OONG', 'ASTANA JAPURA CIREBON', '81324571159', 'oom', 'oom', 5),
+(251, 'OTENG', 'LURAGUNG KUNINGAN', '81324571160', 'oong', 'oong', 5),
+(252, 'PADIL', 'LURAGUNG KUNINGAN', '83708201147', 'oteng', 'oteng', 5),
+(253, 'PADILAH', 'TRISI INDRAMAYU', '83708201148', 'padil', 'padil', 5),
 (254, 'PAK ABU', 'CIAWI GEBANG KUNINGAN', '83708201149', 'padilah', 'padilah', 5),
-(255, 'PAK ADE', 'KUNINGAN', '83708201150', 'pak_abu', 'pak_abu', 4),
-(256, 'PAK ADE', 'MUAT', '83708201151', 'pak_ade', 'pak_ade', 4),
-(257, 'PAK ALIF', 'CIREBON', '83708201152', 'pak_ade', 'pak_ade', 4),
+(255, 'PAK ADE', 'KUNINGAN', '83708201150', 'pak_abu', 'pak_abu', 5),
+(256, 'PAK ADE', 'MUAT', '83708201151', 'pak_ade', 'pak_ade', 5),
+(257, 'PAK ALIF', 'CIREBON', '83708201152', 'pak_ade', 'pak_ade', 5),
 (258, 'PAK ALIF/PAK ANWAR', 'KUNINGAN', '83708201153', 'pak_alif', 'pak_alif', 5),
-(259, 'PAK ANDREAS', 'CIREBON', '83708201154', 'pak_alif/pak_anwar', 'pak_alif/pak_anwar', 1),
-(260, 'PAK ANDREAS', 'KUNINGAN', '83708201155', 'pak_andreas', 'pak_andreas', 4),
-(261, 'PAK ANWAR', 'CIREBON', '83708201156', 'pak_andreas', 'pak_andreas', 4),
-(262, 'PAK ANWAR', 'KUNINGAN', '83708201157', 'pak_anwar', 'pak_anwar', 4),
-(263, 'PAK ARIS', 'KUNINGAN', '83708201158', 'pak_anwar', 'pak_anwar', 4),
+(259, 'PAK ANDREAS', 'CIREBON', '83708201154', 'pak_alif/pak_anwar', 'pak_alif/pak_anwar', 5),
+(260, 'PAK ANDREAS', 'KUNINGAN', '83708201155', 'pak_andreas', 'pak_andreas', 5),
+(261, 'PAK ANWAR', 'CIREBON', '83708201156', 'pak_andreas', 'pak_andreas', 5),
+(262, 'PAK ANWAR', 'KUNINGAN', '83708201157', 'pak_anwar', 'pak_anwar', 5),
+(263, 'PAK ARIS', 'KUNINGAN', '83708201158', 'pak_anwar', 'pak_anwar', 5),
 (264, 'PAK BINTORO CV ARDEN BOYS', 'TASIK', '83708201159', 'pak_aris', 'pak_aris', 5),
-(265, 'PAK BUDIMAN', 'PANGANDARAN', '83708201160', 'pak_bintoro_cv_arden_boys', 'pak_bintoro_cv_arden_boys', 4),
-(266, 'PAK DIDING', 'KUNINGAN', '82219317416', 'pak_budiman', 'pak_budiman', 4),
-(267, 'PAK DIDING', 'DSN 1 BABAKAN MULYA', '82219317417', 'pak_diding', 'pak_diding', 3),
-(268, 'PAK DIDING', 'PENGAWAS', '82219317417', 'pak_diding', 'pak_diding', 4),
-(269, 'PAK EKO', 'PURWOKERTO', '82219317417', 'pak_diding', 'pak_diding', 1),
-(270, 'PAK ENDRI', 'KUNINGAN', '82219317417', 'pak_eko', 'pak_eko', 4),
-(271, 'PAK H ASEP', 'KUNINGAN', '82219317417', 'pak_endri', 'pak_endri', 4),
+(265, 'PAK BUDIMAN', 'PANGANDARAN', '83708201160', 'pak_bintoro_cv_arden_boys', 'pak_bintoro_cv_arden_boys', 5),
+(266, 'PAK DIDING', 'KUNINGAN', '82219317416', 'pak_budiman', 'pak_budiman', 5),
+(267, 'PAK DIDING', 'DSN 1 BABAKAN MULYA', '82219317417', 'pak_diding', 'pak_diding', 5),
+(268, 'PAK DIDING', 'PENGAWAS', '82219317417', 'pak_diding', 'pak_diding', 5),
+(269, 'PAK EKO', 'PURWOKERTO', '82219317417', 'pak_diding', 'pak_diding', 5),
+(270, 'PAK ENDRI', 'KUNINGAN', '82219317417', 'pak_eko', 'pak_eko', 5),
+(271, 'PAK H ASEP', 'KUNINGAN', '82219317417', 'pak_endri', 'pak_endri', 5),
 (272, 'PAK H UCUP', 'KUNINGAN', '82219317417', 'pak_h_asep', 'pak_h_asep', 5),
-(273, 'PAK HARI', 'SALES', '82219317417', 'pak_h_ucup', 'pak_h_ucup', 4),
-(274, 'PAK HENDRA', 'KUNINGAN', '82219317417', 'pak_hari', 'pak_hari', 1),
-(275, 'PAK IAN', 'KUNINGAN', '82219317417', 'pak_hendra', 'pak_hendra', 2),
-(276, 'PAK IRWAN', 'KUNINGAN', '82219317417', 'pak_ian', 'pak_ian', 3),
-(277, 'PAK IYAN', 'KUNINGAN', '82219317417', 'pak_irwan', 'pak_irwan', 1),
-(278, 'PAK NONO', 'SOPIR', '81324571161', 'pak_iyan', 'pak_iyan', 4),
+(273, 'PAK HARI', 'SALES', '82219317417', 'pak_h_ucup', 'pak_h_ucup', 5),
+(274, 'PAK HENDRA', 'KUNINGAN', '82219317417', 'pak_hari', 'pak_hari', 5),
+(275, 'PAK IAN', 'KUNINGAN', '82219317417', 'pak_hendra', 'pak_hendra', 5),
+(276, 'PAK IRWAN', 'KUNINGAN', '82219317417', 'pak_ian', 'pak_ian', 5),
+(277, 'PAK IYAN', 'KUNINGAN', '82219317417', 'pak_irwan', 'pak_irwan', 5),
+(278, 'PAK NONO', 'SOPIR', '81324571161', 'pak_iyan', 'pak_iyan', 5),
 (279, 'PAK PULUNG', 'KUNINGAN', '81324571162', 'pak_nono', 'pak_nono', 5),
-(280, 'PAK ROHENDI', 'KUNINGAN', '81324571163', 'pak_pulung', 'pak_pulung', 4),
-(281, 'PAK RUKMANA', 'POLISI', '81324571164', 'pak_rohendi', 'pak_rohendi', 4),
-(282, 'PAK SAEFUL', 'GUNUNG KELING KUNINGAN', '81324571165', 'pak_rukmana', 'pak_rukmana', 4),
-(283, 'PAK SALAM', 'MUAT', '81324571166', 'pak_saeful', 'pak_saeful', 1),
-(284, 'PAK SALAM', 'KUNINGAN', '81324571167', 'pak_salam', 'pak_salam', 1),
-(285, 'PAK SALAM/PGRI', 'KUNINGAN', '81324571168', 'pak_salam', 'pak_salam', 2),
-(286, 'PAK SHUKRON', 'KUNINGAN', '81324571169', 'pak_salam/pgri', 'pak_salam/pgri', 3),
-(287, 'PAK SHUKRON / ZAKI', 'PRODUKSI', '81324571170', 'pak_shukron', 'pak_shukron', 4),
-(288, 'PAK SHUKRON/PAK NANANG', 'KUNINGAN', '81324571171', 'pak_shukron_/_zaki', 'pak_shukron_/_zaki', 2),
-(289, 'PAK SHUKRON/UKIN', 'KUNINGAN', '81324571172', 'pak_shukron/pak_nanang', 'pak_shukron/pak_nanang', 3),
-(290, 'PAK WITONO', 'CILEDUG CIREBON', '83708201161', 'pak_shukron/ukin', 'pak_shukron/ukin', 1),
-(291, 'PAK WIWIT', 'CIREBON', '83708201162', 'pak_witono', 'pak_witono', 3),
-(292, 'PALIRUS', 'JATIBARANG INDRAMAYU', '83708201163', 'pak_wiwit', 'pak_wiwit', 1),
-(293, 'PD PANTES', 'BANJARPATROMAN', '83708201164', 'palirus', 'palirus', 4),
-(294, 'PERMANA RAHAYU', 'LURAGUNG KUNINGAN', '83708201165', 'pd_pantes', 'pd_pantes', 4),
-(295, 'PERMATASARI', 'BUNISEURI CIAMIS', '83708201166', 'permana_rahayu', 'permana_rahayu', 4),
-(296, 'POLSEK', 'PANCALANG', '83708201167', 'permatasari', 'permatasari', 4),
-(297, 'PONDOK MAS HOTEL', 'CIREBON', '83708201168', 'polsek', 'polsek', 1),
-(298, 'POPI', 'DARMA KUNINGAN', '83708201169', 'pondok_mas_hotel', 'pondok_mas_hotel', 1),
-(299, 'PRIMA GROUP', 'RAJAGALUH MAJALENGKA', '83708201170', 'popi', 'popi', 4),
-(300, 'PROZEN/AYIP', 'CIAWI KUNINGAN', '83708201171', 'prima_group', 'prima_group', 1),
-(301, 'PUNDI', 'KOJENGKANG KUNINGAN', '83708201172', 'prozen/ayip', 'prozen/ayip', 1),
-(302, 'PURNAMA ABADI', 'TASIK', '82219317417', 'pundi', 'pundi', 3),
-(303, 'PUTRA CIMAHI', 'CIDAHU KUNINGAN', '82219317417', 'purnama_abadi', 'purnama_abadi', 4),
-(304, 'PUTRA PANTES', 'BANJARPATROMAN', '82219317417', 'putra_cimahi', 'putra_cimahi', 1),
-(305, 'PUTRA SINDANG', 'SIDARAJA KUNINGAN', '82219317417', 'putra_pantes', 'putra_pantes', 4),
-(306, 'RAEHAN', 'TARAJU KUNINGAN', '82219317417', 'putra_sindang', 'putra_sindang', 4),
-(307, 'RAFFI SADEWA', 'TRISI INDRAMAYU', '82219317417', 'raehan', 'raehan', 4),
-(308, 'RIAN/PETOT', 'KUNINGAN', '82219317417', 'raffi_sadewa', 'raffi_sadewa', 3),
-(309, 'RM NEDI', 'LURAGUNG KUNINGAN', '82219317417', 'rian/petot', 'rian/petot', 1),
-(310, 'ROHMAT/DUDUNG', 'TARAJU KUNINGAN', '82219317417', 'rm_nedi', 'rm_nedi', 4),
-(311, 'ROHMAT/SWALAYAN', 'LURAGUNG KUNINGAN', '82219317417', 'rohmat/dudung', 'rohmat/dudung', 4),
-(312, 'RUKMANA', 'KUNINGAN', '82219317417', 'rohmat/swalayan', 'rohmat/swalayan', 4),
-(313, 'SAEFUL', 'KUNINGAN', '82219317417', 'rukmana', 'rukmana', 4),
-(314, 'SAHABAT PROZEN', 'LURAGUNG KUNINGAN', '82219317417', 'saeful', 'saeful', 4),
-(315, 'SAHABAT PROZEN', 'CIAWI GEBANG KUNINGAN', '82219317417', 'sahabat_prozen', 'sahabat_prozen', 4),
-(316, 'SANURI', 'PANGURAGAN CIREBON', '81324571173', 'sahabat_prozen', 'sahabat_prozen', 4),
-(317, 'SEHATI', 'CIAWI GEBANG KUNINGAN DEPAN', '81324571174', 'sanuri', 'sanuri', 1),
-(318, 'SEHATI', 'CIAWI GEBANG KUNINGAN BELAKANG', '81324571175', 'sehati', 'sehati', 1),
-(319, 'SETIA', 'HAURKUNING KUNINGAN', '81324571176', 'sehati', 'sehati', 4),
-(320, 'SIDIK', 'TRISI INDRAMAYU', '81324571177', 'setia', 'setia', 4),
-(321, 'SILVI', 'CILEDUG CIREBON', '81324571178', 'sidik', 'sidik', 2),
-(322, 'SILVI', 'CIHIDEUNG KUNINGAN', '81324571179', 'silvi', 'silvi', 4),
+(280, 'PAK ROHENDI', 'KUNINGAN', '81324571163', 'pak_pulung', 'pak_pulung', 5),
+(281, 'PAK RUKMANA', 'POLISI', '81324571164', 'pak_rohendi', 'pak_rohendi', 5),
+(282, 'PAK SAEFUL', 'GUNUNG KELING KUNINGAN', '81324571165', 'pak_rukmana', 'pak_rukmana', 5),
+(283, 'PAK SALAM', 'MUAT', '81324571166', 'pak_saeful', 'pak_saeful', 5),
+(284, 'PAK SALAM', 'KUNINGAN', '81324571167', 'pak_salam', 'pak_salam', 5),
+(285, 'PAK SALAM/PGRI', 'KUNINGAN', '81324571168', 'pak_salam', 'pak_salam', 5),
+(286, 'PAK SHUKRON', 'KUNINGAN', '81324571169', 'pak_salam/pgri', 'pak_salam/pgri', 5),
+(287, 'PAK SHUKRON / ZAKI', 'PRODUKSI', '81324571170', 'pak_shukron', 'pak_shukron', 5),
+(288, 'PAK SHUKRON/PAK NANANG', 'KUNINGAN', '81324571171', 'pak_shukron_/_zaki', 'pak_shukron_/_zaki', 5),
+(289, 'PAK SHUKRON/UKIN', 'KUNINGAN', '81324571172', 'pak_shukron/pak_nanang', 'pak_shukron/pak_nanang', 5),
+(290, 'PAK WITONO', 'CILEDUG CIREBON', '83708201161', 'pak_shukron/ukin', 'pak_shukron/ukin', 5),
+(291, 'PAK WIWIT', 'CIREBON', '83708201162', 'pak_witono', 'pak_witono', 5),
+(292, 'PALIRUS', 'JATIBARANG INDRAMAYU', '83708201163', 'pak_wiwit', 'pak_wiwit', 5),
+(293, 'PD PANTES', 'BANJARPATROMAN', '83708201164', 'palirus', 'palirus', 5),
+(294, 'PERMANA RAHAYU', 'LURAGUNG KUNINGAN', '83708201165', 'pd_pantes', 'pd_pantes', 5),
+(295, 'PERMATASARI', 'BUNISEURI CIAMIS', '83708201166', 'permana_rahayu', 'permana_rahayu', 5),
+(296, 'POLSEK', 'PANCALANG', '83708201167', 'permatasari', 'permatasari', 5),
+(297, 'PONDOK MAS HOTEL', 'CIREBON', '83708201168', 'polsek', 'polsek', 5),
+(298, 'POPI', 'DARMA KUNINGAN', '83708201169', 'pondok_mas_hotel', 'pondok_mas_hotel', 5),
+(299, 'PRIMA GROUP', 'RAJAGALUH MAJALENGKA', '83708201170', 'popi', 'popi', 5),
+(300, 'PROZEN/AYIP', 'CIAWI KUNINGAN', '83708201171', 'prima_group', 'prima_group', 5),
+(301, 'PUNDI', 'KOJENGKANG KUNINGAN', '83708201172', 'prozen/ayip', 'prozen/ayip', 5),
+(302, 'PURNAMA ABADI', 'TASIK', '82219317417', 'pundi', 'pundi', 5),
+(303, 'PUTRA CIMAHI', 'CIDAHU KUNINGAN', '82219317417', 'purnama_abadi', 'purnama_abadi', 5),
+(304, 'PUTRA PANTES', 'BANJARPATROMAN', '82219317417', 'putra_cimahi', 'putra_cimahi', 5),
+(305, 'PUTRA SINDANG', 'SIDARAJA KUNINGAN', '82219317417', 'putra_pantes', 'putra_pantes', 5),
+(306, 'RAEHAN', 'TARAJU KUNINGAN', '82219317417', 'putra_sindang', 'putra_sindang', 5),
+(307, 'RAFFI SADEWA', 'TRISI INDRAMAYU', '82219317417', 'raehan', 'raehan', 5),
+(308, 'RIAN/PETOT', 'KUNINGAN', '82219317417', 'raffi_sadewa', 'raffi_sadewa', 5),
+(309, 'RM NEDI', 'LURAGUNG KUNINGAN', '82219317417', 'rian/petot', 'rian/petot', 5),
+(310, 'ROHMAT/DUDUNG', 'TARAJU KUNINGAN', '82219317417', 'rm_nedi', 'rm_nedi', 5),
+(311, 'ROHMAT/SWALAYAN', 'LURAGUNG KUNINGAN', '82219317417', 'rohmat/dudung', 'rohmat/dudung', 5),
+(312, 'RUKMANA', 'KUNINGAN', '82219317417', 'rohmat/swalayan', 'rohmat/swalayan', 5),
+(313, 'SAEFUL', 'KUNINGAN', '82219317417', 'rukmana', 'rukmana', 5),
+(314, 'SAHABAT PROZEN', 'LURAGUNG KUNINGAN', '82219317417', 'saeful', 'saeful', 5),
+(315, 'SAHABAT PROZEN', 'CIAWI GEBANG KUNINGAN', '82219317417', 'sahabat_prozen', 'sahabat_prozen', 5),
+(316, 'SANURI', 'PANGURAGAN CIREBON', '81324571173', 'sahabat_prozen', 'sahabat_prozen', 5),
+(317, 'SEHATI', 'CIAWI GEBANG KUNINGAN DEPAN', '81324571174', 'sanuri', 'sanuri', 5),
+(318, 'SEHATI', 'CIAWI GEBANG KUNINGAN BELAKANG', '81324571175', 'sehati', 'sehati', 5),
+(319, 'SETIA', 'HAURKUNING KUNINGAN', '81324571176', 'sehati', 'sehati', 5),
+(320, 'SIDIK', 'TRISI INDRAMAYU', '81324571177', 'setia', 'setia', 5),
+(321, 'SILVI', 'CILEDUG CIREBON', '81324571178', 'sidik', 'sidik', 5),
+(322, 'SILVI', 'CIHIDEUNG KUNINGAN', '81324571179', 'silvi', 'silvi', 5),
 (323, 'SIMPANG 3', 'CIGUGUR KUNINGAN', '81324571180', 'silvi', 'silvi', 5),
-(324, 'SITI/FUJI', 'KETANGGUNGAN BREBES', '81324571181', 'simpang_3', 'simpang_3', 4),
-(325, 'SMAN 1', 'JALAKSANA KUNINGAN', '81324571182', 'siti/fuji', 'siti/fuji', 4),
-(326, 'SRI', 'KUNINGAN', '81324571183', 'sman_1', 'sman_1', 4),
-(327, 'SUGIARTO', 'KUNINGAN', '81324571184', 'sri', 'sri', 4),
-(328, 'SUHAN', 'CIREBON', '81324571185', 'sugiarto', 'sugiarto', 4),
+(324, 'SITI/FUJI', 'KETANGGUNGAN BREBES', '81324571181', 'simpang_3', 'simpang_3', 5),
+(325, 'SMAN 1', 'JALAKSANA KUNINGAN', '81324571182', 'siti/fuji', 'siti/fuji', 5),
+(326, 'SRI', 'KUNINGAN', '81324571183', 'sman_1', 'sman_1', 5),
+(327, 'SUGIARTO', 'KUNINGAN', '81324571184', 'sri', 'sri', 5),
+(328, 'SUHAN', 'CIREBON', '81324571185', 'sugiarto', 'sugiarto', 5),
 (329, 'SUHANA', 'CIDAHU KUNINGAN', '81324571186', 'suhan', 'suhan', 5),
-(330, 'SUKARA', 'GANTAR INDRAMAYU', '83708201173', 'suhana', 'suhana', 4),
-(331, 'SUM', 'SIDAMULYA', '83708201174', 'sukara', 'sukara', 4),
-(332, 'SUMAR JAKARIA', 'DURAJAYA', '83708201175', 'sum', 'sum', 4),
+(330, 'SUKARA', 'GANTAR INDRAMAYU', '83708201173', 'suhana', 'suhana', 5),
+(331, 'SUM', 'SIDAMULYA', '83708201174', 'sukara', 'sukara', 5),
+(332, 'SUMAR JAKARIA', 'DURAJAYA', '83708201175', 'sum', 'sum', 5),
 (333, 'SUMBER URIP', 'MAJENANG', '83708201176', 'sumar_jakaria', 'sumar_jakaria', 5),
-(334, 'SUMIYATI', 'KUNINGAN', '83708201177', 'sumber_urip', 'sumber_urip', 4),
-(335, 'SURYA TOSERBA', 'JL.KARANG GETAS CIREBON', '83708201178', 'sumiyati', 'sumiyati', 4),
-(336, 'SURYA TOSERBA', 'CIREBON', '83708201179', 'surya_toserba', 'surya_toserba', 4),
+(334, 'SUMIYATI', 'KUNINGAN', '83708201177', 'sumber_urip', 'sumber_urip', 5),
+(335, 'SURYA TOSERBA', 'JL.KARANG GETAS CIREBON', '83708201178', 'sumiyati', 'sumiyati', 5),
+(336, 'SURYA TOSERBA', 'CIREBON', '83708201179', 'surya_toserba', 'surya_toserba', 5),
 (337, 'SURYADI', 'BABAKAN MULYA', '83708201180', 'surya_toserba', 'surya_toserba', 5),
 (338, 'SUTIKNO', 'KUNINGAN', '83708201181', 'suryadi', 'suryadi', 5),
-(339, 'SWH WATER', 'ALUN ALUN INDRAMAYU', '83708201182', 'sutikno', 'sutikno', 4),
-(340, 'TIGA PUTRA', 'CIBINBIN KUNINGAN', '83708201183', 'swh_water', 'swh_water', 4),
-(341, 'TIGA PUTRA/KUD', 'CIBINBIN KUNINGAN', '83708201184', 'tiga_putra', 'tiga_putra', 4),
+(339, 'SWH WATER', 'ALUN ALUN INDRAMAYU', '83708201182', 'sutikno', 'sutikno', 5),
+(340, 'TIGA PUTRA', 'CIBINBIN KUNINGAN', '83708201183', 'swh_water', 'swh_water', 5),
+(341, 'TIGA PUTRA/KUD', 'CIBINBIN KUNINGAN', '83708201184', 'tiga_putra', 'tiga_putra', 5),
 (342, 'TIGA PUTRA/PD MUKTI', 'CIBINBIN KUNINGAN', '83708201185', 'tiga_putra/kud', 'tiga_putra/kud', 5),
-(343, 'TIRTA RAOS', 'BANJARPATROMAN', '83708201186', 'tiga_putra/pd_mukti', 'tiga_putra/pd_mukti', 1),
-(344, 'TK ABADI', 'CIREBON', '81324571186', 'tirta_raos', 'tirta_raos', 4),
-(345, 'TK ADE', 'CINAGARA KUNINGAN', '81324571187', 'tk_abadi', 'tk_abadi', 4),
+(343, 'TIRTA RAOS', 'BANJARPATROMAN', '83708201186', 'tiga_putra/pd_mukti', 'tiga_putra/pd_mukti', 5),
+(344, 'TK ABADI', 'CIREBON', '81324571186', 'tirta_raos', 'tirta_raos', 5),
+(345, 'TK ADE', 'CINAGARA KUNINGAN', '81324571187', 'tk_abadi', 'tk_abadi', 5),
 (346, 'TK ALEX', 'WILANEGARA KUNINGAN', '81324571188', 'tk_ade', 'tk_ade', 5),
-(347, 'TK ANDREAS', 'CIREBON', '81324571189', 'tk_alex', 'tk_alex', 4),
-(348, 'TK ANDRI', 'JL.AYAM TEGAL', '81324571190', 'tk_andreas', 'tk_andreas', 1),
-(349, 'TK AZKI', 'ASTANA JAPURA CIREBON', '81324571191', 'tk_andri', 'tk_andri', 3),
-(350, 'TK EHA', 'CIAWI GEBANG KUNINGAN', '81324571192', 'tk_azki', 'tk_azki', 4),
-(351, 'TK ELIN', 'CIAWI GEBANG KUNINGAN', '81324571193', 'tk_eha', 'tk_eha', 1),
-(352, 'TK ELY', 'CIHIDUENG KUNINGAN', '81324571194', 'tk_elin', 'tk_elin', 4),
-(353, 'TK ENDANG', 'KAWALI CIAMIS', '81324571195', 'tk_ely', 'tk_ely', 1),
-(354, 'TK ENDI', 'CIGEDANG KUNINGAN', '81324571196', 'tk_endang', 'tk_endang', 3),
-(355, 'TK H.D', 'CIAWI GEBANG KUNINGAN', '81324571197', 'tk_endi', 'tk_endi', 1),
-(356, 'TK KECIL', 'LURAGUNG KUNINGAN', '81324571198', 'tk_h.d', 'tk_h.d', 1),
-(357, 'TK LELI/GONE JAYA', 'SUKRA INDRAMAYU', '81324571199', 'tk_kecil', 'tk_kecil', 3),
-(358, 'TK LIMA', 'PSR KEPUH KUNINGAN', '81324571200', 'tk_leli/gone_jaya', 'tk_leli/gone_jaya', 1),
+(347, 'TK ANDREAS', 'CIREBON', '81324571189', 'tk_alex', 'tk_alex', 5),
+(348, 'TK ANDRI', 'JL.AYAM TEGAL', '81324571190', 'tk_andreas', 'tk_andreas', 5),
+(349, 'TK AZKI', 'ASTANA JAPURA CIREBON', '81324571191', 'tk_andri', 'tk_andri', 5),
+(350, 'TK EHA', 'CIAWI GEBANG KUNINGAN', '81324571192', 'tk_azki', 'tk_azki', 5),
+(351, 'TK ELIN', 'CIAWI GEBANG KUNINGAN', '81324571193', 'tk_eha', 'tk_eha', 5),
+(352, 'TK ELY', 'CIHIDUENG KUNINGAN', '81324571194', 'tk_elin', 'tk_elin', 5),
+(353, 'TK ENDANG', 'KAWALI CIAMIS', '81324571195', 'tk_ely', 'tk_ely', 5),
+(354, 'TK ENDI', 'CIGEDANG KUNINGAN', '81324571196', 'tk_endang', 'tk_endang', 5),
+(355, 'TK H.D', 'CIAWI GEBANG KUNINGAN', '81324571197', 'tk_endi', 'tk_endi', 5),
+(356, 'TK KECIL', 'LURAGUNG KUNINGAN', '81324571198', 'tk_h.d', 'tk_h.d', 5),
+(357, 'TK LELI/GONE JAYA', 'SUKRA INDRAMAYU', '81324571199', 'tk_kecil', 'tk_kecil', 5),
+(358, 'TK LIMA', 'PSR KEPUH KUNINGAN', '81324571200', 'tk_leli/gone_jaya', 'tk_leli/gone_jaya', 5),
 (359, 'TK POPI', 'DARMA KUNINGAN', '81324571201', 'tk_lima', 'tk_lima', 5),
 (360, 'TK SITI', 'BIMA CIREBON', '81324571202', 'tk_popi', 'tk_popi', 5),
 (361, 'TK SITI/FUJI', 'KETANGGUNGAN BREBES', '83708201186', 'tk_siti', 'tk_siti', 5),
@@ -3999,7 +4386,7 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_tlp`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penilaian`
+-- Table structure for table `penilaian`
 --
 
 CREATE TABLE `penilaian` (
@@ -4012,7 +4399,7 @@ CREATE TABLE `penilaian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -4025,7 +4412,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `deskripsi`, `stok`, `harga`, `gambar`) VALUES
@@ -4039,7 +4426,7 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `deskripsi`, `stok`, `harga`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -4055,7 +4442,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `tgl_transaksi`, `tot_transaksi`, `stat_transaksi`, `stat_pembayaran`, `bukti_pembayaran`, `pengiriman`, `ongkir`) VALUES
@@ -7612,7 +7999,7 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `tgl_transaksi`, `tot_t
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -7626,7 +8013,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `no_hp`, `username`, `password`, `level_user`) VALUES
@@ -7640,89 +8027,101 @@ INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `no_hp`, `username`, `pass
 --
 
 --
--- Indeks untuk tabel `detail_transaksi`
+-- Indexes for table `analisis`
+--
+ALTER TABLE `analisis`
+  ADD PRIMARY KEY (`id_analisis`);
+
+--
+-- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`);
 
 --
--- Indeks untuk tabel `diskon`
+-- Indexes for table `diskon`
 --
 ALTER TABLE `diskon`
   ADD PRIMARY KEY (`id_diskon`);
 
 --
--- Indeks untuk tabel `pelanggan`
+-- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indeks untuk tabel `penilaian`
+-- Indexes for table `penilaian`
 --
 ALTER TABLE `penilaian`
   ADD PRIMARY KEY (`id_penilaian`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `detail_transaksi`
+-- AUTO_INCREMENT for table `analisis`
+--
+ALTER TABLE `analisis`
+  MODIFY `id_analisis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
+
+--
+-- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3539;
 
 --
--- AUTO_INCREMENT untuk tabel `diskon`
+-- AUTO_INCREMENT for table `diskon`
 --
 ALTER TABLE `diskon`
-  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `pelanggan`
+-- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=382;
 
 --
--- AUTO_INCREMENT untuk tabel `penilaian`
+-- AUTO_INCREMENT for table `penilaian`
 --
 ALTER TABLE `penilaian`
   MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `transaksi`
+-- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3539;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

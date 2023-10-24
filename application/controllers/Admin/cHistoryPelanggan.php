@@ -49,10 +49,6 @@ class cHistoryPelanggan extends CI_Controller
 		$this->load->view('Admin/vViewAnalisis');
 		$this->load->view('Admin/Layouts/footer');
 	}
-
-	public function lap_segmentasi()
-	{
-	}
 }
 
 /* End of file cHistoryPelanggan.php */

@@ -51,6 +51,13 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cDiskon') {
+													echo 'active';
+												}  ?>" href="<?= base_url('Admin/cDiskon') ?>">
+								<i class=" fas fa-percent"></i> Data Diskon
+							</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cTransaksi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cTransaksi') ?>">
@@ -68,14 +75,14 @@
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cLaporanTransaksi') {
 													echo 'active';
 												}  ?> " href="<?= base_url('Admin/cLaporanTransaksi') ?>">
-								<i class=" fas fa-book"></i> Cetak Laporan Penjualan
+								<i class=" fas fa-book"></i> <small> Cetak Laporan Penjualan</small>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link <?php if ($this->uri->segment(1) == 'Admin' && $this->uri->segment(2) == 'cLaporanSegmentasi') {
 													echo 'active';
 												}  ?>" href="<?= base_url('Admin/cLaporanSegmentasi') ?>">
-								<i class=" fas fa-book-open"></i> Cetak Laporan Segmentasi Pelanggan
+								<i class=" fas fa-book-open"></i> <small>Cetak Laporan Segmentasi Pelanggan</small>
 							</a>
 						</li>
 					<?php
