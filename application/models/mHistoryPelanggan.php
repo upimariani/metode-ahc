@@ -13,7 +13,7 @@ class mHistoryPelanggan extends CI_Model
 	}
 	public function detail_history($id)
 	{
-		return $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan LEFT JOIN penilaian ON transaksi.id_transaksi=penilaian.id_transaksi WHERE pelanggan.id_pelanggan='" . $id . "'")->result();
+		return $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan LEFT JOIN penilaian ON transaksi.id_transaksi=penilaian.id_transaksi WHERE pelanggan.id_pelanggan='" . $id . "' AND stat_transaksi='4'")->result();
 	}
 	public function select_history_old()
 	{

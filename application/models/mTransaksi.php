@@ -59,6 +59,8 @@ class mTransaksi extends CI_Model
 		$this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
 		$this->db->where('MONTH(tgl_transaksi)', $bulan);
 		$this->db->where('YEAR(tgl_transaksi)', $tahun);
+		$this->db->where('stat_transaksi=4');
+
 		return $this->db->get()->result();
 	}
 }

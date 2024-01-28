@@ -51,6 +51,19 @@ class cCart extends CI_Controller
 			);
 			$this->db->insert('detail_transaksi', $detail);
 		}
+
+		//mengurangi data stok
+		foreach ($this->cart->contents() as $key => $value) {
+			$stok_sebelumnya = $value['stok'];
+			$qty = $value['qty'];
+			$stok_update = $stok_sebelumnya - $qty;
+			$stok_new = array(
+				'stok' => $stok_update
+			);
+			$this->db->where('id_produk', $value['id']);
+			$this->db->update('produk', $stok_new);
+		}
+
 		$this->cart->destroy();
 		redirect('Pelanggan/cHome');
 	}

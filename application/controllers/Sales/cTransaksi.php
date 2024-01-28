@@ -57,7 +57,7 @@ class cTransaksi extends CI_Controller
 		$this->db->where('id_transaksi', $id);
 		$this->db->delete('detail_transaksi');
 
-		$this->session->set_flashdata('success', 'Pesanan Berhasil Dihapus!');
+		$this->session->set_flashdata('success', ' ***Pesanan Berhasil Dihapus!');
 		redirect('Sales/cTransaksi');
 	}
 }

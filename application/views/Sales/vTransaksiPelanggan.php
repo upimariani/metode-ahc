@@ -42,7 +42,7 @@
 									<td>Rp. <?= number_format($value->tot_transaksi)  ?></td>
 									<td><?php if ($value->stat_transaksi == '0') {
 										?>
-											<span class="badge badge-danger">Belum Bayar</span>
+											<span class="badge badge-danger">Belum Dibayar</span>
 										<?php
 										} else if ($value->stat_transaksi == '1') {
 										?>
